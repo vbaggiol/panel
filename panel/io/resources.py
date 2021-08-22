@@ -109,7 +109,6 @@ def bundle_resources(resources):
 
     js_files.extend(js_resources.js_files)
     js_raw.extend(js_resources.js_raw)
-
     css_files.extend(css_resources.css_files)
     css_raw.extend(css_resources.css_raw)
 
@@ -132,7 +131,6 @@ def bundle_resources(resources):
         js_raw.append(ext)
 
     hashes = js_resources.hashes if js_resources else {}
-
     return Bundle(
         js_files=js_files, js_raw=js_raw, css_files=css_files,
         css_raw=css_raw, hashes=hashes
@@ -235,8 +233,10 @@ class Resources(BkResources):
         from ..config import config
         from ..reactive import ReactiveHTML
 
-        files = super(Resources, self).css_files
-
+        if state.rel_path:
+            files = [f'{state.rel_path}/{file}' for file in super(Resources, self).css_files]
+        else:
+            files = super(Resources, self).css_files
         for model in param.concrete_descendents(ReactiveHTML).values():
             if hasattr(model, '__css__'):
                 for css_file in model.__css__:
@@ -298,7 +298,7 @@ class Bundle(BkBundle):
             if (js_file.startswith(state.base_url) or js_file.startswith('static/')):
                 if js_file.startswith(state.base_url):
                     js_file = js_file[len(state.base_url):]
-                
+
                 if state.rel_path:
                     js_file = f'{state.rel_path}/{js_file}'
             js_files.append(js_file)
