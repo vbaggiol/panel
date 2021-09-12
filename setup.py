@@ -150,7 +150,9 @@ extras_require = {
         'ipyvolume',
         'ipyleaflet',
         'xarray',
-        'pyinstrument >=4.0'
+        'pyinstrument >=4.0',
+        'graphviz',
+        'python-graphviz',
     ],
     'tests': _tests,
     'recommended': _recommended,
