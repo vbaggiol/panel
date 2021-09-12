@@ -152,7 +152,6 @@ extras_require = {
         'xarray',
         'pyinstrument >=4.0',
         'graphviz',
-        'python-graphviz',
     ],
     'tests': _tests,
     'recommended': _recommended,
