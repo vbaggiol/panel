@@ -5,6 +5,7 @@ ways.
 
 import ast
 import base64
+import importlib
 import logging # isort:skip
 import os
 
@@ -168,6 +169,10 @@ class Serve(_BkServe):
         ('--autoreload', dict(
             action  = 'store_true',
             help    = "Whether to autoreload source when script changes."
+        )),
+        ('--plugins', dict(
+            action  = 'store',
+            type    = str
         ))
     )
 
@@ -274,6 +279,15 @@ class Serve(_BkServe):
             pattern = REST_PROVIDERS['param'](files, 'rest')
             patterns.extend(pattern)
             state.publish('session_info', state, ['session_info'])
+
+        if args.plugins:
+            plugins = ast.literal_eval(args.plugins)
+            for slug, plugin in plugins.items():
+                plugin_parts = plugin.split('.')
+                mod, cls = '.'.join(plugin_parts[:-1]), plugin_parts[-1]
+                handler = getattr(importlib.import_module(mod), cls)
+                print(slug, handler)
+                patterns.append((slug, handler))
 
         if args.oauth_provider:
             config.oauth_provider = args.oauth_provider
