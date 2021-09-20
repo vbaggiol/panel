@@ -171,7 +171,7 @@ class Serve(_BkServe):
             help    = "Whether to autoreload source when script changes."
         )),
         ('--plugins', dict(
-            action  = 'store',
+            action  = 'append',
             type    = str
         ))
     )
@@ -280,14 +280,9 @@ class Serve(_BkServe):
             patterns.extend(pattern)
             state.publish('session_info', state, ['session_info'])
 
-        if args.plugins:
-            plugins = ast.literal_eval(args.plugins)
-            for slug, plugin in plugins.items():
-                plugin_parts = plugin.split('.')
-                mod, cls = '.'.join(plugin_parts[:-1]), plugin_parts[-1]
-                handler = getattr(importlib.import_module(mod), cls)
-                print(slug, handler)
-                patterns.append((slug, handler))
+        for plugin in args.plugins:
+            routes = getattr(importlib.import_module(plugin), 'ROUTES')
+            patterns.extend(routes)
 
         if args.oauth_provider:
             config.oauth_provider = args.oauth_provider
