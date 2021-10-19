@@ -18,6 +18,8 @@ from panel.pane import HTML, Markdown
 from panel.io import state
 from panel import serve
 
+PORT = 6000
+
 
 @pytest.fixture
 def document():
@@ -175,6 +177,8 @@ def server_cleanup():
     state.kill_all_servers()
     state._indicators.clear()
     state._locations.clear()
+    state.cache.clear()
+    state._scheduled.clear()
 
 
 @pytest.fixture
@@ -182,3 +186,16 @@ def py_file():
     tf = tempfile.NamedTemporaryFile(mode='w', suffix='.py')
     yield tf
     tf.close()
+
+
+def _port():
+    global PORT
+    PORT += 1
+    yield PORT
+
+port = pytest.fixture(_port)
+
+
+@pytest.fixture
+def ports():
+    yield next(_port()), next(_port())

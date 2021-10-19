@@ -7,6 +7,7 @@ import json
 import threading
 
 from collections import OrderedDict, defaultdict
+from collections.abc import Iterator
 from functools import partial
 from weakref import WeakKeyDictionary, WeakSet
 from urllib.parse import urljoin
@@ -189,8 +190,9 @@ class _state(param.Parameterized):
         diter, cb = self._scheduled[name]
         try:
             at = next(diter)
-        except StopIteration:
+        except Exception as e:
             at = None
+            del self._scheduled[name]
         if at is not None:
             ioloop = IOLoop.current()
             now = dt.datetime.now().timestamp()
@@ -376,13 +378,15 @@ class _state(param.Parameterized):
 
     def schedule(self, name, callback, at=None, period=None, cron=None):
         """
-        Schedule a callback periodically at a specific
-        time. Scheduling is idempotent, i.e. if a callback has already
+        Schedule a callback periodically at a specific time.
+        Scheduling is idempotent, i.e. if a callback has already
         been scheduled under the same name subsequent calls will have
         no effect. By default the starting time is immediate but may
         be overridden with the `at` keyword argument. The period may
         be declared using the `period` argument or a cron expression
-        (which requires the `croniter` library).
+        (which requires the `croniter` library). Note that the `at`
+        time should be in local time but if a callable is provided
+        it must return a UTC time.
 
         Arguments
         ---------
@@ -390,11 +394,13 @@ class _state(param.Parameterized):
           Name of the scheduled task
         callback: callable
           Callback to schedule
-        at: datetime.datetime
-          Datetime to schedule the task at
+        at: datetime.datetime or callable
+          Datetime to schedule the task at in the local timezone or
+          a callable which is given the current UTC time and must
+          return a datetime also in UTC.
         period: str or datetime.timedelta
-          The period between executions, may be expressed as a timedelta
-          or a string:
+          The period between executions, may be expressed as a
+          timedelta or a string:
 
             - Week:   '1w'
             - Day:    '1d'
@@ -414,8 +420,18 @@ class _state(param.Parameterized):
             if isinstance(period, str):
                 period = parse_timedelta(period)
             def dgen():
-                if period is None:
-                    yield at
+                if isinstance(at, Iterator):
+                    while True:
+                        new = next(at)
+                        yield new.timestamp()
+                elif callable(at):
+                    while True:
+                        new = at(dt.datetime.utcnow())
+                        if new is None:
+                            raise StopIteration
+                        yield new.replace(tzinfo=dt.timezone.utc).astimezone().timestamp()
+                elif period is None:
+                    yield at.timestamp()
                     raise StopIteration
                 new_time = at or dt.datetime.now()
                 while True:
@@ -427,7 +443,10 @@ class _state(param.Parameterized):
             base = dt.datetime.now() if at is None else at
             diter = croniter(cron, base)
         now = dt.datetime.now().timestamp()
-        call_time_seconds = (next(diter) - now)
+        try:
+            call_time_seconds = (next(diter) - now)
+        except:
+            return
         self._scheduled[name] = (diter, callback)
         ioloop.call_later(delay=call_time_seconds, callback=partial(self._scheduled_cb, name))
 
