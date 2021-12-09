@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>links Module — Panel 0.12.6 documentation</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     links
+    </span>
+</code>
+   Module
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="links-module">
+<h1>links Module<a class="headerlink" href="#links-module" title="Permalink to this headline">¶</a></h1>
+<section id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">links</span></code> Module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-panel.links"></span><p>Defines Links which allow declaring links between bokeh properties.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="panel.links.Callback">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">panel.links.</span></span><span class="sig-name descname"><span class="pre">Callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">param.parameterized.Parameterized</span></code></p>
+<p>A Callback defines some callback to be triggered when a property
+changes on the source object. A Callback can execute arbitrary
+Javascript code and will make all objects referenced in the args
+available in the JS namespace.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">args</span></code> = param.Dict(allow_None=True, class_=&lt;class ‘dict’&gt;, default={}, label=’Args’)</dt><dd><p>A mapping of names to Python objects. These objects are made
+        available to the callback’s code snippet as the values of
+        named parameters to the callback.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">code</span></code> = param.Dict(allow_None=True, class_=&lt;class ‘dict’&gt;, label=’Code’)</dt><dd><p>A dictionary mapping from a source specication to a JS code
+        snippet to be executed if the source property changes.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Callback.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Callback.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Callback.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers the Callback</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Callback.register_callback">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Callback.register_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Callback.register_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a LinkCallback providing the implementation for
+the Link for a particular backend.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="panel.links.Link">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">panel.links.</span></span><span class="sig-name descname"><span class="pre">Link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#panel.links.Callback" title="panel.links.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">panel.links.Callback</span></code></a></p>
+<p>A Link defines some connection between a source and target model.
+It allows defining callbacks in response to some change or event
+on the source object. Instead a Link directly causes some action
+to occur on the target, for JS based backends this usually means
+that a corresponding JS callback will effect some change on the
+target in response to a change on the source.</p>
+<p>A Link must define a source object which is what triggers events,
+but must not define a target. It is also possible to define bi-
+directional links between the source and target object.</p>
+<p>Parameters inherited from:</p>
+<blockquote>
+<div><p><a class="reference internal" href="#panel.links.Callback" title="panel.links.Callback"><code class="xref py py-class docutils literal notranslate"><span class="pre">panel.links.Callback</span></code></a>: args, code</p>
+</div></blockquote>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">bidirectional</span></code> = param.Boolean(bounds=(0, 1), default=False, label=’Bidirectional’)</dt><dd><p>Whether to link source and target in both directions.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">properties</span></code> = param.Dict(class_=&lt;class ‘dict’&gt;, default={}, label=’Properties’)</dt><dd><p>A dictionary mapping between source specification to target
+        specification.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Link.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#panel.links.Link.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers the Callback</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Link.link">
+<span class="sig-name descname"><span class="pre">link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Link.link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Link.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers the Link</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Link.register_callback">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#panel.links.Link.register_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a LinkCallback providing the implementation for
+the Link for a particular backend.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Link.unlink">
+<span class="sig-name descname"><span class="pre">unlink</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Link.unlink"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Link.unlink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregisters the Link</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="panel.links.Parameterized">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">panel.links.</span></span><span class="sig-name descname"><span class="pre">Parameterized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Init</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Intrinsic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialized</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#Parameterized"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.Parameterized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bokeh.core.property.bases.Property</span></code></p>
+<p>Accept a Parameterized object.</p>
+<p>This property only exists to support type validation, e.g. for “accepts”
+clauses. It is not serializable itself, and is not useful to add to
+Bokeh models directly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.accepts">
+<span class="sig-name descname"><span class="pre">accepts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">bokeh.core.property.bases.Property</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bokeh.core.property.bases.Property</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">converter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">bokeh.core.property.bases.Property</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bokeh.core.property.bases.T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bokeh.core.property.bases.Property</span><span class="p"><span class="pre">[</span></span><span class="pre">bokeh.core.property.bases.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#panel.links.Parameterized.accepts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Declare that other types may be converted to this property type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tp</strong> (<em>Property</em>) – A type that may be converted automatically to this property
+type.</p></li>
+<li><p><strong>converter</strong> (<em>callable</em>) – A function accepting <code class="docutils literal notranslate"><span class="pre">value</span></code> to perform conversion of the
+value to this property type.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.asserts">
+<span class="sig-name descname"><span class="pre">asserts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">HasProps</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_or_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">HasProps</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Property</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#panel.links.Parameterized.asserts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that prepared values satisfy given conditions.</p>
+<p>Assertions are intended in enforce conditions beyond simple value
+type validation. For instance, this method can be use to assert that
+the columns of a <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> all collectively have the same
+length at all times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> (<em>callable</em>) – A function accepting <code class="docutils literal notranslate"><span class="pre">(obj,</span> <span class="pre">value)</span></code> that returns True if the value
+passes the assertion, or False otherwise.</p></li>
+<li><p><strong>msg_or_fn</strong> (<em>str</em><em> or </em><em>callable</em>) – A message to print in case the assertion fails, or a function
+accepting <code class="docutils literal notranslate"><span class="pre">(obj,</span> <span class="pre">name,</span> <span class="pre">value)</span></code> to call in in case the assertion
+fails.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.from_json">
+<span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">ID</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">HasProps</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#panel.links.Parameterized.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert from JSON-compatible values into a value for this property.</p>
+<p>JSON-compatible values are: list, dict, number, string, bool, None</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#panel.links.Parameterized.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the value passes validation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>obj</em>) – the value to validate against this property type</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if valid, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.make_descriptors">
+<span class="sig-name descname"><span class="pre">make_descriptors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bokeh.core.property.descriptors.PropertyDescriptor</span><span class="p"><span class="pre">[</span></span><span class="pre">bokeh.core.property.bases.T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#panel.links.Parameterized.make_descriptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of <code class="docutils literal notranslate"><span class="pre">PropertyDescriptor</span></code> instances to install
+on a class, in order to delegate attribute access to this property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – the name of the property these descriptors are for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list[PropertyDescriptor]</p>
+</dd>
+</dl>
+<p>The descriptors returned are collected by the <code class="docutils literal notranslate"><span class="pre">MetaHasProps</span></code>
+metaclass and added to <code class="docutils literal notranslate"><span class="pre">HasProps</span></code> subclasses during class creation.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.matches">
+<span class="sig-name descname"><span class="pre">matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bokeh.core.property.bases.T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bokeh.core.property.bases.T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#panel.links.Parameterized.matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether two parameters match values.</p>
+<p>If either <code class="docutils literal notranslate"><span class="pre">new</span></code> or <code class="docutils literal notranslate"><span class="pre">old</span></code> is a NumPy array or Pandas Series or Index,
+then the result of <code class="docutils literal notranslate"><span class="pre">np.array_equal</span></code> will determine if the values match.</p>
+<p>Otherwise, the result of standard Python equality will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True, if new and old match, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="panel.links.Parameterized.readonly">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readonly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#panel.links.Parameterized.readonly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this property is read-only.</p>
+<p>Read-only properties may only be modified by the client (i.e., by BokehJS
+in the browser).</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.serialize_value">
+<span class="sig-name descname"><span class="pre">serialize_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bokeh.core.property.bases.T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#panel.links.Parameterized.serialize_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the value into a JSON serializable format.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="panel.links.Parameterized.serialized">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialized</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#panel.links.Parameterized.serialized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the property should be serialized when serializing an object.</p>
+<p>This would be False for a “virtual” or “convenience” property that duplicates
+information already available in other properties, for example.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.themed_default">
+<span class="sig-name descname"><span class="pre">themed_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">HasProps</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme_overrides</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="headerlink" href="#panel.links.Parameterized.themed_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>The default, transformed by prepare_value() and the theme overrides.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bokeh.core.property.bases.T</span></span></span><a class="headerlink" href="#panel.links.Parameterized.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the value into the canonical format for this property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>obj</em>) – the value to apply transformation to.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>transformed value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>obj</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.links.Parameterized.wrap">
+<span class="sig-name descname"><span class="pre">wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bokeh.core.property.bases.T</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bokeh.core.property.bases.T</span></span></span><a class="headerlink" href="#panel.links.Parameterized.wrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some property types need to wrap their values in special containers, etc.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.links.construct_data_model">
+<span class="sig-prename descclassname"><span class="pre">panel.links.</span></span><span class="sig-name descname"><span class="pre">construct_data_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameterized</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#construct_data_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.construct_data_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamically creates a Bokeh DataModel class from a Parameterized
+object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameterized</strong> (<em>param.Parameterized</em>) – The Parameterized class or instance from which to create the
+DataModel</p></li>
+<li><p><strong>name</strong> (<em>str</em><em> or </em><em>None</em>) – Name of the dynamically created DataModel class</p></li>
+<li><p><strong>ignore</strong> (<em>list</em><em>(</em><em>str</em><em>)</em>) – List of parameters to ignore.</p></li>
+<li><p><strong>types</strong> (<em>dict</em>) – A dictionary mapping from parameter name to a Parameter type,
+making it possible to override the default parameter types.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataModel</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.links.create_linked_datamodel">
+<span class="sig-prename descclassname"><span class="pre">panel.links.</span></span><span class="sig-name descname"><span class="pre">create_linked_datamodel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/links.html#create_linked_datamodel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.links.create_linked_datamodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Bokeh DataModel from a Parameterized class or instance
+which automatically links the parameters bi-directionally.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>param.Parameterized</em>) – The Parameterized class to create a linked DataModel for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DataModel instance linked to the Parameterized object.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

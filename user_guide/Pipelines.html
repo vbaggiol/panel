@@ -1,0 +1,1248 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Pipelines — Panel 0.12.6 documentation</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="Templates.html" rel="next" title="Templates"/>
+<link href="Links.html" rel="prev" title="Links"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Overview.html">
+   Overview
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Components.html">
+   Components
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="APIs.html">
+   APIs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Customization.html">
+   Customization
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Deploy_and_Export.html">
+   Deploy &amp; Export
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Interact.html">
+   Interact
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Widgets.html">
+   Widgets
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Param.html">
+   Parameters
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Links.html">
+   Linking
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   Pipelines
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Templates.html">
+   Templates
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Server_Deployment.html">
+   Server Deployment
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Custom_Components.html">
+   Building Custom Components
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Async_and_Concurrency.html">
+   Asynchronous and Concurrent Process
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Authentication.html">
+   Authentication
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Django_Apps.html">
+   Django Apps
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#non-linear-pipelines">
+   Non-linear pipelines
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#custom-layout">
+   Custom layout
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#programmatic-flow-control">
+   Programmatic flow control
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/user_guide/Pipelines.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="pipelines">
+<h1>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">param</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'katex'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {'katex': 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min', 'autoLoad': 'https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min'}, 'shim': {}});
+      
+      require(["katex"], function(katex) {
+	
+	window.katex = katex
+	
+	on_load()
+      })
+      
+      require(["autoLoad"], function(renderMathInElement) {
+	
+	window.renderMathInElement = renderMathInElement
+	
+	on_load()
+      })
+      
+      root._bokeh_is_loading = css_urls.length + 2;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    if (((window['katex'] !== undefined) && (!(window['katex'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }
+    if (((window['renderMathInElement'] !== undefined) && (!(window['renderMathInElement'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js", "https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p>The <a class="reference internal" href="Param.html"><span class="doc std std-doc">Param user guide</span></a> described how to set up classes that declare parameters and link them to some computation or visualization. In this section we will discover how to connect multiple such panels into a <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> to express complex multi-page workflows where the output of one stage feeds into the next stage.</p>
+<p>To start using a <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>, let us declare an empty one by instantiating the class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Having set up a Pipeline it is now possible to start populating it with one or more stages.  We have previously seen how a <code class="docutils literal notranslate"><span class="pre">Parameterized</span></code> class can have parameters controlling some visualization or computation on a method, with that linkage declared using the <code class="docutils literal notranslate"><span class="pre">param.depends</span></code> decorator. To use such classes as a pipeline stage, the <code class="docutils literal notranslate"><span class="pre">Parameterized</span></code> class will also need to designate at least one of the methods as an “output”, and it should also provide a visual representation for that pipeline stage.</p>
+<p>To declare the output for a stage, decorate one of its methods with <code class="docutils literal notranslate"><span class="pre">param.output</span></code>. A <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> will use this information to determine what outputs are available to be fed into the next stage of the workflow. In the example below, the <code class="docutils literal notranslate"><span class="pre">Stage1</span></code> class has two parameters (<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>) and one output (<code class="docutils literal notranslate"><span class="pre">c</span></code>). The signature of the decorator allows a number of different ways of declaring the outputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">param.output()</span></code>: Declaring an output without arguments will declare that the method returns an output that will inherit the name of the method and does not make any specific type declarations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">param.output(param.Number)</span></code>: Declaring an output with a specific <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> or Python type also declares an output with the name of the method but declares that the output will be of a specific type.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">param.output(c=param.Number)</span></code>: Declaring an output using a keyword argument allows overriding the method name as the name of the output and declares the type.</p></li>
+</ul>
+<p>It is also possible to declare multiple outputs, either as keywords (Python &gt;= 3.6 required) or tuples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">param.output(c=param.Number,</span> <span class="pre">d=param.String)</span></code> or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">param.output(('c',</span> <span class="pre">param.Number),</span> <span class="pre">('d',</span> <span class="pre">param.String))</span></code></p></li>
+</ul>
+<p>The example below takes two inputs (<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>) and produces two outputs (<code class="docutils literal notranslate"><span class="pre">c</span></code>, computed by mutiplying the inputs, and <code class="docutils literal notranslate"><span class="pre">d</span></code>, computed by raising <code class="docutils literal notranslate"><span class="pre">a</span></code> to the power <code class="docutils literal notranslate"><span class="pre">b</span></code>). To use the class as a pipeline stage, we also have to implement a <code class="docutils literal notranslate"><span class="pre">panel</span></code> method, which returns a Panel object providing a visual representation of the stage.  Here we help implement the <code class="docutils literal notranslate"><span class="pre">panel</span></code> method using an additional <code class="docutils literal notranslate"><span class="pre">view</span></code> method that returns a <code class="docutils literal notranslate"><span class="pre">LaTeX</span></code> pane, which will render the equation to <code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>.</p>
+<p>In addition to passing along the outputs, the Pipeline will also pass along the values of any input parameters whose names match input parameters on the next stage (unless <code class="docutils literal notranslate"><span class="pre">inherit_params</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<p>Let’s start by displaying this stage on its own:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stage1</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">ready</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">precedence</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nd">@param</span><span class="o">.</span><span class="n">output</span><span class="p">((</span><span class="s1">'c'</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">),</span> <span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+    
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">LaTeX</span><span class="p">(</span><span class="s1">'$</span><span class="si">{a}</span><span class="s1"> * </span><span class="si">{b}</span><span class="s1"> = </span><span class="si">{c}</span><span class="s1">$</span><span class="se">\n</span><span class="s1">$</span><span class="si">{a}</span><span class="s1">^{{</span><span class="si">{b}</span><span class="s1">}} = </span><span class="si">{d}</span><span class="s1">$'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">d</span><span class="p">),</span> <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">'font-size'</span><span class="p">:</span> <span class="s1">'2em'</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+
+<span class="n">stage1</span> <span class="o">=</span> <span class="n">Stage1</span><span class="p">()</span>
+<span class="n">stage1</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="4b9ea8d5-732a-418e-8805-6fa2cf690ac7"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"46eefd09-874d-4976-ba2e-5184419aebe9":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1003"},{"id":"1007"}],"margin":[0,0,0,0],"name":"Row03207"},"id":"1002","type":"Row"},{"attributes":{"margin":[5,5,5,5],"name":"LaTeX03203","style":{"font-size":"2em"},"text":"$5 * 5 = 25$\n$5^{5} = 3125$"},"id":"1008","type":"panel.models.katex.KaTeX"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"A","value":5},"id":"1005","type":"Slider"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"B","value":5},"id":"1006","type":"Slider"},{"attributes":{"reload":false},"id":"1010","type":"panel.models.location.Location"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Stage</b>"},"id":"1004","type":"Div"},{"attributes":{"client_comm_id":"0238814e85d54d62b24d796fd25f6fa5","comm_id":"1c67b7b26e964d2f888b43efcda03062","plot_id":"1002"},"id":"1009","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1008"}],"margin":[0,0,0,0],"name":"Row03202"},"id":"1007","type":"Row"},{"attributes":{"children":[{"id":"1004"},{"id":"1005"},{"id":"1006"}],"margin":[5,5,5,5],"min_width":300,"name":"Stage","width":300},"id":"1003","type":"Column"}],"root_ids":["1002","1009","1010"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"46eefd09-874d-4976-ba2e-5184419aebe9","root_ids":["1002"],"roots":{"1002":"4b9ea8d5-732a-418e-8805-6fa2cf690ac7"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>To summarize, we have followed several conventions when setting up this stage of our <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>:</p>
+<ol class="simple">
+<li><p>Declare a Parameterized class with some input parameters.</p></li>
+<li><p>Declare one or more methods decorated with the <code class="docutils literal notranslate"><span class="pre">param.output</span></code> decorator.</p></li>
+<li><p>Declare a <code class="docutils literal notranslate"><span class="pre">panel</span></code> method that returns a view of the object that the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> can render.</p></li>
+</ol>
+<p>Now that the object has been instantiated we can also query it for its outputs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stage1</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'c': (&lt;param.Number at 0x7fb78d917c40&gt;,
+  &lt;bound method Stage1.output of Stage1(a=5, b=5, name='Stage103187', ready=False)&gt;,
+  0),
+ 'd': (&lt;param.Number at 0x7fb78d917d00&gt;,
+  &lt;bound method Stage1.output of Stage1(a=5, b=5, name='Stage103187', ready=False)&gt;,
+  1)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that <code class="docutils literal notranslate"><span class="pre">Stage1</span></code> declares outputs named <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code> of type <code class="docutils literal notranslate"><span class="pre">param.Number</span></code> that can be accessed by calling the <code class="docutils literal notranslate"><span class="pre">output</span></code> method on the object. Now let us add this stage to our <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> using the <code class="docutils literal notranslate"><span class="pre">add_stage</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Stage 1'</span><span class="p">,</span> <span class="n">stage1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">add_stage</span></code> method takes the name of the stage as its first argument, the stage class or instance as the second parameter, and any additional keyword arguments if you want to override default behavior.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> with only a single stage is not much of a <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code>, of course! So let’s set up a second stage, consuming the output of the first. Recall that <code class="docutils literal notranslate"><span class="pre">Stage1</span></code> declares an  output named <code class="docutils literal notranslate"><span class="pre">c</span></code>. If output <code class="docutils literal notranslate"><span class="pre">c</span></code> from <code class="docutils literal notranslate"><span class="pre">Stage1</span></code> should flow to <code class="docutils literal notranslate"><span class="pre">Stage2</span></code>, the latter should declare a <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> named <code class="docutils literal notranslate"><span class="pre">c</span></code> to consume the output of the first stage. <code class="docutils literal notranslate"><span class="pre">Stage2</span></code> does not have to consume all parameters, and here we will ignore output <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
+<p>In the second stage we will define parameters <code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">exp</span></code>. To make sure that we don’t get a widget for <code class="docutils literal notranslate"><span class="pre">c</span></code> (as it will be set by the previous stage, not the user), we’ll set its precedence to be negative (which tells Panel to skip creating a widget for it). In other respects this class is very similar to the first one; it declares both a <code class="docutils literal notranslate"><span class="pre">view</span></code> method that depends on the parameters of the class, and a <code class="docutils literal notranslate"><span class="pre">panel</span></code> method that returns a view of the object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stage2</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+    
+    <span class="n">c</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+    <span class="n">exp</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'exp'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">LaTeX</span><span class="p">(</span><span class="s1">'${</span><span class="si">%s</span><span class="s1">}^{</span><span class="si">%s</span><span class="s1">}={</span><span class="si">%.3f</span><span class="s1">}$'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">exp</span><span class="p">),</span>
+                             <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">'font-size'</span><span class="p">:</span> <span class="s1">'2em'</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    
+<span class="n">stage2</span> <span class="o">=</span> <span class="n">Stage2</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">stage1</span><span class="o">.</span><span class="n">output</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">stage2</span><span class="o">.</span><span class="n">panel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1011">
+<div class="bk-root" data-root-id="1011" id="bf8ed43b-05fd-4f38-ae81-5996e9bf3f33"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"6c63083f-276c-4eaa-b045-a97438fef2ed":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1013"},{"id":"1014"},{"id":"1015"}],"margin":[5,5,5,5],"min_width":300,"name":"Stage","width":300},"id":"1012","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"LaTeX03426","style":{"font-size":"2em"},"text":"${25}^{0.1}={1.380}$"},"id":"1017","type":"panel.models.katex.KaTeX"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Stage</b>"},"id":"1013","type":"Div"},{"attributes":{"end":3,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"Exp","value":0.1},"id":"1015","type":"Slider"},{"attributes":{"client_comm_id":"675f0869a4bb4380bb540344cc0eab47","comm_id":"abe93f4faafb4b59a599ab475a91394b","plot_id":"1011"},"id":"1018","type":"panel.models.comm_manager.CommManager"},{"attributes":{"low":0,"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"C","value":25,"value_throttled":25},"id":"1014","type":"Spinner"},{"attributes":{"children":[{"id":"1012"},{"id":"1016"}],"margin":[0,0,0,0],"name":"Row03430"},"id":"1011","type":"Row"},{"attributes":{"children":[{"id":"1017"}],"margin":[0,0,0,0],"name":"Row03425"},"id":"1016","type":"Row"}],"root_ids":["1011","1018"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"6c63083f-276c-4eaa-b045-a97438fef2ed","root_ids":["1011"],"roots":{"1011":"bf8ed43b-05fd-4f38-ae81-5996e9bf3f33"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Now that we have declared the second stage of the pipeline, let us add it to the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Stage 2'</span><span class="p">,</span> <span class="n">stage2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And that’s it; we have now declared a two-stage pipeline, where the output <code class="docutils literal notranslate"><span class="pre">c</span></code> flows from the first stage into the second stage. To begin with we can <code class="docutils literal notranslate"><span class="pre">print</span></code> the pipeline to see the stages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline:
+    [0] Stage 1: Stage1()
+    [1] Stage 2: Stage2(c=25)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To display the <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> we simply let it render itself:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Stage 1'</span><span class="p">,</span> <span class="n">Stage1</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Stage 2'</span><span class="p">,</span> <span class="n">Stage2</span><span class="p">)</span>
+
+<span class="n">pipeline</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1019">
+<div class="bk-root" data-root-id="1019" id="61030dee-630f-4680-b6b7-efb55c89e60c"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"903def8c-72b4-486a-9c53-2b687d1ce99a":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":0.1},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1086"}}},"id":"1091","type":"Text"},{"attributes":{"children":[{"id":"1022"},{"id":"1023"}],"margin":[0,0,0,0],"name":"Column03816"},"id":"1021","type":"Column"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1070","type":"MultiLine"},{"attributes":{"line_width":{"value":2}},"id":"1067","type":"MultiLine"},{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":0.2},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1086"}}},"id":"1092","type":"Text"},{"attributes":{"source":{"id":"1057"}},"id":"1066","type":"CDSView"},{"attributes":{},"id":"1033","type":"LinearScale"},{"attributes":{"coordinates":null,"data_source":{"id":"1058"},"glyph":{"id":"1067"},"group":null,"hover_glyph":{"id":"1069"},"muted_glyph":{"id":"1070"},"nonselection_glyph":{"id":"1068"},"view":{"id":"1072"}},"id":"1071","type":"GlyphRenderer"},{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1086"}}},"id":"1090","type":"Text"},{"attributes":{"callback":null,"renderers":[{"id":"1104"}],"tags":["hv_created"],"tooltips":[["Stage","@{Stage}"],["State","@{State}"]]},"id":"1027","type":"HoverTool"},{"attributes":{"disabled":true,"icon":null,"label":"Previous","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1258","type":"Button"},{"attributes":{"line_width":{"value":2}},"id":"1069","type":"MultiLine"},{"attributes":{"reset_end":1,"reset_start":0,"tags":[[["y","y",null]]]},"id":"1025","type":"Range1d"},{"attributes":{"margin":[0,0,0,0],"min_width":100,"name":"Row03814","width":100},"id":"1023","type":"Row"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"A","value":5},"id":"1264","type":"Slider"},{"attributes":{"callback":null,"renderers":[{"id":"1073"}],"tags":["hv_created"],"tooltips":[["Stage","@{index_hover}"],["State","@{State}"]]},"id":"1026","type":"HoverTool"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1068","type":"MultiLine"},{"attributes":{"source":{"id":"1058"}},"id":"1072","type":"CDSView"},{"attributes":{"children":[{"id":"1261"}],"margin":[0,0,0,0],"name":"Row04007"},"id":"1260","type":"Row"},{"attributes":{"below":[{"id":"1037"}],"center":[{"id":"1040"},{"id":"1044"}],"height":80,"left":[{"id":"1041"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_width":400,"outline_line_alpha":0,"renderers":[{"id":"1073"},{"id":"1093"},{"id":"1104"}],"sizing_mode":"stretch_width","title":{"id":"1029"},"toolbar":{"id":"1046"},"toolbar_location":null,"width":null,"x_range":{"id":"1024"},"x_scale":{"id":"1033"},"y_range":{"id":"1025"},"y_scale":{"id":"1035"}},"id":"1028","subtype":"Figure","type":"Plot"},{"attributes":{"css_classes":["markdown"],"margin":[0,0,0,5],"name":"Markdown03812","text":"&lt;h2&gt;Stage: Stage 1&lt;/h2&gt;"},"id":"1022","type":"panel.models.markup.HTML"},{"attributes":{"axis":{"id":"1037"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"1040","type":"Grid"},{"attributes":{},"id":"1082","type":"NodesOnly"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"1029","type":"Title"},{"attributes":{},"id":"1035","type":"LinearScale"},{"attributes":{"icon":null,"label":"Next","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1259","type":"Button"},{"attributes":{},"id":"1038","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1099","type":"Scatter"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Stage</b>"},"id":"1263","type":"Div"},{"attributes":{},"id":"1119","type":"Selection"},{"attributes":{"children":[{"id":"1020"},{"id":"1260"}],"margin":[0,0,0,0],"name":"Column04008","sizing_mode":"stretch_width"},"id":"1019","type":"Column"},{"attributes":{},"id":"1042","type":"BasicTicker"},{"attributes":{},"id":"1116","type":"UnionRenderers"},{"attributes":{},"id":"1084","type":"NodesAndLinkedEdges"},{"attributes":{"axis":{"id":"1041"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"1044","type":"Grid"},{"attributes":{"margin":[5,5,5,5],"name":"LaTeX04025","style":{"font-size":"2em"},"text":"$5 * 5 = 25$\n$5^{5} = 3125$"},"id":"1267","type":"panel.models.katex.KaTeX"},{"attributes":{"axis_label":"x","coordinates":null,"formatter":{"id":"1051"},"group":null,"major_label_policy":{"id":"1052"},"ticker":{"id":"1038"},"visible":false},"id":"1037","type":"LinearAxis"},{"attributes":{"source":{"id":"1087"}},"id":"1094","type":"CDSView"},{"attributes":{"axis_label":"y","coordinates":null,"formatter":{"id":"1054"},"group":null,"major_label_policy":{"id":"1055"},"ticker":{"id":"1042"},"visible":false},"id":"1041","type":"LinearAxis"},{"attributes":{"children":[{"id":"1262"},{"id":"1266"}],"margin":[0,0,0,0],"name":"Row04029"},"id":"1261","type":"Row"},{"attributes":{"data":{"Stage":["Stage 1","Stage 2"],"x":[0,1],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADgPw==","dtype":"float64","order":"little","shape":[2]}},"selected":{"id":"1088"},"selection_policy":{"id":"1114"}},"id":"1087","type":"ColumnDataSource"},{"attributes":{"graph_layout":{"0":[0,0.5],"1":[1,0.5]}},"id":"1059","type":"StaticLayoutProvider"},{"attributes":{"callback":null,"renderers":[{"id":"1104"}]},"id":"1045","type":"TapTool"},{"attributes":{"coordinates":null,"data_source":{"id":"1087"},"glyph":{"id":"1090"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1092"},"nonselection_glyph":{"id":"1091"},"selection_glyph":{"id":"1095"},"view":{"id":"1094"}},"id":"1093","type":"GlyphRenderer"},{"attributes":{"angle":{"value":0},"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":1.0},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"text_font_style":{"value":"normal"},"text_line_height":{"value":1.2},"x":{"field":"x"},"x_offset":{"value":0},"y":{"field":"y","transform":{"id":"1086"}},"y_offset":{"value":0}},"id":"1095","type":"Text"},{"attributes":{},"id":"1054","type":"BasicTickFormatter"},{"attributes":{},"id":"1088","type":"Selection"},{"attributes":{"data":{"Stage":["Stage 1","Stage 2"],"State":["active","next"],"x":[0,1],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADgPw==","dtype":"float64","order":"little","shape":[2]}},"selected":{"id":"1097"},"selection_policy":{"id":"1116"}},"id":"1096","type":"ColumnDataSource"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"B","value":5},"id":"1265","type":"Slider"},{"attributes":{"range":null,"value":-0.3},"id":"1086","type":"Dodge"},{"attributes":{},"id":"1114","type":"UnionRenderers"},{"attributes":{},"id":"1051","type":"BasicTickFormatter"},{"attributes":{},"id":"1121","type":"Selection"},{"attributes":{},"id":"1052","type":"AllLabels"},{"attributes":{},"id":"1120","type":"UnionRenderers"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1100","type":"Scatter"},{"attributes":{"tools":[{"id":"1026"},{"id":"1027"},{"id":"1045"}]},"id":"1046","type":"Toolbar"},{"attributes":{"children":[{"id":"1263"},{"id":"1264"},{"id":"1265"}],"margin":[5,5,5,5],"min_width":300,"name":"Stage","width":300},"id":"1262","type":"Column"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1103","type":"Scatter"},{"attributes":{"factors":["inactive","active","error","next"],"palette":["white","#5cb85c","red","yellow"]},"id":"1056","type":"CategoricalColorMapper"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"limegreen"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1101","type":"Scatter"},{"attributes":{"children":[{"id":"1267"}],"margin":[0,0,0,0],"name":"Row04024"},"id":"1266","type":"Row"},{"attributes":{"client_comm_id":"1ce5920e521b4ab4a1e4013625ae8f03","comm_id":"247e31081daa4f5283b17ffcbd0d9950","plot_id":"1019"},"id":"1313","type":"panel.models.comm_manager.CommManager"},{"attributes":{"hatch_color":{"field":"node_color","transform":{"id":"1056"}},"size":{"value":15}},"id":"1063","type":"Circle"},{"attributes":{},"id":"1055","type":"AllLabels"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1056"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1056"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1061","type":"Circle"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"indianred"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1102","type":"Scatter"},{"attributes":{"children":[{"id":"1021"},{"id":"1028"},{"id":"1257"}],"margin":[0,0,0,0],"name":"Row03817","sizing_mode":"stretch_width"},"id":"1020","type":"Row"},{"attributes":{},"id":"1118","type":"UnionRenderers"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1056"}},"hatch_color":{"field":"node_color","transform":{"id":"1056"}},"size":{"value":15}},"id":"1062","type":"Circle"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1056"}},"hatch_color":{"field":"node_color","transform":{"id":"1056"}},"size":{"value":15}},"id":"1060","type":"Circle"},{"attributes":{"data":{"end":{"__ndarray__":"AQAAAA==","dtype":"int32","order":"little","shape":[1]},"start":{"__ndarray__":"AAAAAA==","dtype":"int32","order":"little","shape":[1]}},"selected":{"id":"1121"},"selection_policy":{"id":"1120"}},"id":"1058","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1096"}},"id":"1105","type":"CDSView"},{"attributes":{"data":{"State":["active","next"],"index":{"__ndarray__":"AAAAAAEAAAA=","dtype":"int32","order":"little","shape":[2]},"index_hover":["Stage 1","Stage 2"],"node_color":["active","next"]},"selected":{"id":"1119"},"selection_policy":{"id":"1118"}},"id":"1057","type":"ColumnDataSource"},{"attributes":{"coordinates":null,"edge_renderer":{"id":"1071"},"group":null,"inspection_policy":{"id":"1084"},"layout_provider":{"id":"1059"},"node_renderer":{"id":"1065"},"selection_policy":{"id":"1082"}},"id":"1073","type":"GraphRenderer"},{"attributes":{"coordinates":null,"data_source":{"id":"1096"},"glyph":{"id":"1099"},"group":null,"hover_glyph":{"id":"1102"},"muted_glyph":{"id":"1103"},"nonselection_glyph":{"id":"1100"},"selection_glyph":{"id":"1101"},"view":{"id":"1105"}},"id":"1104","type":"GlyphRenderer"},{"attributes":{"js_property_callbacks":{"change:indices":[{"id":"1106"}]}},"id":"1097","type":"Selection"},{"attributes":{"end":1.25,"reset_end":1.25,"reset_start":-0.25,"start":-0.25,"tags":[[["x","x",null]]]},"id":"1024","type":"Range1d"},{"attributes":{"children":[{"id":"1258"},{"id":"1259"}],"margin":[0,0,0,0],"name":"Row03815"},"id":"1257","type":"Row"},{"attributes":{"coordinates":null,"data_source":{"id":"1057"},"glyph":{"id":"1060"},"group":null,"hover_glyph":{"id":"1063"},"muted_glyph":{"id":"1064"},"nonselection_glyph":{"id":"1061"},"selection_glyph":{"id":"1062"},"view":{"id":"1066"}},"id":"1065","type":"GlyphRenderer"},{"attributes":{"args":{"selected":{"id":"1097"}},"code":"var data = {};\ndata[\"index\"] = cb_obj[\"indices\"];\n\nfunction unique_events(events) {\n  // Processes the event queue ignoring duplicate events\n  // of the same type\n  var unique = [];\n  var unique_events = [];\n  for (var i=0; i<events.length; i++) {\n    var _tmpevent = events[i];\n    event = _tmpevent[0];\n    data = _tmpevent[1];\n    if (unique_events.indexOf(event)===-1) {\n      unique.unshift(data);\n      unique_events.push(event);\n      }\n  }\n  return unique;\n}\n\nfunction process_events(comm_status) {\n  // Iterates over event queue and sends events via Comm\n  var events = unique_events(comm_status.event_buffer);\n  for (var i=0; i<events.length; i++) {\n    var data = events[i];\n    var comm = window.PyViz.comms[data[\"comm_id\"]];\n    comm.send(data);\n  }\n  comm_status.event_buffer = [];\n}\n\nfunction on_msg(msg) {\n  // Receives acknowledgement from Python, processing event\n  // and unblocking Comm if event queue empty\n  var metadata = msg.metadata;\n  var comm_id = metadata.comm_id\n  var comm_status = window.PyViz.comm_status[comm_id];\n  if (comm_status.event_buffer.length) {\n    process_events(comm_status);\n    comm_status.blocked = true;\n    comm_status.time = Date.now()+20;\n  } else {\n    comm_status.blocked = false;\n  }\n  comm_status.event_buffer = [];\n  if ((metadata.msg_type == \"Ready\") && metadata.content) {\n    console.log(\"Python callback returned following output:\", metadata.content);\n  } else if (metadata.msg_type == \"Error\") {\n    console.log(\"Python failed with the following traceback:\", metadata.traceback)\n  }\n}\n\n// Initialize Comm\nif ((window.PyViz == undefined) || (window.PyViz.comm_manager == undefined)) { return }\nvar comm = window.PyViz.comm_manager.get_client_comm(\"1019\", \"471d2d566ad24355ad5660ac8c1582cc\", on_msg);\nif (!comm) {\n  return\n}\n\n// Initialize event queue and timeouts for Comm\nvar comm_status = window.PyViz.comm_status[\"471d2d566ad24355ad5660ac8c1582cc\"];\nif (comm_status === undefined) {\n  comm_status = {event_buffer: [], blocked: false, time: Date.now()}\n  window.PyViz.comm_status[\"471d2d566ad24355ad5660ac8c1582cc\"] = comm_status\n}\n\n// Add current event to queue and process queue if not blocked\nvar event_name = cb_obj.event_name;\nif (event_name === undefined) {\n  // we are a widget not an event... fake a key.\n  event_name = Object.keys(data).join(',');\n}\ndata['comm_id'] = \"471d2d566ad24355ad5660ac8c1582cc\";\nvar timeout = comm_status.time + 20000;\nif ((comm_status.blocked && (Date.now() < timeout))) {\n  comm_status.event_buffer.unshift([event_name, data]);\n} else {\n  comm_status.event_buffer.unshift([event_name, data]);\n  setTimeout(function() { process_events(comm_status); }, 20);\n  comm_status.blocked = true;\n  comm_status.time = Date.now()+20;\n}\n"},"id":"1106","type":"CustomJS"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1056"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1056"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1064","type":"Circle"}],"root_ids":["1019","1313"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"903def8c-72b4-486a-9c53-2b687d1ce99a","root_ids":["1019"],"roots":{"1019":"61030dee-630f-4680-b6b7-efb55c89e60c"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>As you can see the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> renders a little diagram displaying the available stages in the workflow along with previous and next buttons to move between each stage. This allows setting up complex workflows with multiple stages, where each component is a self-contained unit, with minimal declarations about stage outputs (using the <code class="docutils literal notranslate"><span class="pre">param.output</span></code> decorator) and how to render the stage (by declaring a <code class="docutils literal notranslate"><span class="pre">panel</span></code> method).  Note also when progressing to Stage 2, the <code class="docutils literal notranslate"><span class="pre">c</span></code> parameter widget is not rendered because its value has been provided by the previous stage.</p>
+<p>Above we created the <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> as we went along, which makes some sense in a notebook to allow debugging and development of each stage.  When deploying the Pipeline as a server app or when there’s no reason to instantiate each stage separately; instead we can declare the stages as part of the constructor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">([(</span><span class="s1">'Stage 1'</span><span class="p">,</span> <span class="n">Stage1</span><span class="p">),</span> <span class="p">(</span><span class="s1">'Stage 2'</span><span class="p">,</span> <span class="n">Stage2</span><span class="p">)])</span>
+<span class="n">pipeline</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1389">
+<div class="bk-root" data-root-id="1389" id="eb2e39eb-4664-482a-82df-ed1564c2fe65"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"955dde1e-0ef0-400e-ae2d-8d28c6a33bec":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":0.1},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1456"}}},"id":"1461","type":"Text"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Stage</b>"},"id":"1633","type":"Div"},{"attributes":{"angle":{"value":0},"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":1.0},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"text_font_style":{"value":"normal"},"text_line_height":{"value":1.2},"x":{"field":"x"},"x_offset":{"value":0},"y":{"field":"y","transform":{"id":"1456"}},"y_offset":{"value":0}},"id":"1465","type":"Text"},{"attributes":{"margin":[5,5,5,5],"name":"LaTeX05427","style":{"font-size":"2em"},"text":"$5 * 5 = 25$\n$5^{5} = 3125$"},"id":"1637","type":"panel.models.katex.KaTeX"},{"attributes":{"coordinates":null,"data_source":{"id":"1457"},"glyph":{"id":"1460"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1462"},"nonselection_glyph":{"id":"1461"},"selection_glyph":{"id":"1465"},"view":{"id":"1464"}},"id":"1463","type":"GlyphRenderer"},{"attributes":{},"id":"1421","type":"BasicTickFormatter"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"A","value":5},"id":"1634","type":"Slider"},{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_alpha":{"value":0.2},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1456"}}},"id":"1462","type":"Text"},{"attributes":{},"id":"1490","type":"UnionRenderers"},{"attributes":{"end":10,"margin":[5,10,5,10],"start":0,"step":0.1,"title":"B","value":5},"id":"1635","type":"Slider"},{"attributes":{"children":[{"id":"1637"}],"margin":[0,0,0,0],"name":"Row05426"},"id":"1636","type":"Row"},{"attributes":{"source":{"id":"1457"}},"id":"1464","type":"CDSView"},{"attributes":{"range":null,"value":-0.3},"id":"1456","type":"Dodge"},{"attributes":{"text":{"field":"Stage"},"text_align":{"value":"center"},"text_baseline":{"value":"middle"},"text_color":{"value":"black"},"x":{"field":"x"},"y":{"field":"y","transform":{"id":"1456"}}},"id":"1460","type":"Text"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1469","type":"Scatter"},{"attributes":{},"id":"1422","type":"AllLabels"},{"attributes":{},"id":"1484","type":"UnionRenderers"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1426"}},"hatch_color":{"field":"node_color","transform":{"id":"1426"}},"size":{"value":15}},"id":"1432","type":"Circle"},{"attributes":{"js_property_callbacks":{"change:indices":[{"id":"1476"}]}},"id":"1467","type":"Selection"},{"attributes":{"graph_layout":{"0":[0,0.5],"1":[1,0.5]}},"id":"1429","type":"StaticLayoutProvider"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"indianred"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1472","type":"Scatter"},{"attributes":{},"id":"1424","type":"BasicTickFormatter"},{"attributes":{},"id":"1486","type":"UnionRenderers"},{"attributes":{},"id":"1425","type":"AllLabels"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1470","type":"Scatter"},{"attributes":{"coordinates":null,"data_source":{"id":"1466"},"glyph":{"id":"1469"},"group":null,"hover_glyph":{"id":"1472"},"muted_glyph":{"id":"1473"},"nonselection_glyph":{"id":"1470"},"selection_glyph":{"id":"1471"},"view":{"id":"1475"}},"id":"1474","type":"GlyphRenderer"},{"attributes":{"args":{"selected":{"id":"1467"}},"code":"var data = {};\ndata[\"index\"] = cb_obj[\"indices\"];\n\nfunction unique_events(events) {\n  // Processes the event queue ignoring duplicate events\n  // of the same type\n  var unique = [];\n  var unique_events = [];\n  for (var i=0; i<events.length; i++) {\n    var _tmpevent = events[i];\n    event = _tmpevent[0];\n    data = _tmpevent[1];\n    if (unique_events.indexOf(event)===-1) {\n      unique.unshift(data);\n      unique_events.push(event);\n      }\n  }\n  return unique;\n}\n\nfunction process_events(comm_status) {\n  // Iterates over event queue and sends events via Comm\n  var events = unique_events(comm_status.event_buffer);\n  for (var i=0; i<events.length; i++) {\n    var data = events[i];\n    var comm = window.PyViz.comms[data[\"comm_id\"]];\n    comm.send(data);\n  }\n  comm_status.event_buffer = [];\n}\n\nfunction on_msg(msg) {\n  // Receives acknowledgement from Python, processing event\n  // and unblocking Comm if event queue empty\n  var metadata = msg.metadata;\n  var comm_id = metadata.comm_id\n  var comm_status = window.PyViz.comm_status[comm_id];\n  if (comm_status.event_buffer.length) {\n    process_events(comm_status);\n    comm_status.blocked = true;\n    comm_status.time = Date.now()+20;\n  } else {\n    comm_status.blocked = false;\n  }\n  comm_status.event_buffer = [];\n  if ((metadata.msg_type == \"Ready\") && metadata.content) {\n    console.log(\"Python callback returned following output:\", metadata.content);\n  } else if (metadata.msg_type == \"Error\") {\n    console.log(\"Python failed with the following traceback:\", metadata.traceback)\n  }\n}\n\n// Initialize Comm\nif ((window.PyViz == undefined) || (window.PyViz.comm_manager == undefined)) { return }\nvar comm = window.PyViz.comm_manager.get_client_comm(\"1389\", \"e1be899f159b4ff2b691f319a8711e2f\", on_msg);\nif (!comm) {\n  return\n}\n\n// Initialize event queue and timeouts for Comm\nvar comm_status = window.PyViz.comm_status[\"e1be899f159b4ff2b691f319a8711e2f\"];\nif (comm_status === undefined) {\n  comm_status = {event_buffer: [], blocked: false, time: Date.now()}\n  window.PyViz.comm_status[\"e1be899f159b4ff2b691f319a8711e2f\"] = comm_status\n}\n\n// Add current event to queue and process queue if not blocked\nvar event_name = cb_obj.event_name;\nif (event_name === undefined) {\n  // we are a widget not an event... fake a key.\n  event_name = Object.keys(data).join(',');\n}\ndata['comm_id'] = \"e1be899f159b4ff2b691f319a8711e2f\";\nvar timeout = comm_status.time + 20000;\nif ((comm_status.blocked && (Date.now() < timeout))) {\n  comm_status.event_buffer.unshift([event_name, data]);\n} else {\n  comm_status.event_buffer.unshift([event_name, data]);\n  setTimeout(function() { process_events(comm_status); }, 20);\n  comm_status.blocked = true;\n  comm_status.time = Date.now()+20;\n}\n"},"id":"1476","type":"CustomJS"},{"attributes":{"factors":["inactive","active","error","next"],"palette":["white","#5cb85c","red","yellow"]},"id":"1426","type":"CategoricalColorMapper"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"limegreen"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1471","type":"Scatter"},{"attributes":{"source":{"id":"1427"}},"id":"1436","type":"CDSView"},{"attributes":{"coordinates":null,"data_source":{"id":"1428"},"glyph":{"id":"1437"},"group":null,"hover_glyph":{"id":"1439"},"muted_glyph":{"id":"1440"},"nonselection_glyph":{"id":"1438"},"view":{"id":"1442"}},"id":"1441","type":"GlyphRenderer"},{"attributes":{"data":{"Stage":["Stage 1","Stage 2"],"State":["active","next"],"x":[0,1],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADgPw==","dtype":"float64","order":"little","shape":[2]}},"selected":{"id":"1467"},"selection_policy":{"id":"1486"}},"id":"1466","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1473","type":"Scatter"},{"attributes":{"source":{"id":"1466"}},"id":"1475","type":"CDSView"},{"attributes":{"data":{"end":{"__ndarray__":"AQAAAA==","dtype":"int32","order":"little","shape":[1]},"start":{"__ndarray__":"AAAAAA==","dtype":"int32","order":"little","shape":[1]}},"selected":{"id":"1491"},"selection_policy":{"id":"1490"}},"id":"1428","type":"ColumnDataSource"},{"attributes":{"data":{"State":["active","next"],"index":{"__ndarray__":"AAAAAAEAAAA=","dtype":"int32","order":"little","shape":[2]},"index_hover":["Stage 1","Stage 2"],"node_color":["active","next"]},"selected":{"id":"1489"},"selection_policy":{"id":"1488"}},"id":"1427","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1426"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1426"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1434","type":"Circle"},{"attributes":{"margin":[0,0,0,0],"min_width":100,"name":"Row05216","width":100},"id":"1393","type":"Row"},{"attributes":{},"id":"1403","type":"LinearScale"},{"attributes":{"client_comm_id":"f2f12d1b09754dc0962dff403905bc86","comm_id":"77c9eafbf3ea433381ce34713a77666b","plot_id":"1389"},"id":"1683","type":"panel.models.comm_manager.CommManager"},{"attributes":{"end":1.25,"reset_end":1.25,"reset_start":-0.25,"start":-0.25,"tags":[[["x","x",null]]]},"id":"1394","type":"Range1d"},{"attributes":{"coordinates":null,"data_source":{"id":"1427"},"glyph":{"id":"1430"},"group":null,"hover_glyph":{"id":"1433"},"muted_glyph":{"id":"1434"},"nonselection_glyph":{"id":"1431"},"selection_glyph":{"id":"1432"},"view":{"id":"1436"}},"id":"1435","type":"GlyphRenderer"},{"attributes":{"data":{"Stage":["Stage 1","Stage 2"],"x":[0,1],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADgPw==","dtype":"float64","order":"little","shape":[2]}},"selected":{"id":"1458"},"selection_policy":{"id":"1484"}},"id":"1457","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"1407"}],"center":[{"id":"1410"},{"id":"1414"}],"height":80,"left":[{"id":"1411"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_width":400,"outline_line_alpha":0,"renderers":[{"id":"1443"},{"id":"1463"},{"id":"1474"}],"sizing_mode":"stretch_width","title":{"id":"1399"},"toolbar":{"id":"1416"},"toolbar_location":null,"width":null,"x_range":{"id":"1394"},"x_scale":{"id":"1403"},"y_range":{"id":"1395"},"y_scale":{"id":"1405"}},"id":"1398","subtype":"Figure","type":"Plot"},{"attributes":{"line_width":{"value":2}},"id":"1437","type":"MultiLine"},{"attributes":{"callback":null,"renderers":[{"id":"1474"}],"tags":["hv_created"],"tooltips":[["Stage","@{Stage}"],["State","@{State}"]]},"id":"1397","type":"HoverTool"},{"attributes":{"hatch_color":{"field":"node_color","transform":{"id":"1426"}},"size":{"value":15}},"id":"1433","type":"Circle"},{"attributes":{"callback":null,"renderers":[{"id":"1443"}],"tags":["hv_created"],"tooltips":[["Stage","@{index_hover}"],["State","@{State}"]]},"id":"1396","type":"HoverTool"},{"attributes":{},"id":"1458","type":"Selection"},{"attributes":{"children":[{"id":"1391"},{"id":"1398"},{"id":"1627"}],"margin":[0,0,0,0],"name":"Row05219","sizing_mode":"stretch_width"},"id":"1390","type":"Row"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1426"}},"hatch_color":{"field":"node_color","transform":{"id":"1426"}},"size":{"value":15}},"id":"1430","type":"Circle"},{"attributes":{"children":[{"id":"1631"}],"margin":[0,0,0,0],"name":"Row05409"},"id":"1630","type":"Row"},{"attributes":{"children":[{"id":"1390"},{"id":"1630"}],"margin":[0,0,0,0],"name":"Column05410","sizing_mode":"stretch_width"},"id":"1389","type":"Column"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1426"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1426"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1431","type":"Circle"},{"attributes":{},"id":"1405","type":"LinearScale"},{"attributes":{"css_classes":["markdown"],"margin":[0,0,0,5],"name":"Markdown05214","text":"&lt;h2&gt;Stage: Stage 1&lt;/h2&gt;"},"id":"1392","type":"panel.models.markup.HTML"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"1399","type":"Title"},{"attributes":{"icon":null,"label":"Next","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1629","type":"Button"},{"attributes":{"children":[{"id":"1392"},{"id":"1393"}],"margin":[0,0,0,0],"name":"Column05218"},"id":"1391","type":"Column"},{"attributes":{"children":[{"id":"1628"},{"id":"1629"}],"margin":[0,0,0,0],"name":"Row05217"},"id":"1627","type":"Row"},{"attributes":{},"id":"1408","type":"BasicTicker"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1440","type":"MultiLine"},{"attributes":{"axis":{"id":"1407"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"1410","type":"Grid"},{"attributes":{"children":[{"id":"1633"},{"id":"1634"},{"id":"1635"}],"margin":[5,5,5,5],"min_width":300,"name":"Stage","width":300},"id":"1632","type":"Column"},{"attributes":{"line_width":{"value":2}},"id":"1439","type":"MultiLine"},{"attributes":{"reset_end":1,"reset_start":0,"tags":[[["y","y",null]]]},"id":"1395","type":"Range1d"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1438","type":"MultiLine"},{"attributes":{},"id":"1412","type":"BasicTicker"},{"attributes":{"source":{"id":"1428"}},"id":"1442","type":"CDSView"},{"attributes":{"axis":{"id":"1411"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"1414","type":"Grid"},{"attributes":{},"id":"1488","type":"UnionRenderers"},{"attributes":{"axis_label":"x","coordinates":null,"formatter":{"id":"1421"},"group":null,"major_label_policy":{"id":"1422"},"ticker":{"id":"1408"},"visible":false},"id":"1407","type":"LinearAxis"},{"attributes":{},"id":"1491","type":"Selection"},{"attributes":{"axis_label":"y","coordinates":null,"formatter":{"id":"1424"},"group":null,"major_label_policy":{"id":"1425"},"ticker":{"id":"1412"},"visible":false},"id":"1411","type":"LinearAxis"},{"attributes":{},"id":"1452","type":"NodesOnly"},{"attributes":{"children":[{"id":"1632"},{"id":"1636"}],"margin":[0,0,0,0],"name":"Row05431"},"id":"1631","type":"Row"},{"attributes":{"tools":[{"id":"1396"},{"id":"1397"},{"id":"1415"}]},"id":"1416","type":"Toolbar"},{"attributes":{"disabled":true,"icon":null,"label":"Previous","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1628","type":"Button"},{"attributes":{},"id":"1489","type":"Selection"},{"attributes":{"coordinates":null,"edge_renderer":{"id":"1441"},"group":null,"inspection_policy":{"id":"1454"},"layout_provider":{"id":"1429"},"node_renderer":{"id":"1435"},"selection_policy":{"id":"1452"}},"id":"1443","type":"GraphRenderer"},{"attributes":{},"id":"1454","type":"NodesAndLinkedEdges"},{"attributes":{"callback":null,"renderers":[{"id":"1474"}]},"id":"1415","type":"TapTool"}],"root_ids":["1389","1683"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"955dde1e-0ef0-400e-ae2d-8d28c6a33bec","root_ids":["1389"],"roots":{"1389":"eb2e39eb-4664-482a-82df-ed1564c2fe65"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Pipeline stages may be either <code class="docutils literal notranslate"><span class="pre">Parameterized</span></code> instances or <code class="docutils literal notranslate"><span class="pre">Parameterized</span></code> classes. With classes, the class will not be instantiated until that stage is reached, which lets you postpone allocating memory, reading files, querying databases, and other expensive actions that might be in the constructor until the parameters for that stage have been collected from previous stages. You can also use an instantiated <code class="docutils literal notranslate"><span class="pre">Parameterized</span></code> object instance, e.g. if you want to set some parameters to non-default values before putting the stage into the pipeline, but in that case you will need to ensure that updating the parameters of the instantiated object is sufficient to update the full current state of that stage.</p>
+<section id="non-linear-pipelines">
+<h2>Non-linear pipelines<a class="headerlink" href="#non-linear-pipelines" title="Permalink to this headline">¶</a></h2>
+<p>Pipelines are not limited to simple linear UI workflows like the ones listed above. They support any arbitrary branching structures, i.e., an acyclic graph. A simple example might be a workflow with two alternative stages that rejoin at a later point. In the very simple example below we declare four stages: an <code class="docutils literal notranslate"><span class="pre">Input</span></code>, <code class="docutils literal notranslate"><span class="pre">Multiply</span></code>, <code class="docutils literal notranslate"><span class="pre">Add</span></code>, and <code class="docutils literal notranslate"><span class="pre">Result</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Input</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+    
+    <span class="n">value1</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">value2</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Multiply</span><span class="p">(</span><span class="n">Input</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'</span><span class="si">%.3f</span><span class="s1"> * </span><span class="si">%.3f</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span>
+
+    <span class="nd">@param</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="s1">'result'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">value2</span>
+    
+<span class="k">class</span> <span class="nc">Add</span><span class="p">(</span><span class="n">Input</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'</span><span class="si">%d</span><span class="s1"> + </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span>
+    
+    <span class="nd">@param</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="s1">'result'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value2</span>
+    
+<span class="k">class</span> <span class="nc">Result</span><span class="p">(</span><span class="n">Input</span><span class="p">):</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
+    
+<span class="n">dag</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">()</span>
+
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Input'</span><span class="p">,</span> <span class="n">Input</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Multiply'</span><span class="p">,</span> <span class="n">Multiply</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Add'</span><span class="p">,</span> <span class="n">Add</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Result'</span><span class="p">,</span> <span class="n">Result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After adding all the stages we have to express the relationship between these stages. To declare the graph we can use the <code class="docutils literal notranslate"><span class="pre">define_graph</span></code> method and provide a adjacency map, which declares which stage feeds into which other stages. In this case the <code class="docutils literal notranslate"><span class="pre">Input</span></code> feeds into both <code class="docutils literal notranslate"><span class="pre">Multiply</span></code> and <code class="docutils literal notranslate"><span class="pre">Add</span></code> and both those stages feed into the <code class="docutils literal notranslate"><span class="pre">Result</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span><span class="o">.</span><span class="n">define_graph</span><span class="p">({</span><span class="s1">'Input'</span><span class="p">:</span> <span class="p">(</span><span class="s1">'Multiply'</span><span class="p">,</span> <span class="s1">'Add'</span><span class="p">),</span> <span class="s1">'Multiply'</span><span class="p">:</span> <span class="s1">'Result'</span><span class="p">,</span> <span class="s1">'Add'</span><span class="p">:</span> <span class="s1">'Result'</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is of course a very simple example but it demonstrates the ability to express arbitrary workflows with branching and converging steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1759">
+<div class="bk-root" data-root-id="1759" id="ecbd3290-25e7-4d04-bacd-7219bbd4a8bb"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"37cc7f8d-61f9-4054-8ca7-406fbd9123b5":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"icon":null,"label":"Next","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1973","type":"Button"},{"attributes":{"below":[{"id":"1777"}],"center":[{"id":"1780"},{"id":"1784"}],"height":100,"left":[{"id":"1781"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_width":400,"outline_line_alpha":0,"renderers":[{"id":"1813"},{"id":"1834"}],"sizing_mode":"stretch_width","title":{"id":"1769"},"toolbar":{"id":"1786"},"toolbar_location":null,"width":null,"x_range":{"id":"1764"},"x_scale":{"id":"1773"},"y_range":{"id":"1765"},"y_scale":{"id":"1775"}},"id":"1768","subtype":"Figure","type":"Plot"},{"attributes":{"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Value1","value":2,"value_throttled":2},"id":"1976","type":"Spinner"},{"attributes":{"callback":null,"renderers":[{"id":"1834"}],"tags":["hv_created"],"tooltips":[["Stage","@{Stage}"],["State","@{State}"]]},"id":"1767","type":"HoverTool"},{"attributes":{"callback":null,"renderers":[{"id":"1813"}],"tags":["hv_created"],"tooltips":[["Stage","@{index_hover}"],["State","@{State}"]]},"id":"1766","type":"HoverTool"},{"attributes":{"axis_label":"x","coordinates":null,"formatter":{"id":"1791"},"group":null,"major_label_policy":{"id":"1792"},"ticker":{"id":"1778"},"visible":false},"id":"1777","type":"LinearAxis"},{"attributes":{"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Value2","value":3,"value_throttled":3},"id":"1977","type":"Spinner"},{"attributes":{"children":[{"id":"1972"},{"id":"1973"}],"margin":[0,0,0,0],"name":"Column07912"},"id":"1971","type":"Column"},{"attributes":{"coordinates":null,"data_source":{"id":"1826"},"glyph":{"id":"1829"},"group":null,"hover_glyph":{"id":"1832"},"muted_glyph":{"id":"1833"},"nonselection_glyph":{"id":"1830"},"selection_glyph":{"id":"1831"},"view":{"id":"1835"}},"id":"1834","type":"GlyphRenderer"},{"attributes":{},"id":"1791","type":"BasicTickFormatter"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1808","type":"MultiLine"},{"attributes":{"js_property_callbacks":{"change:indices":[{"id":"1836"}]}},"id":"1827","type":"Selection"},{"attributes":{},"id":"1778","type":"BasicTicker"},{"attributes":{},"id":"1775","type":"LinearScale"},{"attributes":{},"id":"1773","type":"LinearScale"},{"attributes":{},"id":"1848","type":"UnionRenderers"},{"attributes":{},"id":"1849","type":"Selection"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1796"}},"hatch_color":{"field":"node_color","transform":{"id":"1796"}},"size":{"value":15}},"id":"1802","type":"Circle"},{"attributes":{"client_comm_id":"7b345f858cc84732b17e8f973a4ba02a","comm_id":"3894b558e84f457b952eddda38fa2cfd","plot_id":"1759"},"id":"2017","type":"panel.models.comm_manager.CommManager"},{"attributes":{},"id":"1794","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"1797"}},"id":"1806","type":"CDSView"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"1769","type":"Title"},{"attributes":{},"id":"1792","type":"AllLabels"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1829","type":"Scatter"},{"attributes":{},"id":"1844","type":"UnionRenderers"},{"attributes":{"tools":[{"id":"1766"},{"id":"1767"},{"id":"1785"}]},"id":"1786","type":"Toolbar"},{"attributes":{"source":{"id":"1826"}},"id":"1835","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1796"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1796"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1804","type":"Circle"},{"attributes":{},"id":"1782","type":"BasicTicker"},{"attributes":{"data":{"end":{"__ndarray__":"AgAAAAEAAAADAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"start":{"__ndarray__":"AAAAAAAAAAACAAAAAQAAAA==","dtype":"int32","order":"little","shape":[4]}},"selected":{"id":"1849"},"selection_policy":{"id":"1848"}},"id":"1798","type":"ColumnDataSource"},{"attributes":{"children":[{"id":"1762"},{"id":"1763"}],"margin":[0,0,0,0],"name":"Column06801"},"id":"1761","type":"Column"},{"attributes":{"args":{"selected":{"id":"1827"}},"code":"var data = {};\ndata[\"index\"] = cb_obj[\"indices\"];\n\nfunction unique_events(events) {\n  // Processes the event queue ignoring duplicate events\n  // of the same type\n  var unique = [];\n  var unique_events = [];\n  for (var i=0; i<events.length; i++) {\n    var _tmpevent = events[i];\n    event = _tmpevent[0];\n    data = _tmpevent[1];\n    if (unique_events.indexOf(event)===-1) {\n      unique.unshift(data);\n      unique_events.push(event);\n      }\n  }\n  return unique;\n}\n\nfunction process_events(comm_status) {\n  // Iterates over event queue and sends events via Comm\n  var events = unique_events(comm_status.event_buffer);\n  for (var i=0; i<events.length; i++) {\n    var data = events[i];\n    var comm = window.PyViz.comms[data[\"comm_id\"]];\n    comm.send(data);\n  }\n  comm_status.event_buffer = [];\n}\n\nfunction on_msg(msg) {\n  // Receives acknowledgement from Python, processing event\n  // and unblocking Comm if event queue empty\n  var metadata = msg.metadata;\n  var comm_id = metadata.comm_id\n  var comm_status = window.PyViz.comm_status[comm_id];\n  if (comm_status.event_buffer.length) {\n    process_events(comm_status);\n    comm_status.blocked = true;\n    comm_status.time = Date.now()+20;\n  } else {\n    comm_status.blocked = false;\n  }\n  comm_status.event_buffer = [];\n  if ((metadata.msg_type == \"Ready\") && metadata.content) {\n    console.log(\"Python callback returned following output:\", metadata.content);\n  } else if (metadata.msg_type == \"Error\") {\n    console.log(\"Python failed with the following traceback:\", metadata.traceback)\n  }\n}\n\n// Initialize Comm\nif ((window.PyViz == undefined) || (window.PyViz.comm_manager == undefined)) { return }\nvar comm = window.PyViz.comm_manager.get_client_comm(\"1759\", \"6edbc2c5ce7f48bbafea5a2a3fd1f584\", on_msg);\nif (!comm) {\n  return\n}\n\n// Initialize event queue and timeouts for Comm\nvar comm_status = window.PyViz.comm_status[\"6edbc2c5ce7f48bbafea5a2a3fd1f584\"];\nif (comm_status === undefined) {\n  comm_status = {event_buffer: [], blocked: false, time: Date.now()}\n  window.PyViz.comm_status[\"6edbc2c5ce7f48bbafea5a2a3fd1f584\"] = comm_status\n}\n\n// Add current event to queue and process queue if not blocked\nvar event_name = cb_obj.event_name;\nif (event_name === undefined) {\n  // we are a widget not an event... fake a key.\n  event_name = Object.keys(data).join(',');\n}\ndata['comm_id'] = \"6edbc2c5ce7f48bbafea5a2a3fd1f584\";\nvar timeout = comm_status.time + 20000;\nif ((comm_status.blocked && (Date.now() < timeout))) {\n  comm_status.event_buffer.unshift([event_name, data]);\n} else {\n  comm_status.event_buffer.unshift([event_name, data]);\n  setTimeout(function() { process_events(comm_status); }, 20);\n  comm_status.blocked = true;\n  comm_status.time = Date.now()+20;\n}\n"},"id":"1836","type":"CustomJS"},{"attributes":{},"id":"1822","type":"NodesOnly"},{"attributes":{"axis":{"id":"1781"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"1784","type":"Grid"},{"attributes":{"end":2.25,"reset_end":2.25,"reset_start":-0.25,"start":-0.25,"tags":[[["x","x",null]]]},"id":"1764","type":"Range1d"},{"attributes":{"reset_end":1,"reset_start":0,"tags":[[["y","y",null]]]},"id":"1765","type":"Range1d"},{"attributes":{"children":[{"id":"1976"},{"id":"1977"}],"margin":[0,0,0,0],"name":"Row07005"},"id":"1975","type":"Row"},{"attributes":{"axis":{"id":"1777"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"1780","type":"Grid"},{"attributes":{"coordinates":null,"data_source":{"id":"1797"},"glyph":{"id":"1800"},"group":null,"hover_glyph":{"id":"1803"},"muted_glyph":{"id":"1804"},"nonselection_glyph":{"id":"1801"},"selection_glyph":{"id":"1802"},"view":{"id":"1806"}},"id":"1805","type":"GlyphRenderer"},{"attributes":{"line_width":{"value":2}},"id":"1807","type":"MultiLine"},{"attributes":{"css_classes":["markdown"],"margin":[0,0,0,5],"name":"Markdown06797","text":"&lt;h2&gt;Stage: Input&lt;/h2&gt;"},"id":"1762","type":"panel.models.markup.HTML"},{"attributes":{"axis_label":"y","coordinates":null,"formatter":{"id":"1794"},"group":null,"major_label_policy":{"id":"1795"},"ticker":{"id":"1782"},"visible":false},"id":"1781","type":"LinearAxis"},{"attributes":{"children":[{"id":"1761"},{"id":"1768"},{"id":"1967"}],"margin":[0,0,0,0],"name":"Row06802","sizing_mode":"stretch_width"},"id":"1760","type":"Row"},{"attributes":{"children":[{"id":"1760"},{"id":"1974"}],"margin":[0,0,0,0],"name":"Column06993","sizing_mode":"stretch_width"},"id":"1759","type":"Column"},{"attributes":{"hatch_color":{"field":"node_color","transform":{"id":"1796"}},"size":{"value":15}},"id":"1803","type":"Circle"},{"attributes":{"disabled":true,"icon":null,"label":"Previous","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"1970","type":"Button"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1833","type":"Scatter"},{"attributes":{"children":[{"id":"1968"},{"id":"1971"}],"margin":[0,0,0,0],"name":"Row06800"},"id":"1967","type":"Row"},{"attributes":{"coordinates":null,"data_source":{"id":"1798"},"glyph":{"id":"1807"},"group":null,"hover_glyph":{"id":"1809"},"muted_glyph":{"id":"1810"},"nonselection_glyph":{"id":"1808"},"view":{"id":"1812"}},"id":"1811","type":"GlyphRenderer"},{"attributes":{"margin":[0,0,0,0],"min_width":100,"name":"Row06799","width":100},"id":"1763","type":"Row"},{"attributes":{"margin":[5,10,5,10],"min_width":125,"options":["Multiply","Add"],"value":"Multiply","width":125},"id":"1972","type":"Select"},{"attributes":{"children":[{"id":"1975"}],"margin":[0,0,0,0],"name":"Row06992"},"id":"1974","type":"Row"},{"attributes":{"data":{"State":["active","inactive","next","inactive"],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"index_hover":["Input","Add","Multiply","Result"],"node_color":["active","inactive","next","inactive"]},"selected":{"id":"1847"},"selection_policy":{"id":"1846"}},"id":"1797","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1798"}},"id":"1812","type":"CDSView"},{"attributes":{"coordinates":null,"edge_renderer":{"id":"1811"},"group":null,"inspection_policy":{"id":"1824"},"layout_provider":{"id":"1799"},"node_renderer":{"id":"1805"},"selection_policy":{"id":"1822"}},"id":"1813","type":"GraphRenderer"},{"attributes":{},"id":"1846","type":"UnionRenderers"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"indianred"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1832","type":"Scatter"},{"attributes":{"graph_layout":{"0":[0,0.5],"1":[1,0.25],"2":[1,0.75],"3":[2,0.5]}},"id":"1799","type":"StaticLayoutProvider"},{"attributes":{"data":{"Stage":["Input","Add","Multiply","Result"],"State":["active","inactive","next","inactive"],"x":[0,1,1,2],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADQPwAAAAAAAOg/AAAAAAAA4D8=","dtype":"float64","order":"little","shape":[4]}},"selected":{"id":"1827"},"selection_policy":{"id":"1844"}},"id":"1826","type":"ColumnDataSource"},{"attributes":{},"id":"1795","type":"AllLabels"},{"attributes":{"disabled":true,"margin":[5,10,5,10],"min_width":125,"width":125},"id":"1969","type":"Select"},{"attributes":{},"id":"1824","type":"NodesAndLinkedEdges"},{"attributes":{"line_width":{"value":2}},"id":"1809","type":"MultiLine"},{"attributes":{},"id":"1847","type":"Selection"},{"attributes":{"children":[{"id":"1969"},{"id":"1970"}],"margin":[0,0,0,0],"name":"Column07911"},"id":"1968","type":"Column"},{"attributes":{"callback":null,"renderers":[{"id":"1834"}]},"id":"1785","type":"TapTool"},{"attributes":{"factors":["inactive","active","error","next"],"palette":["white","#5cb85c","red","yellow"]},"id":"1796","type":"CategoricalColorMapper"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1830","type":"Scatter"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"1796"}},"hatch_color":{"field":"node_color","transform":{"id":"1796"}},"size":{"value":15}},"id":"1800","type":"Circle"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"1810","type":"MultiLine"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"limegreen"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1831","type":"Scatter"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"1796"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"1796"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"1801","type":"Circle"}],"root_ids":["1759","2017"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"37cc7f8d-61f9-4054-8ca7-406fbd9123b5","root_ids":["1759"],"roots":{"1759":"ecbd3290-25e7-4d04-bacd-7219bbd4a8bb"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="custom-layout">
+<h2>Custom layout<a class="headerlink" href="#custom-layout" title="Permalink to this headline">¶</a></h2>
+<p>For a <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> object <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">p.layout</span></code> is a Panel layout with the following hierarchically arranged components:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">layout</span></code>: The overall layout of the header and stage.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: The navigation components and network diagram.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The name of the current stage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network</span></code>: A network diagram representing the pipeline.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buttons</span></code>: All navigation buttons and selectors.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prev_button</span></code>: The button to go to the previous stage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prev_selector</span></code>: The selector widget to select between previous branching stages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">next_button</span></code>:   The button to go to the previous stage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">next_selector</span></code>: The selector widget to select the next branching stages.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">stage</span></code>: The contents of the current pipeline stage.</p></li>
+</ul>
+</li>
+</ul>
+<p>You can pick and choose any combination of these components to display in any configuration, e.g. just <code class="docutils literal notranslate"><span class="pre">pn.Column(p.title,p.network,p.stage)</span></code> if you don’t want to show any buttons for a pipeline <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
+<p>For instance, let’s rearrange our <code class="docutils literal notranslate"><span class="pre">dag</span></code> pipeline to fit into a smaller horizontal space:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">dag</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">HSpacer</span><span class="p">(),</span> <span class="n">dag</span><span class="o">.</span><span class="n">buttons</span><span class="p">),</span>
+    <span class="n">dag</span><span class="o">.</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">dag</span><span class="o">.</span><span class="n">stage</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="2083">
+<div class="bk-root" data-root-id="2083" id="7e81e607-be13-4307-ad8b-3ffd261118fd"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"d2ddbd98-190e-4bd0-9ed6-f6cea11fe573":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"coordinates":null,"data_source":{"id":"2127"},"glyph":{"id":"2130"},"group":null,"hover_glyph":{"id":"2133"},"muted_glyph":{"id":"2134"},"nonselection_glyph":{"id":"2131"},"selection_glyph":{"id":"2132"},"view":{"id":"2136"}},"id":"2135","type":"GlyphRenderer"},{"attributes":{"coordinates":null,"data_source":{"id":"2128"},"glyph":{"id":"2137"},"group":null,"hover_glyph":{"id":"2139"},"muted_glyph":{"id":"2140"},"nonselection_glyph":{"id":"2138"},"view":{"id":"2142"}},"id":"2141","type":"GlyphRenderer"},{"attributes":{},"id":"2112","type":"BasicTicker"},{"attributes":{},"id":"2174","type":"UnionRenderers"},{"attributes":{"line_width":{"value":2}},"id":"2137","type":"MultiLine"},{"attributes":{},"id":"2108","type":"BasicTicker"},{"attributes":{"source":{"id":"2127"}},"id":"2136","type":"CDSView"},{"attributes":{"axis_label":"x","coordinates":null,"formatter":{"id":"2121"},"group":null,"major_label_policy":{"id":"2122"},"ticker":{"id":"2108"},"visible":false},"id":"2107","type":"LinearAxis"},{"attributes":{},"id":"2105","type":"LinearScale"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"2140","type":"MultiLine"},{"attributes":{"reset_end":1,"reset_start":0,"tags":[[["y","y",null]]]},"id":"2095","type":"Range1d"},{"attributes":{"margin":[5,5,5,5],"name":"HSpacer08532","sizing_mode":"stretch_width"},"id":"2086","type":"Spacer"},{"attributes":{"disabled":true,"margin":[5,10,5,10],"min_width":125,"width":125},"id":"2089","type":"Select"},{"attributes":{"children":[{"id":"2089"},{"id":"2090"}],"margin":[0,0,0,0],"name":"Column07911"},"id":"2088","type":"Column"},{"attributes":{"line_width":{"value":2}},"id":"2139","type":"MultiLine"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"2138","type":"MultiLine"},{"attributes":{"source":{"id":"2128"}},"id":"2142","type":"CDSView"},{"attributes":{"children":[{"id":"2088"},{"id":"2091"}],"margin":[0,0,0,0],"name":"Row06800"},"id":"2087","type":"Row"},{"attributes":{"callback":null,"renderers":[{"id":"2143"}],"tags":["hv_created"],"tooltips":[["Stage","@{index_hover}"],["State","@{State}"]]},"id":"2096","type":"HoverTool"},{"attributes":{"children":[{"id":"2298"}],"margin":[0,0,0,0],"name":"Row06992"},"id":"2297","type":"Row"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"2099","type":"Title"},{"attributes":{"axis":{"id":"2111"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"2114","type":"Grid"},{"attributes":{},"id":"2152","type":"NodesOnly"},{"attributes":{"js_property_callbacks":{"change:indices":[{"id":"2166"}]}},"id":"2157","type":"Selection"},{"attributes":{"disabled":true,"icon":null,"label":"Previous","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"2090","type":"Button"},{"attributes":{"client_comm_id":"749dd89e19bc4d20946d3d2170c7ee50","comm_id":"c9ebd594703e41a29f50c35cb61cd28f","plot_id":"2083"},"id":"2340","type":"panel.models.comm_manager.CommManager"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2159","type":"Scatter"},{"attributes":{"axis":{"id":"2107"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"2110","type":"Grid"},{"attributes":{"children":[{"id":"2092"},{"id":"2093"}],"margin":[0,0,0,0],"name":"Column07912"},"id":"2091","type":"Column"},{"attributes":{"axis_label":"y","coordinates":null,"formatter":{"id":"2124"},"group":null,"major_label_policy":{"id":"2125"},"ticker":{"id":"2112"},"visible":false},"id":"2111","type":"LinearAxis"},{"attributes":{},"id":"2154","type":"NodesAndLinkedEdges"},{"attributes":{"css_classes":["markdown"],"margin":[0,0,0,5],"name":"Markdown06797","text":"&lt;h2&gt;Stage: Input&lt;/h2&gt;"},"id":"2085","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"2084"},{"id":"2098"},{"id":"2297"}],"margin":[0,0,0,0],"name":"Column08534"},"id":"2083","type":"Column"},{"attributes":{"callback":null,"renderers":[{"id":"2164"}]},"id":"2115","type":"TapTool"},{"attributes":{},"id":"2103","type":"LinearScale"},{"attributes":{"children":[{"id":"2085"},{"id":"2086"},{"id":"2087"}],"margin":[0,0,0,0],"name":"Row08533"},"id":"2084","type":"Row"},{"attributes":{},"id":"2121","type":"BasicTickFormatter"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"indianred"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2162","type":"Scatter"},{"attributes":{},"id":"2125","type":"AllLabels"},{"attributes":{"coordinates":null,"data_source":{"id":"2156"},"glyph":{"id":"2159"},"group":null,"hover_glyph":{"id":"2162"},"muted_glyph":{"id":"2163"},"nonselection_glyph":{"id":"2160"},"selection_glyph":{"id":"2161"},"view":{"id":"2165"}},"id":"2164","type":"GlyphRenderer"},{"attributes":{"below":[{"id":"2107"}],"center":[{"id":"2110"},{"id":"2114"}],"height":100,"left":[{"id":"2111"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_width":400,"outline_line_alpha":0,"renderers":[{"id":"2143"},{"id":"2164"}],"sizing_mode":"stretch_width","title":{"id":"2099"},"toolbar":{"id":"2116"},"toolbar_location":null,"width":null,"x_range":{"id":"2094"},"x_scale":{"id":"2103"},"y_range":{"id":"2095"},"y_scale":{"id":"2105"}},"id":"2098","subtype":"Figure","type":"Plot"},{"attributes":{"data":{"end":{"__ndarray__":"AgAAAAEAAAADAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"start":{"__ndarray__":"AAAAAAAAAAACAAAAAQAAAA==","dtype":"int32","order":"little","shape":[4]}},"selected":{"id":"2179"},"selection_policy":{"id":"2178"}},"id":"2128","type":"ColumnDataSource"},{"attributes":{"end":2.25,"reset_end":2.25,"reset_start":-0.25,"start":-0.25,"tags":[[["x","x",null]]]},"id":"2094","type":"Range1d"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2160","type":"Scatter"},{"attributes":{"source":{"id":"2156"}},"id":"2165","type":"CDSView"},{"attributes":{"data":{"Stage":["Input","Add","Multiply","Result"],"State":["active","inactive","next","inactive"],"x":[0,1,1,2],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADQPwAAAAAAAOg/AAAAAAAA4D8=","dtype":"float64","order":"little","shape":[4]}},"selected":{"id":"2157"},"selection_policy":{"id":"2174"}},"id":"2156","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"limegreen"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2161","type":"Scatter"},{"attributes":{"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Value2","value":3,"value_throttled":3},"id":"2300","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"min_width":125,"options":["Multiply","Add"],"value":"Multiply","width":125},"id":"2092","type":"Select"},{"attributes":{"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Value1","value":2,"value_throttled":2},"id":"2299","type":"Spinner"},{"attributes":{"data":{"State":["active","inactive","next","inactive"],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"index_hover":["Input","Add","Multiply","Result"],"node_color":["active","inactive","next","inactive"]},"selected":{"id":"2177"},"selection_policy":{"id":"2176"}},"id":"2127","type":"ColumnDataSource"},{"attributes":{"tools":[{"id":"2096"},{"id":"2097"},{"id":"2115"}]},"id":"2116","type":"Toolbar"},{"attributes":{"args":{"selected":{"id":"2157"}},"code":"var data = {};\ndata[\"index\"] = cb_obj[\"indices\"];\n\nfunction unique_events(events) {\n  // Processes the event queue ignoring duplicate events\n  // of the same type\n  var unique = [];\n  var unique_events = [];\n  for (var i=0; i<events.length; i++) {\n    var _tmpevent = events[i];\n    event = _tmpevent[0];\n    data = _tmpevent[1];\n    if (unique_events.indexOf(event)===-1) {\n      unique.unshift(data);\n      unique_events.push(event);\n      }\n  }\n  return unique;\n}\n\nfunction process_events(comm_status) {\n  // Iterates over event queue and sends events via Comm\n  var events = unique_events(comm_status.event_buffer);\n  for (var i=0; i<events.length; i++) {\n    var data = events[i];\n    var comm = window.PyViz.comms[data[\"comm_id\"]];\n    comm.send(data);\n  }\n  comm_status.event_buffer = [];\n}\n\nfunction on_msg(msg) {\n  // Receives acknowledgement from Python, processing event\n  // and unblocking Comm if event queue empty\n  var metadata = msg.metadata;\n  var comm_id = metadata.comm_id\n  var comm_status = window.PyViz.comm_status[comm_id];\n  if (comm_status.event_buffer.length) {\n    process_events(comm_status);\n    comm_status.blocked = true;\n    comm_status.time = Date.now()+20;\n  } else {\n    comm_status.blocked = false;\n  }\n  comm_status.event_buffer = [];\n  if ((metadata.msg_type == \"Ready\") && metadata.content) {\n    console.log(\"Python callback returned following output:\", metadata.content);\n  } else if (metadata.msg_type == \"Error\") {\n    console.log(\"Python failed with the following traceback:\", metadata.traceback)\n  }\n}\n\n// Initialize Comm\nif ((window.PyViz == undefined) || (window.PyViz.comm_manager == undefined)) { return }\nvar comm = window.PyViz.comm_manager.get_client_comm(\"2083\", \"76cee1b3accd4643b7f02ffc429e2e34\", on_msg);\nif (!comm) {\n  return\n}\n\n// Initialize event queue and timeouts for Comm\nvar comm_status = window.PyViz.comm_status[\"76cee1b3accd4643b7f02ffc429e2e34\"];\nif (comm_status === undefined) {\n  comm_status = {event_buffer: [], blocked: false, time: Date.now()}\n  window.PyViz.comm_status[\"76cee1b3accd4643b7f02ffc429e2e34\"] = comm_status\n}\n\n// Add current event to queue and process queue if not blocked\nvar event_name = cb_obj.event_name;\nif (event_name === undefined) {\n  // we are a widget not an event... fake a key.\n  event_name = Object.keys(data).join(',');\n}\ndata['comm_id'] = \"76cee1b3accd4643b7f02ffc429e2e34\";\nvar timeout = comm_status.time + 20000;\nif ((comm_status.blocked && (Date.now() < timeout))) {\n  comm_status.event_buffer.unshift([event_name, data]);\n} else {\n  comm_status.event_buffer.unshift([event_name, data]);\n  setTimeout(function() { process_events(comm_status); }, 20);\n  comm_status.blocked = true;\n  comm_status.time = Date.now()+20;\n}\n"},"id":"2166","type":"CustomJS"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2163","type":"Scatter"},{"attributes":{},"id":"2122","type":"AllLabels"},{"attributes":{"children":[{"id":"2299"},{"id":"2300"}],"margin":[0,0,0,0],"name":"Row07005"},"id":"2298","type":"Row"},{"attributes":{},"id":"2176","type":"UnionRenderers"},{"attributes":{},"id":"2177","type":"Selection"},{"attributes":{},"id":"2124","type":"BasicTickFormatter"},{"attributes":{"callback":null,"renderers":[{"id":"2164"}],"tags":["hv_created"],"tooltips":[["Stage","@{Stage}"],["State","@{State}"]]},"id":"2097","type":"HoverTool"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"2126"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"2126"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"2134","type":"Circle"},{"attributes":{"icon":null,"label":"Next","margin":[5,10,5,10],"min_width":125,"subscribed_events":["button_click"],"width":125},"id":"2093","type":"Button"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"2126"}},"hatch_color":{"field":"node_color","transform":{"id":"2126"}},"size":{"value":15}},"id":"2132","type":"Circle"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"2126"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"2126"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"2131","type":"Circle"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"2126"}},"hatch_color":{"field":"node_color","transform":{"id":"2126"}},"size":{"value":15}},"id":"2130","type":"Circle"},{"attributes":{"graph_layout":{"0":[0,0.5],"1":[1,0.25],"2":[1,0.75],"3":[2,0.5]}},"id":"2129","type":"StaticLayoutProvider"},{"attributes":{"factors":["inactive","active","error","next"],"palette":["white","#5cb85c","red","yellow"]},"id":"2126","type":"CategoricalColorMapper"},{"attributes":{},"id":"2178","type":"UnionRenderers"},{"attributes":{},"id":"2179","type":"Selection"},{"attributes":{"hatch_color":{"field":"node_color","transform":{"id":"2126"}},"size":{"value":15}},"id":"2133","type":"Circle"},{"attributes":{"coordinates":null,"edge_renderer":{"id":"2141"},"group":null,"inspection_policy":{"id":"2154"},"layout_provider":{"id":"2129"},"node_renderer":{"id":"2135"},"selection_policy":{"id":"2152"}},"id":"2143","type":"GraphRenderer"}],"root_ids":["2083","2340"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"d2ddbd98-190e-4bd0-9ed6-f6cea11fe573","root_ids":["2083"],"roots":{"2083":"7e81e607-be13-4307-ad8b-3ffd261118fd"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="programmatic-flow-control">
+<h2>Programmatic flow control<a class="headerlink" href="#programmatic-flow-control" title="Permalink to this headline">¶</a></h2>
+<p>By default, controlling the flow between different stages is done using the “Previous” and “Next” buttons. However often we want to control the UI flow programmatically from within a stage. A <code class="docutils literal notranslate"><span class="pre">Pipeline</span></code> allows programmatic control by declaring a <code class="docutils literal notranslate"><span class="pre">ready_parameter</span></code> either per stage or globally on the Pipeline, which can block or unblock the buttons depending on the information obtained so far, as well as advancing automatically when combined with the <code class="docutils literal notranslate"><span class="pre">auto_advance</span></code> parameter. In this way we can control the workflow programmatically from inside the stages.</p>
+<p>In the example below we create a version of the previous workflow that can be used without the buttons by declaring <code class="docutils literal notranslate"><span class="pre">ready</span></code> parameters for each of the stages, which we can toggle with a custom button or simply set to <code class="docutils literal notranslate"><span class="pre">True</span></code> by default to automatically skip the stage.</p>
+<p>Lastly, we can also control which branching stage to switch to from within a stage. To do so we declare a parameter which will hold the name of the next stage to switch to, in this case selecting between ‘Add’ and ‘Multiply’. Later we will point the pipeline to this parameter using the <code class="docutils literal notranslate"><span class="pre">next_parameter</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AutoInput</span><span class="p">(</span><span class="n">Input</span><span class="p">):</span>
+
+    <span class="n">operator</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Selector</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">'Add'</span><span class="p">,</span> <span class="n">objects</span><span class="o">=</span><span class="p">[</span><span class="s1">'Multiply'</span><span class="p">,</span> <span class="s1">'Add'</span><span class="p">])</span>
+
+    <span class="n">ready</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">button</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Go'</span><span class="p">,</span> <span class="n">button_type</span><span class="o">=</span><span class="s1">'success'</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">event</span><span class="p">:</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">'ready'</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+        <span class="n">widgets</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">operator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+            <span class="n">w</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">85</span>
+        <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">widgets</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">AutoMultiply</span><span class="p">(</span><span class="n">Multiply</span><span class="p">):</span>
+    
+    <span class="n">ready</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">AutoAdd</span><span class="p">(</span><span class="n">Add</span><span class="p">):</span>
+    
+    <span class="n">ready</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have declared these stages let us set up the pipeline, ensuring that we declare the <code class="docutils literal notranslate"><span class="pre">ready_parameter</span></code>, <code class="docutils literal notranslate"><span class="pre">next_parameter</span></code>, and <code class="docutils literal notranslate"><span class="pre">auto_advance</span></code> settings appropriately:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dag</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">()</span> <span class="c1"># could instead set ready_parameter='ready' and auto_advance=True globally here</span>
+
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Input'</span><span class="p">,</span>    <span class="n">AutoInput</span><span class="p">,</span>    <span class="n">ready_parameter</span><span class="o">=</span><span class="s1">'ready'</span><span class="p">,</span> <span class="n">auto_advance</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">next_parameter</span><span class="o">=</span><span class="s1">'operator'</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Multiply'</span><span class="p">,</span> <span class="n">AutoMultiply</span><span class="p">,</span> <span class="n">ready_parameter</span><span class="o">=</span><span class="s1">'ready'</span><span class="p">,</span> <span class="n">auto_advance</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Add'</span><span class="p">,</span>      <span class="n">AutoAdd</span><span class="p">,</span>      <span class="n">ready_parameter</span><span class="o">=</span><span class="s1">'ready'</span><span class="p">,</span> <span class="n">auto_advance</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dag</span><span class="o">.</span><span class="n">add_stage</span><span class="p">(</span><span class="s1">'Result'</span><span class="p">,</span>   <span class="n">Result</span><span class="p">)</span>
+
+<span class="n">dag</span><span class="o">.</span><span class="n">define_graph</span><span class="p">({</span><span class="s1">'Input'</span><span class="p">:</span> <span class="p">(</span><span class="s1">'Multiply'</span><span class="p">,</span> <span class="s1">'Add'</span><span class="p">),</span> <span class="s1">'Multiply'</span><span class="p">:</span> <span class="s1">'Result'</span><span class="p">,</span> <span class="s1">'Add'</span><span class="p">:</span> <span class="s1">'Result'</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally we display the pipeline without the buttons, which is appropriate because all the flow control is now handled from within the stages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+    <span class="n">dag</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+    <span class="n">dag</span><span class="o">.</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">dag</span><span class="o">.</span><span class="n">stage</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="2406">
+<div class="bk-root" data-root-id="2406" id="6774d36e-c8ed-4ed2-8feb-d07483c45592"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"1bc90d91-0bb6-4c35-a1f0-6f10e13e4615":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"below":[{"id":"2421"}],"center":[{"id":"2424"},{"id":"2428"}],"height":100,"left":[{"id":"2425"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_width":400,"outline_line_alpha":0,"renderers":[{"id":"2457"},{"id":"2478"}],"sizing_mode":"stretch_width","title":{"id":"2413"},"toolbar":{"id":"2430"},"toolbar_location":null,"width":null,"x_range":{"id":"2408"},"x_scale":{"id":"2417"},"y_range":{"id":"2409"},"y_scale":{"id":"2419"}},"id":"2412","subtype":"Figure","type":"Plot"},{"attributes":{"button_type":"success","icon":null,"label":"Go","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"2617","type":"Button"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"2413","type":"Title"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"2440"}},"hatch_color":{"field":"node_color","transform":{"id":"2440"}},"size":{"value":15}},"id":"2444","type":"Circle"},{"attributes":{"coordinates":null,"data_source":{"id":"2441"},"glyph":{"id":"2444"},"group":null,"hover_glyph":{"id":"2447"},"muted_glyph":{"id":"2448"},"nonselection_glyph":{"id":"2445"},"selection_glyph":{"id":"2446"},"view":{"id":"2450"}},"id":"2449","type":"GlyphRenderer"},{"attributes":{"data":{"end":{"__ndarray__":"AgAAAAEAAAADAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"start":{"__ndarray__":"AAAAAAAAAAACAAAAAQAAAA==","dtype":"int32","order":"little","shape":[4]}},"selected":{"id":"2493"},"selection_policy":{"id":"2492"}},"id":"2442","type":"ColumnDataSource"},{"attributes":{"margin":[5,10,5,10],"min_width":85,"mode":"int","placeholder":"0","title":"Value1","value":2,"value_throttled":2,"width":85},"id":"2614","type":"Spinner"},{"attributes":{"children":[{"id":"2612"}],"margin":[0,0,0,0],"name":"Row09216"},"id":"2611","type":"Row"},{"attributes":{"js_property_callbacks":{"change:indices":[{"id":"2480"}]}},"id":"2471","type":"Selection"},{"attributes":{"graph_layout":{"0":[0,0.5],"1":[1,0.25],"2":[1,0.75],"3":[2,0.5]}},"id":"2443","type":"StaticLayoutProvider"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2474","type":"Scatter"},{"attributes":{"children":[{"id":"2407"},{"id":"2412"},{"id":"2611"}],"margin":[0,0,0,0],"name":"Column11892"},"id":"2406","type":"Column"},{"attributes":{},"id":"2491","type":"Selection"},{"attributes":{"margin":[5,10,5,10],"min_width":85,"options":[["Multiply","Multiply"],["Add","Add"]],"title":"Operator","value":"Add","width":85},"id":"2615","type":"Select"},{"attributes":{"reset_end":1,"reset_start":0,"tags":[[["y","y",null]]]},"id":"2409","type":"Range1d"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2477","type":"Scatter"},{"attributes":{},"id":"2490","type":"UnionRenderers"},{"attributes":{"css_classes":["markdown"],"margin":[0,0,0,5],"name":"Markdown09021","text":"&lt;h2&gt;Stage: Input&lt;/h2&gt;"},"id":"2407","type":"panel.models.markup.HTML"},{"attributes":{"fill_color":{"field":"node_color","transform":{"id":"2440"}},"hatch_color":{"field":"node_color","transform":{"id":"2440"}},"size":{"value":15}},"id":"2446","type":"Circle"},{"attributes":{"coordinates":null,"data_source":{"id":"2470"},"glyph":{"id":"2473"},"group":null,"hover_glyph":{"id":"2476"},"muted_glyph":{"id":"2477"},"nonselection_glyph":{"id":"2474"},"selection_glyph":{"id":"2475"},"view":{"id":"2479"}},"id":"2478","type":"GlyphRenderer"},{"attributes":{"callback":null,"renderers":[{"id":"2478"}]},"id":"2429","type":"TapTool"},{"attributes":{"children":[{"id":"2614"},{"id":"2615"},{"id":"2616"}],"margin":[0,0,0,0],"name":"Row09235"},"id":"2613","type":"Row"},{"attributes":{"source":{"id":"2441"}},"id":"2450","type":"CDSView"},{"attributes":{"coordinates":null,"edge_renderer":{"id":"2455"},"group":null,"inspection_policy":{"id":"2468"},"layout_provider":{"id":"2443"},"node_renderer":{"id":"2449"},"selection_policy":{"id":"2466"}},"id":"2457","type":"GraphRenderer"},{"attributes":{"data":{"State":["active","next","inactive","inactive"],"index":{"__ndarray__":"AAAAAAEAAAACAAAAAwAAAA==","dtype":"int32","order":"little","shape":[4]},"index_hover":["Input","Add","Multiply","Result"],"node_color":["active","next","inactive","inactive"]},"selected":{"id":"2491"},"selection_policy":{"id":"2490"}},"id":"2441","type":"ColumnDataSource"},{"attributes":{"end":2.25,"reset_end":2.25,"reset_start":-0.25,"start":-0.25,"tags":[[["x","x",null]]]},"id":"2408","type":"Range1d"},{"attributes":{},"id":"2466","type":"NodesOnly"},{"attributes":{"margin":[5,10,5,10],"min_width":85,"mode":"int","placeholder":"0","title":"Value2","value":3,"value_throttled":3,"width":85},"id":"2616","type":"Spinner"},{"attributes":{"factors":["inactive","active","error","next"],"palette":["white","#5cb85c","red","yellow"]},"id":"2440","type":"CategoricalColorMapper"},{"attributes":{},"id":"2468","type":"NodesAndLinkedEdges"},{"attributes":{},"id":"2439","type":"AllLabels"},{"attributes":{},"id":"2435","type":"BasicTickFormatter"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"indianred"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2476","type":"Scatter"},{"attributes":{"axis":{"id":"2421"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"2424","type":"Grid"},{"attributes":{"client_comm_id":"90e1bed7ff5d428baf6bed4351de68f8","comm_id":"36412c3741b5466689d068090b876a7e","plot_id":"2406"},"id":"2657","type":"panel.models.comm_manager.CommManager"},{"attributes":{},"id":"2436","type":"AllLabels"},{"attributes":{},"id":"2438","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"2470"}},"id":"2479","type":"CDSView"},{"attributes":{"source":{"id":"2442"}},"id":"2456","type":"CDSView"},{"attributes":{"data":{"Stage":["Input","Add","Multiply","Result"],"State":["active","next","inactive","inactive"],"x":[0,1,1,2],"y":{"__ndarray__":"AAAAAAAA4D8AAAAAAADQPwAAAAAAAOg/AAAAAAAA4D8=","dtype":"float64","order":"little","shape":[4]}},"selected":{"id":"2471"},"selection_policy":{"id":"2488"}},"id":"2470","type":"ColumnDataSource"},{"attributes":{"coordinates":null,"data_source":{"id":"2442"},"glyph":{"id":"2451"},"group":null,"hover_glyph":{"id":"2453"},"muted_glyph":{"id":"2454"},"nonselection_glyph":{"id":"2452"},"view":{"id":"2456"}},"id":"2455","type":"GlyphRenderer"},{"attributes":{"callback":null,"renderers":[{"id":"2478"}],"tags":["hv_created"],"tooltips":[["Stage","@{Stage}"],["State","@{State}"]]},"id":"2411","type":"HoverTool"},{"attributes":{"args":{"selected":{"id":"2471"}},"code":"var data = {};\ndata[\"index\"] = cb_obj[\"indices\"];\n\nfunction unique_events(events) {\n  // Processes the event queue ignoring duplicate events\n  // of the same type\n  var unique = [];\n  var unique_events = [];\n  for (var i=0; i<events.length; i++) {\n    var _tmpevent = events[i];\n    event = _tmpevent[0];\n    data = _tmpevent[1];\n    if (unique_events.indexOf(event)===-1) {\n      unique.unshift(data);\n      unique_events.push(event);\n      }\n  }\n  return unique;\n}\n\nfunction process_events(comm_status) {\n  // Iterates over event queue and sends events via Comm\n  var events = unique_events(comm_status.event_buffer);\n  for (var i=0; i<events.length; i++) {\n    var data = events[i];\n    var comm = window.PyViz.comms[data[\"comm_id\"]];\n    comm.send(data);\n  }\n  comm_status.event_buffer = [];\n}\n\nfunction on_msg(msg) {\n  // Receives acknowledgement from Python, processing event\n  // and unblocking Comm if event queue empty\n  var metadata = msg.metadata;\n  var comm_id = metadata.comm_id\n  var comm_status = window.PyViz.comm_status[comm_id];\n  if (comm_status.event_buffer.length) {\n    process_events(comm_status);\n    comm_status.blocked = true;\n    comm_status.time = Date.now()+20;\n  } else {\n    comm_status.blocked = false;\n  }\n  comm_status.event_buffer = [];\n  if ((metadata.msg_type == \"Ready\") && metadata.content) {\n    console.log(\"Python callback returned following output:\", metadata.content);\n  } else if (metadata.msg_type == \"Error\") {\n    console.log(\"Python failed with the following traceback:\", metadata.traceback)\n  }\n}\n\n// Initialize Comm\nif ((window.PyViz == undefined) || (window.PyViz.comm_manager == undefined)) { return }\nvar comm = window.PyViz.comm_manager.get_client_comm(\"2406\", \"7b56b02d9ac34ed3b561b0c432eb1d69\", on_msg);\nif (!comm) {\n  return\n}\n\n// Initialize event queue and timeouts for Comm\nvar comm_status = window.PyViz.comm_status[\"7b56b02d9ac34ed3b561b0c432eb1d69\"];\nif (comm_status === undefined) {\n  comm_status = {event_buffer: [], blocked: false, time: Date.now()}\n  window.PyViz.comm_status[\"7b56b02d9ac34ed3b561b0c432eb1d69\"] = comm_status\n}\n\n// Add current event to queue and process queue if not blocked\nvar event_name = cb_obj.event_name;\nif (event_name === undefined) {\n  // we are a widget not an event... fake a key.\n  event_name = Object.keys(data).join(',');\n}\ndata['comm_id'] = \"7b56b02d9ac34ed3b561b0c432eb1d69\";\nvar timeout = comm_status.time + 20000;\nif ((comm_status.blocked && (Date.now() < timeout))) {\n  comm_status.event_buffer.unshift([event_name, data]);\n} else {\n  comm_status.event_buffer.unshift([event_name, data]);\n  setTimeout(function() { process_events(comm_status); }, 20);\n  comm_status.blocked = true;\n  comm_status.time = Date.now()+20;\n}\n"},"id":"2480","type":"CustomJS"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"limegreen"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2475","type":"Scatter"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"2440"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"2440"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"2448","type":"Circle"},{"attributes":{"axis":{"id":"2425"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"2428","type":"Grid"},{"attributes":{},"id":"2422","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0},"fill_color":{"value":"#30a2da"},"hatch_alpha":{"value":0},"hatch_color":{"value":"#30a2da"},"line_alpha":{"value":0},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"2473","type":"Scatter"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"2452","type":"MultiLine"},{"attributes":{"line_width":{"value":2}},"id":"2453","type":"MultiLine"},{"attributes":{},"id":"2488","type":"UnionRenderers"},{"attributes":{"tools":[{"id":"2410"},{"id":"2411"},{"id":"2429"}]},"id":"2430","type":"Toolbar"},{"attributes":{"line_alpha":{"value":0.2},"line_width":{"value":2}},"id":"2454","type":"MultiLine"},{"attributes":{"children":[{"id":"2613"},{"id":"2617"}],"margin":[0,0,0,0],"name":"Column09236"},"id":"2612","type":"Column"},{"attributes":{"hatch_color":{"field":"node_color","transform":{"id":"2440"}},"size":{"value":15}},"id":"2447","type":"Circle"},{"attributes":{"axis_label":"y","coordinates":null,"formatter":{"id":"2438"},"group":null,"major_label_policy":{"id":"2439"},"ticker":{"id":"2426"},"visible":false},"id":"2425","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"field":"node_color","transform":{"id":"2440"}},"hatch_alpha":{"value":0.2},"hatch_color":{"field":"node_color","transform":{"id":"2440"}},"line_alpha":{"value":0.2},"size":{"value":15}},"id":"2445","type":"Circle"},{"attributes":{},"id":"2492","type":"UnionRenderers"},{"attributes":{},"id":"2493","type":"Selection"},{"attributes":{},"id":"2426","type":"BasicTicker"},{"attributes":{},"id":"2417","type":"LinearScale"},{"attributes":{"line_width":{"value":2}},"id":"2451","type":"MultiLine"},{"attributes":{"callback":null,"renderers":[{"id":"2457"}],"tags":["hv_created"],"tooltips":[["Stage","@{index_hover}"],["State","@{State}"]]},"id":"2410","type":"HoverTool"},{"attributes":{"axis_label":"x","coordinates":null,"formatter":{"id":"2435"},"group":null,"major_label_policy":{"id":"2436"},"ticker":{"id":"2422"},"visible":false},"id":"2421","type":"LinearAxis"},{"attributes":{},"id":"2419","type":"LinearScale"}],"root_ids":["2406","2657"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"1bc90d91-0bb6-4c35-a1f0-6f10e13e4615","root_ids":["2406"],"roots":{"2406":"6774d36e-c8ed-4ed2-8feb-d07483c45592"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['katex'] !== undefined)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['katex'] !== undefined)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>As you can see, a panel Pipeline can be used to set up complex workflows when needed, with each stage controlled either manually or from within the stage, without having to define complex callbacks or other GUI logic.</p>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/user_guide/Pipelines.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/user_guide/Pipelines.ipynb">Right click to download this notebook from GitHub.</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="Links.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Links</p>
+</div>
+</a>
+<a class="right-next" href="Templates.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Templates</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

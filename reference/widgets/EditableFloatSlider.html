@@ -1,0 +1,1319 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>EditableFloatSlider — Panel 0.12.6 documentation</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="EditableIntSlider.html" rel="next" title="EditableIntSlider"/>
+<link href="DiscreteSlider.html" rel="prev" title="DiscreteSlider"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DeckGL.html">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Param.html">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Accordion.html">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="TextToSpeech.html">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parameters">
+   Parameters:
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core">
+     Core
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#display">
+     Display
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#controls">
+   Controls
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/reference/widgets/EditableFloatSlider.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="editablefloatslider">
+<span id="widgets-gallery-editablefloatslider"></span><h1>EditableFloatSlider<a class="headerlink" href="#editablefloatslider" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/EditableFloatSlider.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {}, 'shim': {}});
+      
+      root._bokeh_is_loading = css_urls.length + 0;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">EditableFloatSlider</span></code> widget allows selecting selecting a numeric floating-point value within a set bounds using a slider and for more precise control offers an editable number input box.</p>
+<p>For more information about listening to widget events and laying out widgets refer to the <a class="reference internal" href="../../user_guide/Widgets.html"><span class="doc std std-doc">widgets user guide</span></a>. Alternatively you can learn how to build GUIs by declaring parameters independently of any specific widgets in the <a class="reference internal" href="../../user_guide/Param.html"><span class="doc std std-doc">param user guide</span></a>. To express interactivity entirely using Javascript without the need for a Python server take a look at the <a class="reference internal" href="../../user_guide/Param.html"><span class="doc std std-doc">links user guide</span></a>.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>For layout and styling related parameters see the <a class="reference internal" href="../../user_guide/Customization.html"><span class="doc std std-doc">customization user guide</span></a>.</p>
+<section id="core">
+<h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">start</span></code></strong> (float): The range’s lower bound</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">end</span></code></strong> (float): The range’s upper bound</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">step</span></code></strong> (float): The interval between values</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">value</span></code></strong> (float): The selected value as a float type</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">value_throttled</span></code></strong> (float): The selected value as a float type throttled until mouseup</p></li>
+</ul>
+</section>
+<section id="display">
+<h3>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">bar_color</span></code></strong> (color): Color of the slider bar as a hexadecimal RGB value</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">direction</span></code></strong> (str): Whether the slider should go from left to right (‘ltr’) or right to left (‘rtl’)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">disabled</span></code></strong> (boolean): Whether the widget is editable</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">format</span></code></strong> (str, bokeh.models.TickFormatter): Formatter to apply to the slider value</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> (str): The title of the widget</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">orientation</span></code></strong> (str): Whether the slider should be displayed in a ‘horizontal’ or ‘vertical’ orientation.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tooltips</span></code></strong> (boolean): Whether to display tooltips on the slider handle</p></li>
+</ul>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_slider</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">EditableFloatSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Float Slider'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">3.141</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.57</span><span class="p">)</span>
+
+<span class="n">float_slider</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="bd88ad27-d1e7-488a-b7b6-92035d1dff63"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"1dae9c2d-f8dd-4b5d-a74e-3cadc591dd22":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"18ea7ad9e2d84b3abac8051b2923e76b","comm_id":"2f319152e8c64d6287474f052ec46187","plot_id":"1002"},"id":"1008","type":"panel.models.comm_manager.CommManager"},{"attributes":{"args":{"slider":{"id":"1006"},"source":{"id":"1005"}},"code":"try { \n        if (cb_obj.value < slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value > slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[139842734544976]},"id":"1007","type":"CustomJS"},{"attributes":{"align":"end","margin":[0,10,0,0],"name":"","text":"Float Slider:"},"id":"1004","type":"Div"},{"attributes":{"reload":false},"id":"1009","type":"panel.models.location.Location"},{"attributes":{"end":3.141,"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":0,"step":0.01,"value":1.57},"id":"1006","type":"Slider"},{"attributes":{"children":[{"id":"1003"},{"id":"1006"}],"margin":[5,10,5,10],"min_width":300,"name":"Column02974","width":300},"id":"1002","type":"Column"},{"attributes":{"children":[{"id":"1004"},{"id":"1005"}],"margin":[0,0,0,0],"name":"Row02979"},"id":"1003","type":"Row"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1007"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.01,"value":1.57,"value_throttled":0,"width":75},"id":"1005","type":"Spinner"}],"root_ids":["1002","1008","1009"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"1dae9c2d-f8dd-4b5d-a74e-3cadc591dd22","root_ids":["1002"],"roots":{"1002":"bd88ad27-d1e7-488a-b7b6-92035d1dff63"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> value is returned as a float and can be accessed and set like any other widget:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_slider</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.57
+</pre></div>
+</div>
+</div>
+</div>
+<p>A custom format string or bokeh TickFormatter may be used to format the slider values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.models.formatters</span> <span class="kn">import</span> <span class="n">PrintfTickFormatter</span>
+
+<span class="n">str_format</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">EditableFloatSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Distance'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'1[.]00'</span><span class="p">)</span>
+
+<span class="n">tick_format</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">EditableFloatSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Distance'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">PrintfTickFormatter</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'</span><span class="si">%.3f</span><span class="s1"> m'</span><span class="p">))</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">str_format</span><span class="p">,</span> <span class="n">tick_format</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1011">
+<div class="bk-root" data-root-id="1011" id="a451d794-3230-4064-871e-d4c4c80d8862"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"c8417127-dbff-494b-bf97-cb5aa6a89441":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1014"},{"id":"1015"}],"margin":[0,0,0,0],"name":"Row02989"},"id":"1013","type":"Row"},{"attributes":{"align":"end","margin":[0,10,0,0],"name":"","text":"Distance:"},"id":"1019","type":"Div"},{"attributes":{"children":[{"id":"1019"},{"id":"1020"}],"margin":[0,0,0,0],"name":"Row02996"},"id":"1018","type":"Row"},{"attributes":{"align":"end","margin":[0,10,0,0],"name":"","text":"Distance:"},"id":"1014","type":"Div"},{"attributes":{"args":{"slider":{"id":"1016"},"source":{"id":"1015"}},"code":"try { \n        if (cb_obj.value < slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value > slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[139842734334112]},"id":"1022","type":"CustomJS"},{"attributes":{"children":[{"id":"1018"},{"id":"1021"}],"margin":[5,10,5,10],"min_width":300,"name":"Column02991","width":300},"id":"1017","type":"Column"},{"attributes":{"end":1.0,"format":"1[.]00","margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":0.0,"step":0.1,"value":0.0},"id":"1016","type":"Slider"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1023"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.1,"value":0.0,"value_throttled":0,"width":75},"id":"1020","type":"Spinner"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1022"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.1,"value":0.0,"value_throttled":0,"width":75},"id":"1015","type":"Spinner"},{"attributes":{"children":[{"id":"1012"},{"id":"1017"}],"margin":[0,0,0,0],"name":"Column02997"},"id":"1011","type":"Column"},{"attributes":{"client_comm_id":"f3dc7f65688148ae9c21c586f603bc76","comm_id":"13cd951e41bb4b58a9fe1c4f66bb20e2","plot_id":"1011"},"id":"1024","type":"panel.models.comm_manager.CommManager"},{"attributes":{"args":{"slider":{"id":"1021"},"source":{"id":"1020"}},"code":"try { \n        if (cb_obj.value < slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value > slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[139842734336080]},"id":"1023","type":"CustomJS"},{"attributes":{"format":"%.3f m"},"id":"1010","type":"PrintfTickFormatter"},{"attributes":{"children":[{"id":"1013"},{"id":"1016"}],"margin":[5,10,5,10],"min_width":300,"name":"Column02984","width":300},"id":"1012","type":"Column"},{"attributes":{"end":1.0,"format":{"id":"1010"},"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":0.0,"step":0.1,"value":0.0},"id":"1021","type":"Slider"}],"root_ids":["1011","1024"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"c8417127-dbff-494b-bf97-cb5aa6a89441","root_ids":["1011"],"roots":{"1011":"a451d794-3230-4064-871e-d4c4c80d8862"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+</section>
+<section id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">EditableFloatSlider</span></code> widget is a composite widget its options can only be controlled from Python. Try out the effect of these parameters interactively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">float_slider</span><span class="o">.</span><span class="n">controls</span><span class="p">(</span><span class="n">jslink</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">float_slider</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1025">
+<div class="bk-root" data-root-id="1025" id="7febb3a4-d0f3-4482-ae73-07cddab0c29f"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"3d3ac087-c20f-4525-9e67-54abb8c063e4":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"title":"Aspect ratio"},"id":"1046","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Value","value":1.57,"value_throttled":1.57},"id":"1037","type":"Spinner"},{"attributes":{"end":3.141,"margin":[0,0,5,0],"show_value":false,"sizing_mode":"stretch_width","start":0,"step":0.01,"value":1.57},"id":"1066","type":"Slider"},{"attributes":{"disabled":true,"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Value throttled","value":1.57,"value_throttled":1.57},"id":"1038","type":"Spinner"},{"attributes":{"align":"end","css_classes":["slider-edit"],"js_property_callbacks":{"change:value":[{"id":"1067"}]},"margin":[0,0,0,0],"min_width":75,"placeholder":"0","step":0.01,"value":1.57,"value_throttled":0,"width":75},"id":"1065","type":"Spinner"},{"attributes":{"active":[0],"labels":["Editable"],"margin":[5,10,5,10]},"id":"1040","type":"CheckboxGroup"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Step","value":0.01,"value_throttled":0.01},"id":"1039","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name","value":"Float Slider"},"id":"1044","type":"TextInput"},{"attributes":{"child":{"id":"1027"},"name":"Controls","title":"Controls"},"id":"1041","type":"Panel"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max height","value":0,"value_throttled":0},"id":"1054","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Layout</b>"},"id":"1043","type":"Div"},{"attributes":{"client_comm_id":"b481c9cb4aaf4e63b0d67c8ffa5c703d","comm_id":"9ee0859492504b30bad431b274764375","plot_id":"1025"},"id":"1068","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"title":"Css classes"},"id":"1048","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Align","value":"'start'"},"id":"1045","type":"TextInput"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min width","value":0,"value_throttled":0},"id":"1051","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Background"},"id":"1047","type":"TextInput"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Width","value":300,"value_throttled":300},"id":"1049","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Height policy","value":"auto"},"id":"1057","type":"Select"},{"attributes":{"children":[{"id":"1026"},{"id":"1062"}],"margin":[0,0,0,0],"name":"Row03071"},"id":"1025","type":"Row"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min height","value":0,"value_throttled":0},"id":"1052","type":"Spinner"},{"attributes":{"children":[{"id":"1063"},{"id":"1066"}],"margin":[5,10,5,10],"min_width":300,"name":"Column02974","width":300},"id":"1062","type":"Column"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max width","value":0,"value_throttled":0},"id":"1053","type":"Spinner"},{"attributes":{"margin":[0,0,0,0],"tabs":[{"id":"1041"},{"id":"1061"}]},"id":"1026","type":"Tabs"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Height","value":0,"value_throttled":0},"id":"1050","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Margin","value":"(5, 10)"},"id":"1055","type":"TextInput"},{"attributes":{"args":{"slider":{"id":"1066"},"source":{"id":"1065"}},"code":"try { \n        if (cb_obj.value < slider.start)\n          slider.start = cb_obj.value\n        else if (cb_obj.value > slider.end)\n          slider.end = cb_obj.value\n         } catch(err) { console.log(err) }","tags":[139842734544976]},"id":"1067","type":"CustomJS"},{"attributes":{"children":[{"id":"1028"},{"id":"1029"},{"id":"1030"},{"id":"1031"},{"id":"1032"},{"id":"1033"},{"id":"1034"},{"id":"1035"},{"id":"1036"},{"id":"1037"},{"id":"1038"},{"id":"1039"},{"id":"1040"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Controls","width":300},"id":"1027","type":"Column"},{"attributes":{"margin":[5,10,5,10],"options":[["fixed","fixed"],["stretch_width","stretch_width"],["stretch_height","stretch_height"],["stretch_both","stretch_both"],["scale_width","scale_width"],["scale_height","scale_height"],["scale_both","scale_both"],["None","None"]],"title":"Sizing mode"},"id":"1058","type":"Select"},{"attributes":{"children":[{"id":"1043"},{"id":"1044"},{"id":"1045"},{"id":"1046"},{"id":"1047"},{"id":"1048"},{"id":"1049"},{"id":"1050"},{"id":"1051"},{"id":"1052"},{"id":"1053"},{"id":"1054"},{"id":"1055"},{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"},{"id":"1060"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Layout","width":300},"id":"1042","type":"Column"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Controls</b>"},"id":"1028","type":"Div"},{"attributes":{"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Width policy","value":"auto"},"id":"1056","type":"Select"},{"attributes":{"margin":[5,10,5,10],"options":[["ltr","ltr"],["rtl","rtl"]],"title":"Direction","value":"ltr"},"id":"1031","type":"Select"},{"attributes":{"labels":["Disabled"],"margin":[5,10,5,10]},"id":"1029","type":"CheckboxGroup"},{"attributes":{"margin":[5,10,5,10],"title":"Format"},"id":"1034","type":"TextInput"},{"attributes":{"active":[0],"labels":["Visible"],"margin":[5,10,5,10]},"id":"1059","type":"CheckboxGroup"},{"attributes":{"color":"#e6e6e6","margin":[5,10,5,10],"title":"Bar color"},"id":"1030","type":"ColorPicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"End","value":3.141,"value_throttled":3.141},"id":"1036","type":"Spinner"},{"attributes":{"align":"end","margin":[0,10,0,0],"name":"","text":"Float Slider:"},"id":"1064","type":"Div"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Start","value":0,"value_throttled":0},"id":"1035","type":"Spinner"},{"attributes":{"labels":["Loading"],"margin":[5,10,5,10]},"id":"1060","type":"CheckboxGroup"},{"attributes":{"child":{"id":"1042"},"name":"Layout","title":"Layout"},"id":"1061","type":"Panel"},{"attributes":{"children":[{"id":"1064"},{"id":"1065"}],"margin":[0,0,0,0],"name":"Row02979"},"id":"1063","type":"Row"},{"attributes":{"margin":[5,10,5,10],"options":[["horizontal","horizontal"],["vertical","vertical"]],"title":"Orientation","value":"horizontal"},"id":"1032","type":"Select"},{"attributes":{"active":[0],"labels":["Tooltips"],"margin":[5,10,5,10]},"id":"1033","type":"CheckboxGroup"}],"root_ids":["1025","1068"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"3d3ac087-c20f-4525-9e67-54abb8c063e4","root_ids":["1025"],"roots":{"1025":"7febb3a4-d0f3-4482-ae73-07cddab0c29f"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/EditableFloatSlider.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/EditableFloatSlider.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="DiscreteSlider.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">DiscreteSlider</p>
+</div>
+</a>
+<a class="right-next" href="EditableIntSlider.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">EditableIntSlider</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

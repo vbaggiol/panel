@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>panel.command Package — Panel 0.12.6 documentation</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#command-package">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     command
+    </span>
+</code>
+   Package
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#oauth-secret-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     oauth_secret
+    </span>
+</code>
+   Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#serve-module">
+<code class="xref py py-mod docutils literal notranslate">
+<span class="pre">
+     serve
+    </span>
+</code>
+   Module
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="panel-command-package">
+<h1>panel.command Package<a class="headerlink" href="#panel-command-package" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils"/>
+<section id="command-package">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">command</span></code> Package<a class="headerlink" href="#command-package" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-panel.command"></span><p>Commandline interface to Panel</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.command.main">
+<span class="sig-prename descclassname"><span class="pre">panel.command.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges commands offered by pyct and bokeh and provides help for both</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.command.transform_cmds">
+<span class="sig-prename descclassname"><span class="pre">panel.command.</span></span><span class="sig-name descname"><span class="pre">transform_cmds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command.html#transform_cmds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.transform_cmds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows usage with anaconda-project by remapping the argv list provided
+into arguments accepted by Bokeh 0.12.7 or later.</p>
+</dd></dl>
+</section>
+<hr class="docutils"/>
+<section id="oauth-secret-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">oauth_secret</span></code> Module<a class="headerlink" href="#oauth-secret-module" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of panel.command.oauth_secret" class="inheritance graphviz" src="../_images/inheritance-3bc8b4fc2b3873897fba9796fbd8555ef1806286.png" usemap="#inheritancef02e56d3d7"/></div>
+<map id="inheritancef02e56d3d7" name="inheritancef02e56d3d7">
+<area alt="" coords="369,5,669,31" href="#panel.command.oauth_secret.OAuthSecret" id="node2" shape="rect" target="_top" title="Subcommand to generate a new encryption key."/>
+</map><span class="target" id="module-panel.command.oauth_secret"></span><dl class="py class">
+<dt class="sig sig-object py" id="panel.command.oauth_secret.OAuthSecret">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">panel.command.oauth_secret.</span></span><span class="sig-name descname"><span class="pre">OAuthSecret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/oauth_secret.html#OAuthSecret"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.oauth_secret.OAuthSecret" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bokeh.command.subcommand.Subcommand</span></code></p>
+<p>Subcommand to generate a new encryption key.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.command.oauth_secret.OAuthSecret.invoke">
+<span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/oauth_secret.html#OAuthSecret.invoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.oauth_secret.OAuthSecret.invoke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes over main program flow to perform the subcommand.</p>
+<p><em>This method must be implemented by subclasses.</em>
+subclassed overwritten methods return different types:
+bool: Build
+None: FileOutput (subclassed by HTML, SVG and JSON. PNG overwrites FileOutput.invoke method), Info, Init,                 Sampledata, Secret, Serve, Static</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>argparse.Namespace</em>) – command line arguments for the subcommand to parse</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="panel.command.oauth_secret.OAuthSecret.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'oauth-secret'</span></em><a class="headerlink" href="#panel.command.oauth_secret.OAuthSecret.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>name for this subcommand</p>
+</dd></dl>
+</dd></dl>
+</section>
+<hr class="docutils"/>
+<section id="serve-module">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">serve</span></code> Module<a class="headerlink" href="#serve-module" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img alt="Inheritance diagram of panel.command.serve" class="inheritance graphviz" src="../_images/inheritance-4d69d7f1c555f1f784af0ece2e94bc3444c7141d.png" usemap="#inheritance9453ee87d3"/></div>
+<map id="inheritance9453ee87d3" name="inheritance9453ee87d3">
+<area alt="" coords="728,5,936,31" href="#panel.command.serve.Serve" id="node3" shape="rect" target="_top" title="panel.command.serve.Serve"/>
+</map><span class="target" id="module-panel.command.serve"></span><p>Subclasses the bokeh serve commandline handler to extend it in various
+ways.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="panel.command.serve.Serve">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">panel.command.serve.</span></span><span class="sig-name descname"><span class="pre">Serve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.ArgumentParser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/serve.html#Serve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.Serve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bokeh.command.subcommands.serve.Serve</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.command.serve.Serve.customize_applications">
+<span class="sig-name descname"><span class="pre">customize_applications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">applications</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/bokeh/command/subcommands/serve.html#Serve.customize_applications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.Serve.customize_applications" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows subclasses to customize <code class="docutils literal notranslate"><span class="pre">applications</span></code>.</p>
+<p>Should modify and return a copy of the <code class="docutils literal notranslate"><span class="pre">applications</span></code> dictionary.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.command.serve.Serve.customize_kwargs">
+<span class="sig-name descname"><span class="pre">customize_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/serve.html#Serve.customize_kwargs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.Serve.customize_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows subclasses to customize <code class="docutils literal notranslate"><span class="pre">server_kwargs</span></code>.</p>
+<p>Should modify and return a copy of the <code class="docutils literal notranslate"><span class="pre">server_kwargs</span></code> dictionary.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="panel.command.serve.Serve.invoke">
+<span class="sig-name descname"><span class="pre">invoke</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/bokeh/command/subcommands/serve.html#Serve.invoke"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.Serve.invoke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.command.serve.parse_var">
+<span class="sig-prename descclassname"><span class="pre">panel.command.serve.</span></span><span class="sig-name descname"><span class="pre">parse_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/serve.html#parse_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.parse_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a key, value pair, separated by ‘=’
+That’s the reverse of ShellArgs.</p>
+<dl class="simple">
+<dt>On the command line (argparse) a declaration will typically look like:</dt><dd><p>foo=hello</p>
+</dd>
+<dt>or</dt><dd><p>foo=”hello world”</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="panel.command.serve.parse_vars">
+<span class="sig-prename descclassname"><span class="pre">panel.command.serve.</span></span><span class="sig-name descname"><span class="pre">parse_vars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/panel/command/serve.html#parse_vars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#panel.command.serve.parse_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a series of key-value pairs and return a dictionary</p>
+</dd></dl>
+<hr class="docutils"/>
+</section>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1320 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>TextToSpeech — Panel 0.12.6 documentation</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="Toggle.html" rel="next" title="Toggle"/>
+<link href="TextInput.html" rel="prev" title="TextInput"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DeckGL.html">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Param.html">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Accordion.html">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="EditableFloatSlider.html">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parameters">
+   Parameters:
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core">
+     Core
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#actions">
+     Actions
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#readonly-parameters">
+     Readonly Parameters:
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/reference/widgets/TextToSpeech.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="texttospeech">
+<span id="widgets-gallery-texttospeech"></span><h1>TextToSpeech<a class="headerlink" href="#texttospeech" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/TextToSpeech.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {}, 'shim': {}});
+      
+      root._bokeh_is_loading = css_urls.length + 0;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code> Widget provides brings <em>text to speech</em> to Panel. It wraps the wraps the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis">HTML5 SpeechSynthesis API</a> and <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance">HTML SpeechSynthesisUtterance API</a>.</p>
+<p>An <em>utterance</em> is the smallest unit of speech in spoken language analysis. The <code class="docutils literal notranslate"><span class="pre">Utterance</span></code> provides fine grained control over the <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">voice</span></code>, <code class="docutils literal notranslate"><span class="pre">volume</span></code>, <code class="docutils literal notranslate"><span class="pre">pitch</span></code> and <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<section id="core">
+<h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">value</span></code></strong> (str): The text that will be synthesised when the utterance is spoken. The text may be provided as plain text, or a well-formed SSML document</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">auto_speak</span></code></strong> (boolean): Whether or not to speak automatically whenever the value changes. Default it True.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">lang</span></code></strong> (str): The language of the utterance.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">voice</span></code></strong> (SpeechSynthesisVoice): The voice that will be used to speak the utterance.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pitch</span></code></strong> (float): The pitch at which the utterance will be spoken at. A number between 0 and 2. Default is 1</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">rate</span></code></strong> (float): The speed at which the utterance will be spoken at. A number between 0.1 and 10. Default is 1</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">volume</span></code></strong> (float): The volume that the utterance will be spoken at. A number between 0 and 1. Default is 1</p></li>
+</ul>
+</section>
+<section id="actions">
+<h3>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">speak</span></code></strong>: Speaks the utterance. Note an utterance is also spoken whenever you change the <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cancel</span></code></strong> (): Removes all Utterances from the Utterance queue.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pause</span></code></strong> (): Puts the SpeechSynthesis object into a paused state.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">resume</span></code></strong> (): Puts the SpeechSynthesis object into a non-paused state: resumes it if it was already paused.</p></li>
+</ul>
+</section>
+<section id="readonly-parameters">
+<h3>Readonly Parameters:<a class="headerlink" href="#readonly-parameters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">voices</span></code></strong> (List[Voice]): Returns a list of Voice objects representing all the available voices in the current device.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">voices</span></code> parameter is populated by your browser and are not available before 1) The <code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code> instance is included in your app 2) the app has loaded and 3) the browser has loaded its list of <code class="docutils literal notranslate"><span class="pre">voices</span></code>. The available voices depend on your OS and browser.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">paused</span></code></strong> (boolean): Returns true if the TextToSpeech object is in a paused state.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pending</span></code></strong> (boolean): Returns true if the utterance queue contains as-yet-unspoken
+utterances.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">speaking</span></code></strong> (boolean): returns true if an utterance is currently in the process of being
+spoken — even if TextToSpeech is in a paused state.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">paused</span></code>, <code class="docutils literal notranslate"><span class="pre">pending</span></code> and <code class="docutils literal notranslate"><span class="pre">speaking</span></code> parameters are being updated by your browser every 1 sec only. So they arrive with a small time lag.</p>
+<hr class="docutils"/>
+<p>Instantiate and display the <code class="docutils literal notranslate"><span class="pre">TextToSpeech</span></code> widget without any text:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basic_speaker</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">TextToSpeech</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Speech Synthesis"</span><span class="p">)</span>
+<span class="n">basic_speaker</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="ffeabc79-1d2d-4b22-8a6c-67bc190fa6dd"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"3b261b73-3d3a-4416-a0df-671023b65716":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"reload":false},"id":"1004","type":"panel.models.location.Location"},{"attributes":{"client_comm_id":"080037269e6f4d3baa5dbed90428e06b","comm_id":"110e785cfc3b49a0b431e4dd2305f69f","plot_id":"1002"},"id":"1003","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"name":"Speech Synthesis","speak":{"lang":"en-US","pitch":1.0,"rate":1.0,"text":"","uuid":"410ad042-3866-45a3-9362-d8bac6bcafcf","volume":1.0}},"id":"1002","type":"panel.models.text_to_speech.TextToSpeech"}],"root_ids":["1002","1003","1004"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"3b261b73-3d3a-4416-a0df-671023b65716","root_ids":["1002"],"roots":{"1002":"ffeabc79-1d2d-4b22-8a6c-67bc190fa6dd"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>As long as <code class="docutils literal notranslate"><span class="pre">auto_speak</span></code> is true setting the <code class="docutils literal notranslate"><span class="pre">value</span></code> will cause it to speak:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basic_speaker</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">"Hello Panel World"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also trigger speaking by setting the <code class="docutils literal notranslate"><span class="pre">speak</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basic_speaker</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let us create a longer text:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TEXT</span> <span class="o">=</span> <span class="s2">"""By Aesop</span>
+
+<span class="s2">There was a time, so the story goes, when all the animals lived together in harmony. The lion didn’t chase the oxen, the wolf didn’t hunt the sheep, and owls didn’t swoop on the mice in the field.</span>
+
+<span class="s2">Once a year they would get together and choose a king, who would then reign over the animal kingdom for the next twelve months. Those animals who thought they would like a turn at being king would put themselves forward and would make speeches and give demonstrations of their prowess or their wisdom. Then all the animals gathered together would vote, and the animal with the most votes was crowned king. That’s probably where us humans got the idea of elections!</span>
+
+<span class="s2">Now, monkey knew very well that he was neither very strong nor very wise, and he was not exactly a great orator, but, boy, could he dance! So he did what he does best, and he danced acrobatically and energetically, performing enormous leaps, back somersaults and cartwheels that truly dazzled his audience. Compared to monkey, the elephant was grave and cumbersome, the lion was powerful and authoritarian, and the snake was sly and sinister.</span>
+
+<span class="s2">Nobody who was there remembers exactly how it happened, but somehow monkey scraped through with a clear majority of all the votes cast, and he was announced the king of the animal kingdom for the coming year. Most of the animals seemed quite content with this outcome, because they knew that monkey would not take his duties too seriously and make all kinds of onerous demands on them, or demand too much of a formal show of obedience. But there were some who thought that the election of monkey diminished the stature of the kingship, and one of these was fox; in fact fox was pretty disgusted, and he didn’t mind who knew it. So he set about concocting a scheme to make monkey look stupid.</span>
+
+<span class="s2">He gathered together some fine fresh fruit from the forest, mangos, figs and dates, and laid them out on a trap he’d found. He waited for the monkey to pass by, and called out to him: “Sire, look at these delicious dainty morsels I discovered here by the wayside. I was tempted to gorge myself on them, but then I remembered fruits are your favourite repast, and I thought I should keep them for you, our beloved king!”</span>
+
+<span class="s2">Monkey could not resist either the flattery or the fruit, and just managed to compose himself long enough to whisper a hurried “Why, thank you, Mr Fox” and made a beeline for the fruit. “Swish” and “Clunk” went the trap, and “AAAYYY AAAYYY” went our unfortunate monkey king, the trap firmly clasped around his paw.</span>
+
+<span class="s2">Monkey bitterly reproached fox for leading him into such a dangerous situation, but fox just laughed and laughed. “You call yourself king of all the animals,” he cried, “and you allow yourself to be taken in just like that!”</span>
+
+<span class="s2">Aesop</span>
+<span class="s2">"""</span>
+
+<span class="n">text_to_speech</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">TextToSpeech</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Text to Speech Widget"</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">TEXT</span><span class="p">,</span> <span class="n">auto_speak</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And controls to the widget so you can test what the various parameters do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="n">text_to_speech</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">widgets</span><span class="o">=</span><span class="p">{</span><span class="s2">"value"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"widget_type"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">TextAreaInput</span><span class="p">,</span> <span class="s2">"height"</span><span class="p">:</span> <span class="mi">300</span><span class="p">}})</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">text_to_speech</span><span class="o">.</span><span class="n">controls</span><span class="p">(</span><span class="n">jslink</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">text</span><span class="p">,</span> <span class="n">text_to_speech</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1007">
+<div class="bk-root" data-root-id="1007" id="1e892732-64ab-4c24-8f37-5142fdd742b1"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"505addb5-39ff-453b-a613-d19ce1e10ab1":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Layout</b>"},"id":"1030","type":"Div"},{"attributes":{"children":[{"id":"1008"},{"id":"1049"},{"id":"1051"}],"margin":[0,0,0,0],"min_width":600,"name":"Row03062","width":600},"id":"1007","type":"Row"},{"attributes":{"disabled":true,"margin":[5,10,5,10],"title":"Voices","value":"[]"},"id":"1026","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"name":"Text to Speech Widget"},"id":"1051","type":"panel.models.text_to_speech.TextToSpeech"},{"attributes":{"margin":[5,10,5,10],"title":"Align","value":"'start'"},"id":"1032","type":"TextInput"},{"attributes":{"margin":[0,0,0,0],"tabs":[{"id":"1028"},{"id":"1048"}]},"id":"1008","type":"Tabs"},{"attributes":{"margin":[5,10,5,10],"title":" voices","value":"[]"},"id":"1027","type":"TextInput"},{"attributes":{"child":{"id":"1009"},"name":"Controls","title":"Controls"},"id":"1028","type":"Panel"},{"attributes":{"children":[{"id":"1030"},{"id":"1031"},{"id":"1032"},{"id":"1033"},{"id":"1034"},{"id":"1035"},{"id":"1036"},{"id":"1037"},{"id":"1038"},{"id":"1039"},{"id":"1040"},{"id":"1041"},{"id":"1042"},{"id":"1043"},{"id":"1044"},{"id":"1045"},{"id":"1046"},{"id":"1047"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Layout","width":300},"id":"1029","type":"Column"},{"attributes":{"disabled":true,"margin":[5,10,5,10],"max_length":5000,"title":"Name","value":"Text to Speech Widget"},"id":"1031","type":"TextInput"},{"attributes":{"height":300,"margin":[5,10,5,10],"max_length":5000,"min_height":300,"title":"Value","value":"By Aesop\n\nThere was a time, so the story goes, when all the animals lived together in harmony. The lion didn\u2019t chase the oxen, the wolf didn\u2019t hunt the sheep, and owls didn\u2019t swoop on the mice in the field.\n\nOnce a year they would get together and choose a king, who would then reign over the animal kingdom for the next twelve months. Those animals who thought they would like a turn at being king would put themselves forward and would make speeches and give demonstrations of their prowess or their wisdom. Then all the animals gathered together would vote, and the animal with the most votes was crowned king. That\u2019s probably where us humans got the idea of elections!\n\nNow, monkey knew very well that he was neither very strong nor very wise, and he was not exactly a great orator, but, boy, could he dance! So he did what he does best, and he danced acrobatically and energetically, performing enormous leaps, back somersaults and cartwheels that truly dazzled his audience. Compared to monkey, the elephant was grave and cumbersome, the lion was powerful and authoritarian, and the snake was sly and sinister.\n\nNobody who was there remembers exactly how it happened, but somehow monkey scraped through with a clear majority of all the votes cast, and he was announced the king of the animal kingdom for the coming year. Most of the animals seemed quite content with this outcome, because they knew that monkey would not take his duties too seriously and make all kinds of onerous demands on them, or demand too much of a formal show of obedience. But there were some who thought that the election of monkey diminished the stature of the kingship, and one of these was fox; in fact fox was pretty disgusted, and he didn\u2019t mind who knew it. So he set about concocting a scheme to make monkey look stupid.\n\nHe gathered together some fine fresh fruit from the forest, mangos, figs and dates, and laid them out on a trap he\u2019d found. He waited for the monkey to pass by, and called out to him: \u201cSire, look at these delicious dainty morsels I discovered here by the wayside. I was tempted to gorge myself on them, but then I remembered fruits are your favourite repast, and I thought I should keep them for you, our beloved king!\u201d\n\nMonkey could not resist either the flattery or the fruit, and just managed to compose himself long enough to whisper a hurried \u201cWhy, thank you, Mr Fox\u201d and made a beeline for the fruit. \u201cSwish\u201d and \u201cClunk\u201d went the trap, and \u201cAAAYYY AAAYYY\u201d went our unfortunate monkey king, the trap firmly clasped around his paw.\n\nMonkey bitterly reproached fox for leading him into such a dangerous situation, but fox just laughed and laughed. \u201cYou call yourself king of all the animals,\u201d he cried, \u201cand you allow yourself to be taken in just like that!\u201d\n\nAesop\n"},"id":"1050","type":"TextAreaInput"},{"attributes":{"children":[{"id":"1010"},{"id":"1011"},{"id":"1012"},{"id":"1013"},{"id":"1014"},{"id":"1015"},{"id":"1016"},{"id":"1017"},{"id":"1018"},{"id":"1019"},{"id":"1020"},{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Controls","width":300},"id":"1009","type":"Column"},{"attributes":{"margin":[5,10,5,10],"title":"Aspect ratio"},"id":"1033","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Css classes"},"id":"1035","type":"TextInput"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max height","value":0,"value_throttled":0},"id":"1041","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Controls</b>"},"id":"1010","type":"Div"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min width","value":0,"value_throttled":0},"id":"1038","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Background"},"id":"1034","type":"TextInput"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Width","value":0,"value_throttled":0},"id":"1036","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Height policy","value":"auto"},"id":"1044","type":"Select"},{"attributes":{"labels":["Disabled"],"margin":[5,10,5,10]},"id":"1011","type":"CheckboxGroup"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min height","value":0,"value_throttled":0},"id":"1039","type":"Spinner"},{"attributes":{"icon":null,"label":"Resume","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"1021","type":"Button"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max width","value":0,"value_throttled":0},"id":"1040","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Voice"},"id":"1016","type":"Select"},{"attributes":{"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Height","value":0,"value_throttled":0},"id":"1037","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Value","value":"By Aesop\n\nThere was a time, so the story goes, when all the animals lived together in harmony. The lion didn\u2019t chase the oxen, the wolf didn\u2019t hunt the sheep, and owls didn\u2019t swoop on the mice in the field.\n\nOnce a year they would get together and choose a king, who would then reign over the animal kingdom for the next twelve months. Those animals who thought they would like a turn at being king would put themselves forward and would make speeches and give demonstrations of their prowess or their wisdom. Then all the animals gathered together would vote, and the animal with the most votes was crowned king. That\u2019s probably where us humans got the idea of elections!\n\nNow, monkey knew very well that he was neither very strong nor very wise, and he was not exactly a great orator, but, boy, could he dance! So he did what he does best, and he danced acrobatically and energetically, performing enormous leaps, back somersaults and cartwheels that truly dazzled his audience. Compared to monkey, the elephant was grave and cumbersome, the lion was powerful and authoritarian, and the snake was sly and sinister.\n\nNobody who was there remembers exactly how it happened, but somehow monkey scraped through with a clear majority of all the votes cast, and he was announced the king of the animal kingdom for the coming year. Most of the animals seemed quite content with this outcome, because they knew that monkey would not take his duties too seriously and make all kinds of onerous demands on them, or demand too much of a formal show of obedience. But there were some who thought that the election of monkey diminished the stature of the kingship, and one of these was fox; in fact fox was pretty disgusted, and he didn\u2019t mind who knew it. So he set about concocting a scheme to make monkey look stupid.\n\nHe gathered together some fine fresh fruit from the forest, mangos, figs and dates, and laid them out on a trap he\u2019d found. He waited for the monkey to pass by, and called out to him: \u201cSire, look at these delicious dainty morsels I discovered here by the wayside. I was tempted to gorge myself on them, but then I remembered fruits are your favourite repast, and I thought I should keep them for you, our beloved king!\u201d\n\nMonkey could not resist either the flattery or the fruit, and just managed to compose himself long enough to whisper a hurried \u201cWhy, thank you, Mr Fox\u201d and made a beeline for the fruit. \u201cSwish\u201d and \u201cClunk\u201d went the trap, and \u201cAAAYYY AAAYYY\u201d went our unfortunate monkey king, the trap firmly clasped around his paw.\n\nMonkey bitterly reproached fox for leading him into such a dangerous situation, but fox just laughed and laughed. \u201cYou call yourself king of all the animals,\u201d he cried, \u201cand you allow yourself to be taken in just like that!\u201d\n\nAesop\n"},"id":"1012","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Margin","value":"(5, 10)"},"id":"1042","type":"TextInput"},{"attributes":{"end":1.0,"margin":[5,10,5,10],"start":0.0,"step":0.1,"title":"Volume","value":1.0},"id":"1017","type":"Slider"},{"attributes":{"margin":[5,10,5,10],"options":[["en-US","en-US"]],"title":"Lang","value":"en-US"},"id":"1013","type":"Select"},{"attributes":{"margin":[5,10,5,10],"options":[["fixed","fixed"],["stretch_width","stretch_width"],["stretch_height","stretch_height"],["stretch_both","stretch_both"],["scale_width","scale_width"],["scale_height","scale_height"],["scale_both","scale_both"],["None","None"]],"title":"Sizing mode"},"id":"1045","type":"Select"},{"attributes":{"end":10.0,"margin":[5,10,5,10],"start":0.1,"step":0.1,"title":"Rate","value":1.0},"id":"1015","type":"Slider"},{"attributes":{"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Width policy","value":"auto"},"id":"1043","type":"Select"},{"attributes":{"end":2.0,"margin":[5,10,5,10],"start":0.0,"step":0.1,"title":"Pitch","value":1.0},"id":"1014","type":"Slider"},{"attributes":{"labels":["Auto speak"],"margin":[5,10,5,10]},"id":"1018","type":"CheckboxGroup"},{"attributes":{"icon":null,"label":"Cancel","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"1019","type":"Button"},{"attributes":{"active":[0],"labels":["Visible"],"margin":[5,10,5,10]},"id":"1046","type":"CheckboxGroup"},{"attributes":{"icon":null,"label":"Pause","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"1020","type":"Button"},{"attributes":{"disabled":true,"labels":["Paused"],"margin":[5,10,5,10]},"id":"1022","type":"CheckboxGroup"},{"attributes":{"labels":["Loading"],"margin":[5,10,5,10]},"id":"1047","type":"CheckboxGroup"},{"attributes":{"child":{"id":"1029"},"name":"Layout","title":"Layout"},"id":"1048","type":"Panel"},{"attributes":{"disabled":true,"labels":["Pending"],"margin":[5,10,5,10]},"id":"1023","type":"CheckboxGroup"},{"attributes":{"children":[{"id":"1050"}],"margin":[5,5,5,5],"min_width":300,"name":"Text to Speech Widget","width":300},"id":"1049","type":"Column"},{"attributes":{"icon":null,"label":"Speak","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"1024","type":"Button"},{"attributes":{"disabled":true,"labels":["Speaking"],"margin":[5,10,5,10]},"id":"1025","type":"CheckboxGroup"},{"attributes":{"client_comm_id":"6d28d439ef154aba99c3c63d1e6f5acf","comm_id":"0dfb3549fe854cfe8fc9ca6da8b6f473","plot_id":"1007"},"id":"1052","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1007","1052"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"505addb5-39ff-453b-a613-d19ce1e10ab1","root_ids":["1007"],"roots":{"1007":"1e892732-64ab-4c24-8f37-5142fdd742b1"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Try changing the <code class="docutils literal notranslate"><span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">lang</span></code>, <code class="docutils literal notranslate"><span class="pre">voice</span></code> etc.</p>
+</section>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/TextToSpeech.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/widgets/TextToSpeech.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="TextInput.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">TextInput</p>
+</div>
+</a>
+<a class="right-next" href="Toggle.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Toggle</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

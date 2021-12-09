@@ -1,0 +1,11 @@
+<map id="inheritancefdc482f0a4" name="inheritancefdc482f0a4">
+<area shape="rect" id="node1" title="This mixin adds the expected Tornado authorization hooks:" alt="" coords="42,40,257,58"/>
+<area shape="rect" id="node3" title="Implements a custom Tornado handler for document display page" alt="" coords="330,57,593,76"/>
+<area shape="rect" id="node5" title="Implements a custom Tornado WebSocketHandler for the Bokeh Server." alt="" coords="651,93,831,112"/>
+<area shape="rect" id="node2" title="Implements a custom Tornado handler for document display page" alt="" coords="628,57,855,76"/>
+<area shape="rect" id="node7" href="#panel.io.jupyter_server_extension.PanelHandler" target="_top" title="panel.io.jupyter_server_extension.PanelHandler" alt="" coords="897,57,1140,76"/>
+<area shape="rect" id="node4" title="Base class for HTTP request handlers." alt="" coords="72,76,226,94"/>
+<area shape="rect" id="node6" title="Subclass this class to create a basic WebSocket handler." alt="" coords="362,93,561,112"/>
+<area shape="rect" id="node8" href="#panel.io.jupyter_server_extension.PanelWSHandler" target="_top" title="panel.io.jupyter_server_extension.PanelWSHandler" alt="" coords="890,93,1148,112"/>
+<area shape="rect" id="node9" href="#panel.io.jupyter_server_extension.ServerApplicationProxy" target="_top" title="A wrapper around the jupyter_server.serverapp.ServerWebApplication" alt="" coords="4,4,295,22"/>
+</map>

@@ -1,0 +1,1727 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Param — Panel 0.12.6 documentation</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="Perspective.html" rel="next" title="Perspective"/>
+<link href="PNG.html" rel="prev" title="PNG"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DeckGL.html">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Accordion.html">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableFloatSlider.html">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextToSpeech.html">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parameters">
+   Parameters:
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#model-building">
+   Model building
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disabling-continuous-updates-for-slider-widgets">
+   Disabling continuous updates for slider widgets
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/reference/panes/Param.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="param">
+<span id="panes-gallery-param"></span><h1>Param<a class="headerlink" href="#param" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/Param.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="kn">import</span> <span class="nn">param</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {}, 'shim': {}});
+      
+      root._bokeh_is_loading = css_urls.length + 0;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">panel.Param</span></code> pane allows customizing the widgets, layout and style of the parameters of a <code class="docutils literal notranslate"><span class="pre">param.Parametrized</span></code> Class.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>The basic parameters are:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">object</span></code></strong> (param.parameterized.Parameters): The <code class="docutils literal notranslate"><span class="pre">param</span></code> attribute of a <code class="docutils literal notranslate"><span class="pre">param.Parameterized</span></code> Class</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">parameters</span></code></strong> (List[str]): A list identifying the subset of parameters to include in the Pane.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">widgets</span></code></strong> (Dict): A Dictionary specifying which parameters and widgets to use for a given parameter. You can also specify widget attributes.</p></li>
+</ul>
+<p>The more advanced parameters which give you more control are:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">default_layout</span></code></strong> (ClassSelector): A layout like Column, Row, etc. or a Custom GridBox.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">display_threshold</span></code></strong> (float): Parameters with precedence below this value are not displayed.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">expand</span></code></strong> (bool): Whether parameterized subobjects are expanded or collapsed on instantiation.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">expand_button</span></code></strong> (bool): Whether to add buttons to expand and collapse sub-objects.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">expand_layout</span></code></strong> (layout): Layout to expand sub-objects into.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong> (str): The title of the pane.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">show_labels</span></code></strong> (bool): Whether or not to show labels</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">show_name</span></code></strong> (bool): Whether or not to show the name of the Parameterized Class</p></li>
+</ul>
+<p>For more layout and styling related parameters see the <a class="reference internal" href="../../user_guide/Customization.html"><span class="doc std std-doc">customization user guide</span></a>.</p>
+<p>For an alternative example of using <code class="docutils literal notranslate"><span class="pre">panel.Param</span></code> see the <a class="reference internal" href="../../user_guide/Param.html"><span class="doc std std-doc">parameters user guide</span></a>.</p>
+<hr class="docutils"/>
+</section>
+<section id="model-building">
+<h2>Model building<a class="headerlink" href="#model-building" title="Permalink to this headline">¶</a></h2>
+<p>Let’s build a model of a cycling Athlete and her PowerCurve.</p>
+<p>The PowerCurve is a recording of her maximum power output in Watt per kg for fixed durations of time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">hvplot.pandas</span>
+
+<span class="n">DATE_BOUNDS</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">PowerCurve</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+    <span class="n">ten_sec</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="mi">1079</span><span class="p">)</span>
+    <span class="n">ten_sec_date</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    <span class="n">one_min</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="mi">684</span><span class="p">)</span>
+    <span class="n">one_min_date</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    <span class="n">ten_min</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="mi">419</span><span class="p">)</span>
+    <span class="n">ten_min_date</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    <span class="n">twenty_min</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="mi">398</span><span class="p">)</span>
+    <span class="n">twenty_min_date</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    <span class="n">one_hour</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="mi">319</span><span class="p">)</span>
+    <span class="n">one_hour_date</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"ten_sec"</span><span class="p">,</span> <span class="s2">"one_min"</span><span class="p">,</span> <span class="s2">"ten_min"</span><span class="p">,</span> <span class="s2">"twenty_min"</span><span class="p">,</span> <span class="s2">"one_hour"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+            <span class="s2">"power"</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ten_sec</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">one_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ten_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">twenty_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">one_hour</span><span class="p">],</span>
+        <span class="p">}</span>
+        <span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">line_plot</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"duration"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"power"</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">"#007BFF"</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"duration"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"power"</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#007BFF"</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">line_plot</span> <span class="o">*</span> <span class="n">scatter_plot</span>
+        <span class="n">gridstyle</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"grid_line_color"</span><span class="p">:</span> <span class="s2">"black"</span><span class="p">,</span> <span class="s2">"grid_line_width"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+            <span class="n">min_height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+            <span class="n">toolbar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">yticks</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1600</span><span class="p">,</span> <span class="mi">200</span><span class="p">)),</span>
+            <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1500</span><span class="p">),</span>
+            <span class="n">gridstyle</span><span class="o">=</span><span class="n">gridstyle</span><span class="p">,</span>
+            <span class="n">show_grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span>
+
+<span class="k">class</span> <span class="nc">Athlete</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+    <span class="n">name_</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="s2">"P.A. Nelson"</span><span class="p">)</span>
+    <span class="n">birthday</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">DATE_BOUNDS</span><span class="p">)</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Number</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">82</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+    <span class="n">power_curve</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">ClassSelector</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="n">PowerCurve</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">PowerCurve</span><span class="p">())</span>
+    
+<span class="n">athlete</span> <span class="o">=</span> <span class="n">Athlete</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pn.Param</span></code> pane can be used to view and edit the models.</p>
+<p>Try clicking the <code class="docutils literal notranslate"><span class="pre">...</span></code> button. This will expand the PowerCurve if running in an interactive notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="n">athlete</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="3910e265-d47c-458d-be29-f71c158217a2"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"43b315a8-c50c-4d79-9f13-cd7fb9c18608":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Athlete</b>"},"id":"1003","type":"Div"},{"attributes":{"margin":[5,0,5,10],"min_width":240,"title":"Power curve","value":"<PowerCurve PowerCurve02975>","width":240},"id":"1008","type":"TextInput"},{"attributes":{"client_comm_id":"860eda4d7c3c43eabeddb801fb1805f1","comm_id":"d7f175c8393c44adabf19c62fdb7eb4d","plot_id":"1002"},"id":"1010","type":"panel.models.comm_manager.CommManager"},{"attributes":{"end":300,"margin":[5,10,5,10],"start":20,"step":0.1,"title":"Weight","value":82},"id":"1006","type":"Slider"},{"attributes":{"reload":false},"id":"1011","type":"panel.models.location.Location"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1004","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Birthday","value":"1976-09-17 00:00:00"},"id":"1005","type":"TextInput"},{"attributes":{"children":[{"id":"1008"},{"id":"1009"}],"margin":[0,0,0,0],"name":"Row02989","width_policy":"max"},"id":"1007","type":"Row"},{"attributes":{"children":[{"id":"1003"},{"id":"1004"},{"id":"1005"},{"id":"1006"},{"id":"1007"}],"margin":[5,5,5,5],"min_width":300,"name":"Athlete","width":300},"id":"1002","type":"Column"},{"attributes":{"align":"end","button_type":"primary","height_policy":"fit","icon":null,"label":"\u22ee","margin":[0,0,5,10],"max_height":30,"max_width":20},"id":"1009","type":"Toggle"}],"root_ids":["1002","1010","1011"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"43b315a8-c50c-4d79-9f13-cd7fb9c18608","root_ids":["1002"],"roots":{"1002":"3910e265-d47c-458d-be29-f71c158217a2"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>The default Name and Birthday widgets are slow to use. So let’s change them to a <code class="docutils literal notranslate"><span class="pre">DatePicker</span></code> and a <code class="docutils literal notranslate"><span class="pre">LiteralInput</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="n">athlete</span><span class="p">,</span> <span class="n">widgets</span><span class="o">=</span><span class="p">{</span><span class="s2">"birthday"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> <span class="s2">"weight"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">LiteralInput</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1012">
+<div class="bk-root" data-root-id="1012" id="fb78124f-8297-4c4a-a3c9-e20441707b10"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"d2f1b2e2-21a4-4ad0-a7f2-39159b22dca8":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,0,5,10],"min_width":240,"title":"Power curve","value":"<PowerCurve PowerCurve02975>","width":240},"id":"1018","type":"TextInput"},{"attributes":{"align":"end","button_type":"primary","height_policy":"fit","icon":null,"label":"\u22ee","margin":[0,0,5,10],"max_height":30,"max_width":20},"id":"1019","type":"Toggle"},{"attributes":{"margin":[5,10,5,10],"title":"Weight","value":"82"},"id":"1016","type":"TextInput"},{"attributes":{"children":[{"id":"1018"},{"id":"1019"}],"margin":[0,0,0,0],"name":"Row03006","width_policy":"max"},"id":"1017","type":"Row"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1014","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Birthday","value":"1976-09-17"},"id":"1015","type":"DatePicker"},{"attributes":{"children":[{"id":"1013"},{"id":"1014"},{"id":"1015"},{"id":"1016"},{"id":"1017"}],"margin":[5,5,5,5],"min_width":300,"name":"Athlete","width":300},"id":"1012","type":"Column"},{"attributes":{"client_comm_id":"1fd98d31dd0848898f0e43a3941fc2df","comm_id":"703c47d7fedb4409be3a024cc0316076","plot_id":"1012"},"id":"1020","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Athlete</b>"},"id":"1013","type":"Div"}],"root_ids":["1012","1020"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"d2f1b2e2-21a4-4ad0-a7f2-39159b22dca8","root_ids":["1012"],"roots":{"1012":"fb78124f-8297-4c4a-a3c9-e20441707b10"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Let’s expand the power curve by default:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span>
+    <span class="n">athlete</span><span class="p">,</span> 
+    <span class="n">widgets</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"birthday"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> 
+        <span class="s2">"weight"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">LiteralInput</span>
+    <span class="p">},</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1021">
+<div class="bk-root" data-root-id="1021" id="58f5afc8-730e-424e-8852-04999cb574ff"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"aa888263-3ea6-4431-92e8-470e9fc318c7":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"title":"Ten sec date","value":"2018-08-21 00:00:00"},"id":"1030","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Ten min date","value":"2017-09-22 00:00:00"},"id":"1034","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten min","value":419,"value_throttled":419},"id":"1033","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Twenty min date","value":"2017-09-22 00:00:00"},"id":"1036","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Twenty min","value":398,"value_throttled":398},"id":"1035","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"One hour date","value":"2017-08-06 00:00:00"},"id":"1038","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One hour","value":319,"value_throttled":319},"id":"1037","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Athlete</b>"},"id":"1022","type":"Div"},{"attributes":{"client_comm_id":"e7e2a1bd0bb24d309404a7b8438f2594","comm_id":"0a02d678ea7d43279d4fff42650b7268","plot_id":"1021"},"id":"1039","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"title":"Weight","value":"82"},"id":"1025","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Power curve","value":"<PowerCurve PowerCurve02975>"},"id":"1026","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Birthday","value":"1976-09-17"},"id":"1024","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1023","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"One min date","value":"2017-08-31 00:00:00"},"id":"1032","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten sec","value":1079,"value_throttled":1079},"id":"1029","type":"Spinner"},{"attributes":{"children":[{"id":"1028"},{"id":"1029"},{"id":"1030"},{"id":"1031"},{"id":"1032"},{"id":"1033"},{"id":"1034"},{"id":"1035"},{"id":"1036"},{"id":"1037"},{"id":"1038"}],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve02975","width":300},"id":"1027","type":"Column"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One min","value":684,"value_throttled":684},"id":"1031","type":"Spinner"},{"attributes":{"children":[{"id":"1022"},{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"}],"margin":[5,5,5,5],"min_width":300,"name":"Athlete","width":300},"id":"1021","type":"Column"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>PowerCurve02975</b>"},"id":"1028","type":"Div"}],"root_ids":["1021","1039"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"aa888263-3ea6-4431-92e8-470e9fc318c7","root_ids":["1021"],"roots":{"1021":"58f5afc8-730e-424e-8852-04999cb574ff"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Now let’s try to display the Name and Birthday only and in a Row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span>
+    <span class="n">athlete</span><span class="p">,</span>
+    <span class="n">widgets</span><span class="o">=</span><span class="p">{</span><span class="s2">"birthday"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">},</span>
+    <span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="s2">"name_"</span><span class="p">,</span> <span class="s2">"birthday"</span><span class="p">],</span>
+    <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">default_layout</span><span class="o">=</span><span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">400</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1040">
+<div class="bk-root" data-root-id="1040" id="90f5f9b0-4350-4c08-b02c-b5f5377adbbc"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"0596bc21-0217-49f4-8321-13d9cfb73138":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1042","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Birthday","value":"1976-09-17"},"id":"1043","type":"DatePicker"},{"attributes":{"children":[{"id":"1042"},{"id":"1043"}],"margin":[5,5,5,5],"min_width":400,"name":"Athlete","width":400},"id":"1041","type":"Row"},{"attributes":{"children":[{"id":"1041"}],"margin":[5,5,5,5],"min_width":400,"name":"Athlete","width":400},"id":"1040","type":"Column"},{"attributes":{"client_comm_id":"35c13914133e429db3138c27ea240905","comm_id":"d11c032e3fd7400eb07e175270e59601","plot_id":"1040"},"id":"1044","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1040","1044"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"0596bc21-0217-49f4-8321-13d9cfb73138","root_ids":["1040"],"roots":{"1040":"90f5f9b0-4350-4c08-b02c-b5f5377adbbc"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Let’s customize the view of the <code class="docutils literal notranslate"><span class="pre">Athlete</span></code> some more.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">athlete_view</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span>
+    <span class="n">athlete</span><span class="p">,</span>
+    <span class="n">widgets</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"birthday"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> 
+        <span class="s2">"weight"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">LiteralInput</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+    <span class="p">},</span>
+    <span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="s2">"name_"</span><span class="p">,</span> <span class="s2">"birthday"</span><span class="p">,</span> <span class="s2">"weight"</span><span class="p">],</span>
+    <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">default_layout</span><span class="o">=</span><span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">600</span>
+<span class="p">)</span>
+<span class="n">athlete_view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1045">
+<div class="bk-root" data-root-id="1045" id="5956c66c-e125-4e24-9386-fe7fdffe4870"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"ac31e602-70f8-4e2f-bf59-1afed2f0db3d":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"min_width":100,"title":"Weight","value":"82","width":100},"id":"1049","type":"TextInput"},{"attributes":{"client_comm_id":"6601aa589db64ac0af677cad7bfb7547","comm_id":"4db13fbb55c54d228f43cc154d54ca1b","plot_id":"1045"},"id":"1050","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1047"},{"id":"1048"},{"id":"1049"}],"margin":[5,5,5,5],"min_width":600,"name":"Athlete","width":600},"id":"1046","type":"Row"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1047","type":"TextInput"},{"attributes":{"children":[{"id":"1046"}],"margin":[5,5,5,5],"min_width":600,"name":"Athlete","width":600},"id":"1045","type":"Column"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Birthday","value":"1976-09-17"},"id":"1048","type":"DatePicker"}],"root_ids":["1045","1050"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"ac31e602-70f8-4e2f-bf59-1afed2f0db3d","root_ids":["1045"],"roots":{"1045":"5956c66c-e125-4e24-9386-fe7fdffe4870"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Let’s take a look at the PowerCurve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="n">athlete</span><span class="o">.</span><span class="n">power_curve</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1051">
+<div class="bk-root" data-root-id="1051" id="1e86f544-0153-401d-af7d-66d6ee3a65ac"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"67c81f6f-6c30-4e79-9dd6-912bda562f6d":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten sec","value":1079,"value_throttled":1079},"id":"1053","type":"Spinner"},{"attributes":{"client_comm_id":"4eb77172275a47ef872321cf6c0ffa1f","comm_id":"f050e7659ab74860bbc55697fb4d5b8b","plot_id":"1051"},"id":"1063","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1052"},{"id":"1053"},{"id":"1054"},{"id":"1055"},{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"},{"id":"1062"}],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1051","type":"Column"},{"attributes":{"margin":[5,10,5,10],"title":"Ten sec date","value":"2018-08-21 00:00:00"},"id":"1054","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"One hour date","value":"2017-08-06 00:00:00"},"id":"1062","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"title":"Ten min date","value":"2017-09-22 00:00:00"},"id":"1058","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten min","value":419,"value_throttled":419},"id":"1057","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"Twenty min date","value":"2017-09-22 00:00:00"},"id":"1060","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One hour","value":319,"value_throttled":319},"id":"1061","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Twenty min","value":398,"value_throttled":398},"id":"1059","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>PowerCurve</b>"},"id":"1052","type":"Div"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One min","value":684,"value_throttled":684},"id":"1055","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"title":"One min date","value":"2017-08-31 00:00:00"},"id":"1056","type":"TextInput"}],"root_ids":["1051","1063"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"67c81f6f-6c30-4e79-9dd6-912bda562f6d","root_ids":["1051"],"roots":{"1051":"1e86f544-0153-401d-af7d-66d6ee3a65ac"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>The PowerCurve layout is not that tidy. Let’s change the layout to two columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="s2">"Creates a new class which overrides parameter defaults."</span>
+    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="p">(</span><span class="bp">cls</span><span class="p">,),</span> <span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">power_curve_columns_view</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span>
+    <span class="n">athlete</span><span class="o">.</span><span class="n">power_curve</span><span class="p">,</span>
+    <span class="n">default_layout</span><span class="o">=</span><span class="n">new_class</span><span class="p">(</span><span class="n">pn</span><span class="o">.</span><span class="n">GridBox</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"ten_sec_date"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> 
+        <span class="s2">"one_min_date"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> 
+        <span class="s2">"ten_min_date"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span>
+        <span class="s2">"twenty_min_date"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">,</span> 
+        <span class="s2">"one_hour_date"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">power_curve_columns_view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1064">
+<div class="bk-root" data-root-id="1064" id="7546eedb-d37b-4a03-b3d7-45f2bc569100"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"f9143be0-37d4-4b14-bdd7-93deb589abf8":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One min date","value":"2017-08-31"},"id":"1069","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten sec date","value":"2018-08-21"},"id":"1067","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One min","value":684,"value_throttled":684},"id":"1068","type":"Spinner"},{"attributes":{"children":[[{"id":"1066"},0,0,1,1],[{"id":"1067"},0,1,1,1],[{"id":"1068"},1,0,1,1],[{"id":"1069"},1,1,1,1],[{"id":"1070"},2,0,1,1],[{"id":"1071"},2,1,1,1],[{"id":"1072"},3,0,1,1],[{"id":"1073"},3,1,1,1],[{"id":"1074"},4,0,1,1],[{"id":"1075"},4,1,1,1]],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1065","type":"GridBox"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One hour date","value":"2017-08-06"},"id":"1075","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Twenty min date","value":"2017-09-22"},"id":"1073","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten sec","value":1079,"value_throttled":1079},"id":"1066","type":"Spinner"},{"attributes":{"client_comm_id":"76bb508866684fe5bba7f4cd74ed8e0c","comm_id":"1da9a665e6bb4903b056d65247e75071","plot_id":"1064"},"id":"1076","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten min date","value":"2017-09-22"},"id":"1071","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One hour","value":319,"value_throttled":319},"id":"1074","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Twenty min","value":398,"value_throttled":398},"id":"1072","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten min","value":419,"value_throttled":419},"id":"1070","type":"Spinner"},{"attributes":{"children":[{"id":"1065"}],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1064","type":"Column"}],"root_ids":["1064","1076"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"f9143be0-37d4-4b14-bdd7-93deb589abf8","root_ids":["1064"],"roots":{"1064":"7546eedb-d37b-4a03-b3d7-45f2bc569100"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Let’s put a plot of the PowerCurve in the mix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sections</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'InputFiles'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'dirs'</span><span class="p">,</span> <span class="s1">'files'</span><span class="p">],</span> <span class="s1">'Field'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'grps'</span><span class="p">,</span> <span class="s1">'varns'</span><span class="p">]}</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="n">target</span><span class="o">.</span><span class="n">set_param</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">sections</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">new</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="n">sections</span><span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">new</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">sel</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">sections</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="n">rad</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">sections</span><span class="p">[</span><span class="n">sel</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+<span class="n">sel</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">rad</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="p">{</span><span class="s1">'value'</span><span class="p">:</span> <span class="n">update</span><span class="p">})</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">rad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1077">
+<div class="bk-root" data-root-id="1077" id="e6cbbfa5-bc4b-4f73-adf5-89a11321bc32"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"f33edc60-5f05-43c6-892a-73aaae4e7a55":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"fa4b9b393e6c48c68f165f1a6406a522","comm_id":"73d40e8eebe049048133ed450dea2bfb","plot_id":"1077"},"id":"1080","type":"panel.models.comm_manager.CommManager"},{"attributes":{"active":0,"labels":["dirs","files"],"margin":[5,10,5,10]},"id":"1079","type":"RadioButtonGroup"},{"attributes":{"margin":[5,10,5,10],"options":["InputFiles","Field"],"value":"InputFiles"},"id":"1078","type":"Select"},{"attributes":{"children":[{"id":"1078"},{"id":"1079"}],"margin":[0,0,0,0],"name":"Column03123"},"id":"1077","type":"Column"}],"root_ids":["1077","1080"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"f33edc60-5f05-43c6-892a-73aaae4e7a55","root_ids":["1077"],"roots":{"1077":"e6cbbfa5-bc4b-4f73-adf5-89a11321bc32"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_curve_view</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
+    <span class="n">power_curve_columns_view</span><span class="p">,</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">VSpacer</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">athlete</span><span class="o">.</span><span class="n">power_curve</span><span class="o">.</span><span class="n">plot</span>
+<span class="p">)</span>
+<span class="n">power_curve_view</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1081">
+<div class="bk-root" data-root-id="1081" id="fa349e86-f22c-4be7-87e4-5433f8988866"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"ce4c416d-4a92-4816-8fc2-383c817f55d9":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#007BFF"},"line_alpha":{"value":0.2},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1154","type":"Scatter"},{"attributes":{},"id":"1141","type":"Selection"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1122","type":"BoxAnnotation"},{"attributes":{"line_alpha":0.1,"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1144","type":"Line"},{"attributes":{"source":{"id":"1140"}},"id":"1147","type":"CDSView"},{"attributes":{"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1143","type":"Line"},{"attributes":{},"id":"1135","type":"BasicTickFormatter"},{"attributes":{"end":1500,"reset_end":1500,"reset_start":0,"tags":[[["power","power",null]]]},"id":"1097","type":"Range1d"},{"attributes":{},"id":"1164","type":"UnionRenderers"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"1101","type":"Title"},{"attributes":{"children":[{"id":"1083"}],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1082","type":"Column"},{"attributes":{"children":[{"id":"1100"}],"margin":[0,0,0,0],"name":"Row03131"},"id":"1095","type":"Row"},{"attributes":{"callback":null,"renderers":[{"id":"1146"},{"id":"1155"}],"tags":["hv_created"],"tooltips":[["duration","@{duration}"],["power","@{power}"]]},"id":"1098","type":"HoverTool"},{"attributes":{"children":[{"id":"1082"},{"id":"1094"},{"id":"1095"}],"margin":[0,0,0,0],"name":"Row03396"},"id":"1081","type":"Row"},{"attributes":{"source":{"id":"1149"}},"id":"1156","type":"CDSView"},{"attributes":{"end":60.0,"reset_end":60.0,"reset_start":0.16666666666666666,"start":0.16666666666666666,"tags":[[["duration","duration",null]]]},"id":"1096","type":"Range1d"},{"attributes":{"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1148","type":"Line"},{"attributes":{"children":[[{"id":"1084"},0,0,1,1],[{"id":"1085"},0,1,1,1],[{"id":"1086"},1,0,1,1],[{"id":"1087"},1,1,1,1],[{"id":"1088"},2,0,1,1],[{"id":"1089"},2,1,1,1],[{"id":"1090"},3,0,1,1],[{"id":"1091"},3,1,1,1],[{"id":"1092"},4,0,1,1],[{"id":"1093"},4,1,1,1]],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1083","type":"GridBox"},{"attributes":{},"id":"1117","type":"SaveTool"},{"attributes":{},"id":"1150","type":"Selection"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten sec","value":1079,"value_throttled":1079},"id":"1084","type":"Spinner"},{"attributes":{},"id":"1107","type":"LinearScale"},{"attributes":{"coordinates":null,"data_source":{"id":"1140"},"glyph":{"id":"1143"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1145"},"nonselection_glyph":{"id":"1144"},"selection_glyph":{"id":"1148"},"view":{"id":"1147"}},"id":"1146","type":"GlyphRenderer"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten min","value":419,"value_throttled":419},"id":"1088","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten min date","value":"2017-09-22"},"id":"1089","type":"DatePicker"},{"attributes":{"axis":{"id":"1109"},"coordinates":null,"grid_line_color":"black","grid_line_width":0.1,"group":null,"ticker":{"id":"1110"}},"id":"1112","type":"Grid"},{"attributes":{"below":[{"id":"1109"}],"center":[{"id":"1112"},{"id":"1116"}],"height":null,"left":[{"id":"1113"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_height":400,"renderers":[{"id":"1146"},{"id":"1155"}],"sizing_mode":"stretch_both","title":{"id":"1101"},"toolbar":{"id":"1123"},"toolbar_location":null,"width":null,"x_range":{"id":"1096"},"x_scale":{"id":"1105"},"y_range":{"id":"1097"},"y_scale":{"id":"1107"}},"id":"1100","subtype":"Figure","type":"Plot"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One min date","value":"2017-08-31"},"id":"1087","type":"DatePicker"},{"attributes":{},"id":"1105","type":"LinearScale"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten sec date","value":"2018-08-21"},"id":"1085","type":"DatePicker"},{"attributes":{},"id":"1166","type":"UnionRenderers"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One min","value":684,"value_throttled":684},"id":"1086","type":"Spinner"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":0.1},"hatch_color":{"value":"#007BFF"},"line_alpha":{"value":0.1},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1153","type":"Scatter"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Twenty min","value":398,"value_throttled":398},"id":"1090","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Twenty min date","value":"2017-09-22"},"id":"1091","type":"DatePicker"},{"attributes":{"ticks":[0,200,400,600,800,1000,1200,1400]},"id":"1130","type":"FixedTicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One hour","value":319,"value_throttled":319},"id":"1092","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One hour date","value":"2017-08-06"},"id":"1093","type":"DatePicker"},{"attributes":{"axis_label":"duration","coordinates":null,"formatter":{"id":"1132"},"group":null,"major_label_policy":{"id":"1133"},"ticker":{"id":"1110"}},"id":"1109","type":"LinearAxis"},{"attributes":{},"id":"1119","type":"WheelZoomTool"},{"attributes":{"axis":{"id":"1113"},"coordinates":null,"dimension":1,"grid_line_color":"black","grid_line_width":0.1,"group":null,"ticker":{"id":"1130"}},"id":"1116","type":"Grid"},{"attributes":{"data":{"duration":{"__ndarray__":"VVVVVVVVxT8AAAAAAADwPwAAAAAAACRAAAAAAAAANEAAAAAAAABOQA==","dtype":"float64","order":"little","shape":[5]},"power":[1079,684,419,398,319]},"selected":{"id":"1141"},"selection_policy":{"id":"1164"}},"id":"1140","type":"ColumnDataSource"},{"attributes":{"client_comm_id":"81f971a732ca44deb278a8f0fda3b44d","comm_id":"42a31954f89d447ba117ed14bd58e724","plot_id":"1081"},"id":"1290","type":"panel.models.comm_manager.CommManager"},{"attributes":{"coordinates":null,"data_source":{"id":"1149"},"glyph":{"id":"1152"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1154"},"nonselection_glyph":{"id":"1153"},"selection_glyph":{"id":"1157"},"view":{"id":"1156"}},"id":"1155","type":"GlyphRenderer"},{"attributes":{},"id":"1118","type":"PanTool"},{"attributes":{"margin":[5,5,5,5],"name":"VSpacer03126","sizing_mode":"stretch_height","width":50},"id":"1094","type":"Spacer"},{"attributes":{"angle":{"value":0.0},"fill_alpha":{"value":1.0},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":1.0},"hatch_color":{"value":"#007BFF"},"hatch_scale":{"value":12.0},"hatch_weight":{"value":1.0},"line_alpha":{"value":1.0},"line_cap":{"value":"butt"},"line_color":{"value":"#007BFF"},"line_dash":{"value":[]},"line_dash_offset":{"value":0},"line_join":{"value":"bevel"},"line_width":{"value":1},"marker":{"value":"circle"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1157","type":"Scatter"},{"attributes":{},"id":"1110","type":"BasicTicker"},{"attributes":{"axis_label":"power","coordinates":null,"formatter":{"id":"1135"},"group":null,"major_label_policy":{"id":"1136"},"ticker":{"id":"1130"}},"id":"1113","type":"LinearAxis"},{"attributes":{},"id":"1133","type":"AllLabels"},{"attributes":{"data":{"duration":{"__ndarray__":"VVVVVVVVxT8AAAAAAADwPwAAAAAAACRAAAAAAAAANEAAAAAAAABOQA==","dtype":"float64","order":"little","shape":[5]},"power":[1079,684,419,398,319]},"selected":{"id":"1150"},"selection_policy":{"id":"1166"}},"id":"1149","type":"ColumnDataSource"},{"attributes":{},"id":"1121","type":"ResetTool"},{"attributes":{},"id":"1132","type":"BasicTickFormatter"},{"attributes":{"fill_color":{"value":"#007BFF"},"hatch_color":{"value":"#007BFF"},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1152","type":"Scatter"},{"attributes":{"tools":[{"id":"1098"},{"id":"1117"},{"id":"1118"},{"id":"1119"},{"id":"1120"},{"id":"1121"}]},"id":"1123","type":"Toolbar"},{"attributes":{"line_alpha":0.2,"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1145","type":"Line"},{"attributes":{"overlay":{"id":"1122"}},"id":"1120","type":"BoxZoomTool"},{"attributes":{},"id":"1136","type":"AllLabels"}],"root_ids":["1081","1290"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"ce4c416d-4a92-4816-8fc2-383c817f55d9","root_ids":["1081"],"roots":{"1081":"fa349e86-f22c-4be7-87e4-5433f8988866"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>And finally, let’s put things together.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"### Athlete"</span><span class="p">),</span> 
+    <span class="n">athlete_view</span><span class="p">,</span> 
+    <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"#### Power Curve"</span><span class="p">),</span> 
+    <span class="n">power_curve_view</span><span class="p">,</span>
+    <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">'stretch_width'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1346">
+<div class="bk-root" data-root-id="1346" id="4ea7e32b-c130-4890-86e9-cdf9c6ab14ba"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"8f546e6e-8762-4b29-abec-8e48bb0abca5":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"tools":[{"id":"1371"},{"id":"1390"},{"id":"1391"},{"id":"1392"},{"id":"1393"},{"id":"1394"}]},"id":"1396","type":"Toolbar"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown03746","text":"&lt;h3&gt;Athlete&lt;/h3&gt;"},"id":"1347","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1408","type":"BasicTickFormatter"},{"attributes":{},"id":"1378","type":"LinearScale"},{"attributes":{"ticks":[0,200,400,600,800,1000,1200,1400]},"id":"1403","type":"FixedTicker"},{"attributes":{},"id":"1406","type":"AllLabels"},{"attributes":{"client_comm_id":"997aec70c1c5427889e81f77ce13cb0d","comm_id":"158cb464d1ea4e7282cbecb58acb422f","plot_id":"1346"},"id":"1563","type":"panel.models.comm_manager.CommManager"},{"attributes":{},"id":"1405","type":"BasicTickFormatter"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1395","type":"BoxAnnotation"},{"attributes":{"overlay":{"id":"1395"}},"id":"1393","type":"BoxZoomTool"},{"attributes":{"line_alpha":0.2,"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1418","type":"Line"},{"attributes":{},"id":"1394","type":"ResetTool"},{"attributes":{},"id":"1390","type":"SaveTool"},{"attributes":{"axis_label":"power","coordinates":null,"formatter":{"id":"1408"},"group":null,"major_label_policy":{"id":"1409"},"ticker":{"id":"1403"}},"id":"1386","type":"LinearAxis"},{"attributes":{},"id":"1409","type":"AllLabels"},{"attributes":{"children":[{"id":"1349"}],"margin":[5,5,5,5],"min_width":600,"name":"Athlete","width":600},"id":"1348","type":"Column"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":0.2},"hatch_color":{"value":"#007BFF"},"line_alpha":{"value":0.2},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1427","type":"Scatter"},{"attributes":{},"id":"1391","type":"PanTool"},{"attributes":{},"id":"1383","type":"BasicTicker"},{"attributes":{"axis":{"id":"1386"},"coordinates":null,"dimension":1,"grid_line_color":"black","grid_line_width":0.1,"group":null,"ticker":{"id":"1403"}},"id":"1389","type":"Grid"},{"attributes":{},"id":"1392","type":"WheelZoomTool"},{"attributes":{"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1416","type":"Line"},{"attributes":{},"id":"1414","type":"Selection"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Birthday","value":"1976-09-17"},"id":"1351","type":"DatePicker"},{"attributes":{},"id":"1437","type":"UnionRenderers"},{"attributes":{"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1421","type":"Line"},{"attributes":{"coordinates":null,"group":null,"text_color":"black","text_font_size":"12pt"},"id":"1374","type":"Title"},{"attributes":{"source":{"id":"1422"}},"id":"1429","type":"CDSView"},{"attributes":{"below":[{"id":"1382"}],"center":[{"id":"1385"},{"id":"1389"}],"height":null,"left":[{"id":"1386"}],"margin":[5,5,5,5],"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"min_height":400,"renderers":[{"id":"1419"},{"id":"1428"}],"sizing_mode":"stretch_both","title":{"id":"1374"},"toolbar":{"id":"1396"},"toolbar_location":null,"width":null,"x_range":{"id":"1369"},"x_scale":{"id":"1378"},"y_range":{"id":"1370"},"y_scale":{"id":"1380"}},"id":"1373","subtype":"Figure","type":"Plot"},{"attributes":{"source":{"id":"1413"}},"id":"1420","type":"CDSView"},{"attributes":{"line_alpha":0.1,"line_color":"#007BFF","line_width":3,"x":{"field":"duration"},"y":{"field":"power"}},"id":"1417","type":"Line"},{"attributes":{"axis_label":"duration","coordinates":null,"formatter":{"id":"1405"},"group":null,"major_label_policy":{"id":"1406"},"ticker":{"id":"1383"}},"id":"1382","type":"LinearAxis"},{"attributes":{"axis":{"id":"1382"},"coordinates":null,"grid_line_color":"black","grid_line_width":0.1,"group":null,"ticker":{"id":"1383"}},"id":"1385","type":"Grid"},{"attributes":{"end":60.0,"reset_end":60.0,"reset_start":0.16666666666666666,"start":0.16666666666666666,"tags":[[["duration","duration",null]]]},"id":"1369","type":"Range1d"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":0.1},"hatch_color":{"value":"#007BFF"},"line_alpha":{"value":0.1},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1426","type":"Scatter"},{"attributes":{"callback":null,"renderers":[{"id":"1419"},{"id":"1428"}],"tags":["hv_created"],"tooltips":[["duration","@{duration}"],["power","@{power}"]]},"id":"1371","type":"HoverTool"},{"attributes":{"margin":[5,10,5,10],"min_width":100,"title":"Weight","value":"82","width":100},"id":"1352","type":"TextInput"},{"attributes":{"children":[{"id":"1350"},{"id":"1351"},{"id":"1352"}],"margin":[5,5,5,5],"min_width":600,"name":"Athlete","width":600},"id":"1349","type":"Row"},{"attributes":{},"id":"1423","type":"Selection"},{"attributes":{},"id":"1439","type":"UnionRenderers"},{"attributes":{"children":[{"id":"1355"},{"id":"1367"},{"id":"1368"}],"margin":[0,0,0,0],"name":"Row03396"},"id":"1354","type":"Row"},{"attributes":{"children":[{"id":"1356"}],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1355","type":"Column"},{"attributes":{"children":[{"id":"1373"}],"margin":[0,0,0,0],"name":"Row03131"},"id":"1368","type":"Row"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"Name ","value":"P.A. Nelson"},"id":"1350","type":"TextInput"},{"attributes":{"fill_color":{"value":"#007BFF"},"hatch_color":{"value":"#007BFF"},"line_color":{"value":"#007BFF"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1425","type":"Scatter"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten sec","value":1079,"value_throttled":1079},"id":"1357","type":"Spinner"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown03748","text":"&lt;h4&gt;Power Curve&lt;/h4&gt;"},"id":"1353","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1347"},{"id":"1348"},{"id":"1353"},{"id":"1354"}],"margin":[0,0,0,0],"name":"Column03750","sizing_mode":"stretch_width"},"id":"1346","type":"Column"},{"attributes":{"children":[[{"id":"1357"},0,0,1,1],[{"id":"1358"},0,1,1,1],[{"id":"1359"},1,0,1,1],[{"id":"1360"},1,1,1,1],[{"id":"1361"},2,0,1,1],[{"id":"1362"},2,1,1,1],[{"id":"1363"},3,0,1,1],[{"id":"1364"},3,1,1,1],[{"id":"1365"},4,0,1,1],[{"id":"1366"},4,1,1,1]],"margin":[5,5,5,5],"min_width":300,"name":"PowerCurve","width":300},"id":"1356","type":"GridBox"},{"attributes":{"angle":{"value":0.0},"fill_alpha":{"value":1.0},"fill_color":{"value":"#007BFF"},"hatch_alpha":{"value":1.0},"hatch_color":{"value":"#007BFF"},"hatch_scale":{"value":12.0},"hatch_weight":{"value":1.0},"line_alpha":{"value":1.0},"line_cap":{"value":"butt"},"line_color":{"value":"#007BFF"},"line_dash":{"value":[]},"line_dash_offset":{"value":0},"line_join":{"value":"bevel"},"line_width":{"value":1},"marker":{"value":"circle"},"size":{"value":2.449489742783178},"x":{"field":"duration"},"y":{"field":"power"}},"id":"1430","type":"Scatter"},{"attributes":{"coordinates":null,"data_source":{"id":"1422"},"glyph":{"id":"1425"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1427"},"nonselection_glyph":{"id":"1426"},"selection_glyph":{"id":"1430"},"view":{"id":"1429"}},"id":"1428","type":"GlyphRenderer"},{"attributes":{"data":{"duration":{"__ndarray__":"VVVVVVVVxT8AAAAAAADwPwAAAAAAACRAAAAAAAAANEAAAAAAAABOQA==","dtype":"float64","order":"little","shape":[5]},"power":[1079,684,419,398,319]},"selected":{"id":"1414"},"selection_policy":{"id":"1437"}},"id":"1413","type":"ColumnDataSource"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten min date","value":"2017-09-22"},"id":"1362","type":"DatePicker"},{"attributes":{"end":1500,"reset_end":1500,"reset_start":0,"tags":[[["power","power",null]]]},"id":"1370","type":"Range1d"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One min","value":684,"value_throttled":684},"id":"1359","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Ten sec date","value":"2018-08-21"},"id":"1358","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"One hour","value":319,"value_throttled":319},"id":"1365","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One hour date","value":"2017-08-06"},"id":"1366","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"One min date","value":"2017-08-31"},"id":"1360","type":"DatePicker"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Ten min","value":419,"value_throttled":419},"id":"1361","type":"Spinner"},{"attributes":{"margin":[5,10,5,10],"placeholder":"0","step":0.1,"title":"Twenty min","value":398,"value_throttled":398},"id":"1363","type":"Spinner"},{"attributes":{},"id":"1380","type":"LinearScale"},{"attributes":{"margin":[5,10,5,10],"max_date":"2021-12-09","min_date":"1900-01-01","title":"Twenty min date","value":"2017-09-22"},"id":"1364","type":"DatePicker"},{"attributes":{"data":{"duration":{"__ndarray__":"VVVVVVVVxT8AAAAAAADwPwAAAAAAACRAAAAAAAAANEAAAAAAAABOQA==","dtype":"float64","order":"little","shape":[5]},"power":[1079,684,419,398,319]},"selected":{"id":"1423"},"selection_policy":{"id":"1439"}},"id":"1422","type":"ColumnDataSource"},{"attributes":{"coordinates":null,"data_source":{"id":"1413"},"glyph":{"id":"1416"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1418"},"nonselection_glyph":{"id":"1417"},"selection_glyph":{"id":"1421"},"view":{"id":"1420"}},"id":"1419","type":"GlyphRenderer"},{"attributes":{"margin":[5,5,5,5],"name":"VSpacer03126","sizing_mode":"stretch_height","width":50},"id":"1367","type":"Spacer"}],"root_ids":["1346","1563"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"8f546e6e-8762-4b29-abec-8e48bb0abca5","root_ids":["1346"],"roots":{"1346":"4ea7e32b-c130-4890-86e9-cdf9c6ab14ba"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="disabling-continuous-updates-for-slider-widgets">
+<h2>Disabling continuous updates for slider widgets<a class="headerlink" href="#disabling-continuous-updates-for-slider-widgets" title="Permalink to this headline">¶</a></h2>
+<p>When a function takes a long time to run and depends on a parameter, realtime feedback can be a burden instead of being helpful.</p>
+<p>Therefore if a slider widget is used for a parameter and you have a function which takes long time to calculate, you can set the <code class="docutils literal notranslate"><span class="pre">throttled</span></code> keyword in the <code class="docutils literal notranslate"><span class="pre">panel.param.widgets</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> for the given parameter. This will then first run the function after the release of the mouse button of the slider.</p>
+<p>An example can be seen below where two parameters is connected to two sliders, one with and one without <code class="docutils literal notranslate"><span class="pre">throttled</span></code> enabled.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">Parameterized</span><span class="p">):</span>
+    <span class="n">without_throttled_enabled</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+        <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">with_throttled_enabled</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+        <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"without_throttled_enabled"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">,</span>
+            <span class="s2">"with_throttled_enabled"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">,</span>
+                <span class="s2">"throttled"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">controls</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widgets</span><span class="o">=</span><span class="n">widgets</span><span class="p">)</span>
+
+    <span class="nd">@param</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"controls"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">calculation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">without_throttled_enabled</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_throttled_enabled</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">controls</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">calculation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1619">
+<div class="bk-root" data-root-id="1619" id="63a6ac38-07dd-4478-b520-15a10548e8a4"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"d4eb51ac-6789-4919-a3cc-ed64285d9771":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"94a0cc38dbad41bcb211c2b83d6ca08c","comm_id":"00b6c57aa49b4b6c9ff8bd95bc8ddb38","plot_id":"1619"},"id":"1626","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>A</b>"},"id":"1621","type":"Div"},{"attributes":{"end":250,"margin":[5,10,5,10],"start":0,"title":"With throttled enabled","value":[100,250]},"id":"1623","type":"RangeSlider"},{"attributes":{"children":[{"id":"1621"},{"id":"1622"},{"id":"1623"}],"margin":[5,5,5,5],"min_width":300,"name":"A","width":300},"id":"1620","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"Str04111","text":"&lt;pre&gt;((100, 250), (100, 250))&lt;/pre&gt;"},"id":"1625","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1625"}],"margin":[0,0,0,0],"name":"Row04113"},"id":"1624","type":"Row"},{"attributes":{"children":[{"id":"1620"},{"id":"1624"}],"margin":[0,0,0,0],"name":"Column04114"},"id":"1619","type":"Column"},{"attributes":{"end":250,"margin":[5,10,5,10],"start":0,"title":"Without throttled enabled","value":[100,250]},"id":"1622","type":"RangeSlider"}],"root_ids":["1619","1626"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"d4eb51ac-6789-4919-a3cc-ed64285d9771","root_ids":["1619"],"roots":{"1619":"63a6ac38-07dd-4478-b520-15a10548e8a4"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/Param.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/Param.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="PNG.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">PNG</p>
+</div>
+</a>
+<a class="right-next" href="Perspective.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Perspective</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

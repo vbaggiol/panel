@@ -1,0 +1,1412 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Interact — Panel 0.12.6 documentation</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="Widgets.html" rel="next" title="Widgets"/>
+<link href="Deploy_and_Export.html" rel="prev" title="Deploy and Export"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Overview.html">
+   Overview
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Components.html">
+   Components
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="APIs.html">
+   APIs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Customization.html">
+   Customization
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Deploy_and_Export.html">
+   Deploy &amp; Export
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   Interact
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Widgets.html">
+   Widgets
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Param.html">
+   Parameters
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Links.html">
+   Linking
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Pipelines.html">
+   Pipelines
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Templates.html">
+   Templates
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Server_Deployment.html">
+   Server Deployment
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Custom_Components.html">
+   Building Custom Components
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Async_and_Concurrency.html">
+   Asynchronous and Concurrent Process
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Authentication.html">
+   Authentication
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Django_Apps.html">
+   Django Apps
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#using-interact">
+   Using Interact
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#basic-interact">
+     Basic
+     <code class="docutils literal notranslate">
+<span class="pre">
+       interact
+      </span>
+</code>
+</a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#laying-out-interact-widgets">
+     Laying out interact widgets
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fixing-arguments-using-fixed">
+     Fixing arguments using
+     <code class="docutils literal notranslate">
+<span class="pre">
+       fixed
+      </span>
+</code>
+</a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#widget-abbreviations">
+     Widget abbreviations
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disabling-continuous-updates-for-slider-widgets">
+     Disabling continuous updates for slider widgets
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/user_guide/Interact.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="interact">
+<h1>Interact<a class="headerlink" href="#interact" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="using-interact">
+<h2>Using Interact<a class="headerlink" href="#using-interact" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">interact</span></code> function (<code class="docutils literal notranslate"><span class="pre">panel.interact</span></code>) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using Panel, and it provides enough flexibility that it may be all you need to learn in Panel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="kn">from</span> <span class="nn">panel.interact</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">panel</span> <span class="kn">import</span> <span class="n">widgets</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {}, 'shim': {}});
+      
+      root._bokeh_is_loading = css_urls.length + 0;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<section id="basic-interact">
+<h3>Basic <code class="docutils literal notranslate"><span class="pre">interact</span></code><a class="headerlink" href="#basic-interact" title="Permalink to this headline">¶</a></h3>
+<p>At the most basic level, <code class="docutils literal notranslate"><span class="pre">interact</span></code> autogenerates UI controls for function arguments, and then calls the function with those arguments when you manipulate the controls interactively. To use <code class="docutils literal notranslate"><span class="pre">interact</span></code>, you need to define a function that you want to explore. Here is a function that prints its only argument <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you pass this function as the first argument to <code class="docutils literal notranslate"><span class="pre">interact</span></code> along with an integer keyword argument (<code class="docutils literal notranslate"><span class="pre">x=10</span></code>), a slider is generated and bound to the function parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="0e6e07c8-4376-45b0-b352-aa154cfd41d7"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"d2fae5ca-2ef4-4a70-872b-222d556ce6e1":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"end":30,"margin":[5,10,5,10],"start":-10,"title":"x","value":10},"id":"1004","type":"Slider"},{"attributes":{"client_comm_id":"60495c7c988943658f69e4046bd65c6e","comm_id":"666924bc581249e286edfe954d3e0236","plot_id":"1002"},"id":"1007","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1003"},{"id":"1005"}],"margin":[0,0,0,0],"name":"Column02974"},"id":"1002","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive02973","text":"&lt;pre&gt;10&lt;/pre&gt;"},"id":"1006","type":"panel.models.markup.HTML"},{"attributes":{"reload":false},"id":"1008","type":"panel.models.location.Location"},{"attributes":{"children":[{"id":"1004"}],"margin":[0,0,0,0],"name":"Column02979"},"id":"1003","type":"Column"},{"attributes":{"children":[{"id":"1006"}],"margin":[0,0,0,0],"name":"Row02978"},"id":"1005","type":"Row"}],"root_ids":["1002","1007","1008"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"d2fae5ca-2ef4-4a70-872b-222d556ce6e1","root_ids":["1002"],"roots":{"1002":"0e6e07c8-4376-45b0-b352-aa154cfd41d7"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>When you move the slider, the function is called, which prints the current value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>If you pass <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">interact</span></code> will generate a checkbox:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1009">
+<div class="bk-root" data-root-id="1009" id="67ab5782-ca4f-48c9-a58f-918a69544c71"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"1d5e5bda-c86d-4cff-b55d-286f98d6206a":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"active":[0],"labels":["x"],"margin":[5,10,5,10]},"id":"1011","type":"CheckboxGroup"},{"attributes":{"children":[{"id":"1010"},{"id":"1012"}],"margin":[0,0,0,0],"name":"Column02984"},"id":"1009","type":"Column"},{"attributes":{"children":[{"id":"1013"}],"margin":[0,0,0,0],"name":"Row02988"},"id":"1012","type":"Row"},{"attributes":{"margin":[5,5,5,5],"name":"interactive02983","text":"&lt;pre&gt;True&lt;/pre&gt;"},"id":"1013","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1011"}],"margin":[0,0,0,0],"name":"Column02989"},"id":"1010","type":"Column"},{"attributes":{"client_comm_id":"5fbd530930164764a0759602ce4bdb11","comm_id":"13153373a7ea4e5ebacae76a4aa56a0c","plot_id":"1009"},"id":"1014","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1009","1014"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"1d5e5bda-c86d-4cff-b55d-286f98d6206a","root_ids":["1009"],"roots":{"1009":"67ab5782-ca4f-48c9-a58f-918a69544c71"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>If you pass a string, <code class="docutils literal notranslate"><span class="pre">interact</span></code> will generate a text area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'Hi there!'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1015">
+<div class="bk-root" data-root-id="1015" id="20dc1277-e31f-4771-af55-78af76043c81"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"67828094-8714-4eb0-aedc-c5f22eadad54":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1019"}],"margin":[0,0,0,0],"name":"Row02997"},"id":"1018","type":"Row"},{"attributes":{"margin":[5,10,5,10],"max_length":5000,"title":"x","value":"Hi there!"},"id":"1017","type":"TextInput"},{"attributes":{"children":[{"id":"1017"}],"margin":[0,0,0,0],"name":"Column02998"},"id":"1016","type":"Column"},{"attributes":{"children":[{"id":"1016"},{"id":"1018"}],"margin":[0,0,0,0],"name":"Column02993"},"id":"1015","type":"Column"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"interactive02992","text":"&lt;p&gt;Hi there!&lt;/p&gt;"},"id":"1019","type":"panel.models.markup.HTML"},{"attributes":{"client_comm_id":"b1b0d3b2eea9428ab1a2d0c3edc4b28a","comm_id":"63e452f5c3e0468f81e98a1825390918","plot_id":"1015"},"id":"1020","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1015","1020"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"67828094-8714-4eb0-aedc-c5f22eadad54","root_ids":["1015"],"roots":{"1015":"20dc1277-e31f-4771-af55-78af76043c81"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">interact</span></code> can also be used as a decorator. This allows you to define a function and how to interact with it in a single shot. As this example shows, <code class="docutils literal notranslate"><span class="pre">interact</span></code> also works with functions that have multiple arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1021">
+<div class="bk-root" data-root-id="1021" id="2feca595-4794-4bb5-a80e-31ea9652dbd9"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"df73506c-a514-49fa-8fee-28571c977beb":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1022"},{"id":"1025"}],"margin":[0,0,0,0],"name":"Column03002"},"id":"1021","type":"Column"},{"attributes":{"children":[{"id":"1026"}],"margin":[0,0,0,0],"name":"Row03007"},"id":"1025","type":"Row"},{"attributes":{"children":[{"id":"1023"},{"id":"1024"}],"margin":[0,0,0,0],"name":"Column03008"},"id":"1022","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03001","text":"&lt;pre&gt;(True, 1.0)&lt;/pre&gt;"},"id":"1026","type":"panel.models.markup.HTML"},{"attributes":{"end":3.0,"margin":[5,10,5,10],"start":-1.0,"step":0.1,"title":"y","value":1.0},"id":"1024","type":"Slider"},{"attributes":{"client_comm_id":"37ab97a6b481425eb9779302359c41f0","comm_id":"4a32665fabeb40a8a9b6743ec6c6f76a","plot_id":"1021"},"id":"1027","type":"panel.models.comm_manager.CommManager"},{"attributes":{"active":[0],"labels":["x"],"margin":[5,10,5,10]},"id":"1023","type":"CheckboxGroup"}],"root_ids":["1021","1027"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"df73506c-a514-49fa-8fee-28571c977beb","root_ids":["1021"],"roots":{"1021":"2feca595-4794-4bb5-a80e-31ea9652dbd9"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="laying-out-interact-widgets">
+<h3>Laying out interact widgets<a class="headerlink" href="#laying-out-interact-widgets" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">interact</span></code> function returns a Panel containing the widgets and the display output. By indexing into this Panel we can lay out the objects precisely how we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'**A custom interact layout**'</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">layout</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">layout</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1028">
+<div class="bk-root" data-root-id="1028" id="7e3b0212-ef89-4ea4-bb31-b4b246da94ad"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"fc161365-7f0f-45f9-bd92-f9eb1ce1c6f9":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown03019","text":"&lt;p&gt;&lt;strong&gt;A custom interact layout&lt;/strong&gt;&lt;/p&gt;"},"id":"1029","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1034"}],"margin":[0,0,0,0],"name":"Row03016"},"id":"1033","type":"Row"},{"attributes":{"children":[{"id":"1031"},{"id":"1033"}],"margin":[0,0,0,0],"name":"Row03018"},"id":"1030","type":"Row"},{"attributes":{"end":30,"margin":[5,10,5,10],"start":-10,"title":"x","value":10},"id":"1032","type":"Slider"},{"attributes":{"children":[{"id":"1032"}],"margin":[0,0,0,0],"name":"Column03017"},"id":"1031","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03011","text":"&lt;pre&gt;10&lt;/pre&gt;"},"id":"1034","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1029"},{"id":"1030"}],"margin":[0,0,0,0],"name":"Column03021"},"id":"1028","type":"Column"},{"attributes":{"client_comm_id":"84e01180da4e47f0bb3dc5f2a29b30b3","comm_id":"136bd850c7044dbb8a177b23bebf8055","plot_id":"1028"},"id":"1035","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1028","1035"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"fc161365-7f0f-45f9-bd92-f9eb1ce1c6f9","root_ids":["1028"],"roots":{"1028":"7e3b0212-ef89-4ea4-bb31-b4b246da94ad"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="fixing-arguments-using-fixed">
+<h3>Fixing arguments using <code class="docutils literal notranslate"><span class="pre">fixed</span></code><a class="headerlink" href="#fixing-arguments-using-fixed" title="Permalink to this headline">¶</a></h3>
+<p>There are times when you may want to explore a function using <code class="docutils literal notranslate"><span class="pre">interact</span></code>, but fix one or more of its arguments to specific values. This can be accomplished by wrapping values with the <code class="docutils literal notranslate"><span class="pre">fixed</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">interact</span></code>, we pass <code class="docutils literal notranslate"><span class="pre">fixed(20)</span></code> for q to hold it fixed at a value of <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">fixed</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1036">
+<div class="bk-root" data-root-id="1036" id="9fa74231-04ef-414c-b5ba-e0aa995d1c48"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"fd32cb48-d836-480e-9c00-fdb230ccddec":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1040"}],"margin":[0,0,0,0],"name":"Row03030"},"id":"1039","type":"Row"},{"attributes":{"end":15,"margin":[5,10,5,10],"start":-5,"title":"p","value":5},"id":"1038","type":"Slider"},{"attributes":{"children":[{"id":"1038"}],"margin":[0,0,0,0],"name":"Column03031"},"id":"1037","type":"Column"},{"attributes":{"children":[{"id":"1037"},{"id":"1039"}],"margin":[0,0,0,0],"name":"Column03026"},"id":"1036","type":"Column"},{"attributes":{"client_comm_id":"f1cce84cd4a643bfa734c8cb287b192b","comm_id":"372c6c9ce37648f5a6772849527af290","plot_id":"1036"},"id":"1041","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03025","text":"&lt;pre&gt;(5, 20)&lt;/pre&gt;"},"id":"1040","type":"panel.models.markup.HTML"}],"root_ids":["1036","1041"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"fd32cb48-d836-480e-9c00-fdb230ccddec","root_ids":["1036"],"roots":{"1036":"9fa74231-04ef-414c-b5ba-e0aa995d1c48"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Notice that a slider is only produced for <code class="docutils literal notranslate"><span class="pre">p</span></code>, as the value of <code class="docutils literal notranslate"><span class="pre">q</span></code> is fixed.</p>
+</section>
+<section id="widget-abbreviations">
+<h3>Widget abbreviations<a class="headerlink" href="#widget-abbreviations" title="Permalink to this headline">¶</a></h3>
+<p>When you pass an integer-valued keyword argument of <code class="docutils literal notranslate"><span class="pre">10</span></code> (<code class="docutils literal notranslate"><span class="pre">x=10</span></code>) to <code class="docutils literal notranslate"><span class="pre">interact</span></code>, it generates an integer-valued slider control with a range of <code class="docutils literal notranslate"><span class="pre">[-10,+3*10]</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">10</span></code> is an <em>abbreviation</em> for an actual slider widget:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In fact, we can get the same result if we pass this <code class="docutils literal notranslate"><span class="pre">IntSlider</span></code> as the keyword argument for <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1042">
+<div class="bk-root" data-root-id="1042" id="c9282fcb-f5a2-49fa-b5a6-cd9902c6304e"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"46d3b6d7-cfcd-48dc-9731-13f8d19d40ea":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1044"}],"margin":[0,0,0,0],"name":"Column03040"},"id":"1043","type":"Column"},{"attributes":{"client_comm_id":"71fb1f44e00b422faacf5c0a887f9290","comm_id":"a1ae76d2373b482ea8272e2630bbe95c","plot_id":"1042"},"id":"1047","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1043"},{"id":"1045"}],"margin":[0,0,0,0],"name":"Column03036"},"id":"1042","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03035","text":"&lt;pre&gt;10&lt;/pre&gt;"},"id":"1046","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1046"}],"margin":[0,0,0,0],"name":"Row03039"},"id":"1045","type":"Row"},{"attributes":{"end":30,"margin":[5,10,5,10],"start":-10,"value":10},"id":"1044","type":"Slider"}],"root_ids":["1042","1047"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"46d3b6d7-cfcd-48dc-9731-13f8d19d40ea","root_ids":["1042"],"roots":{"1042":"c9282fcb-f5a2-49fa-b5a6-cd9902c6304e"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>This examples clarifies how <code class="docutils literal notranslate"><span class="pre">interact</span></code> proceses its keyword arguments:</p>
+<ol class="simple">
+<li><p>If the keyword argument is a <code class="docutils literal notranslate"><span class="pre">Widget</span></code> instance with a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute, that widget is used. Any widget with a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute can be used, even custom ones.</p></li>
+<li><p>Otherwise, the value is treated as a <em>widget abbreviation</em> that is converted to a widget before it is used.</p></li>
+</ol>
+<p>The following table gives an overview of different widget abbreviations:</p>
+<table class="table table-condensed table-bordered">
+<tr><td><strong>Keyword argument</strong></td><td><strong>Widget</strong></td></tr>
+<tr><td>True or False</td><td>Checkbox</td></tr>
+<tr><td>'Hi there'</td><td>Text</td></tr>
+<tr><td>value or (min,max,[step,[value]]) if integers are passed</td><td>IntSlider</td></tr>
+<tr><td>value or (min,max,[step,[value]]) if floats are passed</td><td>FloatSlider</td></tr>
+<tr><td>['orange','apple'] or {'one':1,'two':2}</td><td>Dropdown</td></tr>
+</table>
+Note that a dropdown is used if a list or a dict is given (signifying discrete choices), and a slider is used if a tuple is given (signifying a range).<p>You have seen how the checkbox and textarea widgets work above. Here, more details about the different abbreviations for sliders and dropdowns are given.</p>
+<p>If a 2-tuple of integers is passed <code class="docutils literal notranslate"><span class="pre">(min,max)</span></code>, an integer-valued slider is produced with those minimum and maximum values (inclusively). In this case, the default step size of <code class="docutils literal notranslate"><span class="pre">1</span></code> is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1048">
+<div class="bk-root" data-root-id="1048" id="503b8eb4-45cc-4bde-b464-e4b43cbae401"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"8ed852f5-8857-4b89-80ab-7195c7df180a":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"0773bcb411ba4db4868c743fb3c5c503","comm_id":"4eb6e6f56084458184bd84b1eaf7961e","plot_id":"1048"},"id":"1053","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1050"}],"margin":[0,0,0,0],"name":"Column03049"},"id":"1049","type":"Column"},{"attributes":{"children":[{"id":"1052"}],"margin":[0,0,0,0],"name":"Row03048"},"id":"1051","type":"Row"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03043","text":"&lt;pre&gt;2&lt;/pre&gt;"},"id":"1052","type":"panel.models.markup.HTML"},{"attributes":{"end":4,"margin":[5,10,5,10],"start":0,"title":"x","value":2},"id":"1050","type":"Slider"},{"attributes":{"children":[{"id":"1049"},{"id":"1051"}],"margin":[0,0,0,0],"name":"Column03044"},"id":"1048","type":"Column"}],"root_ids":["1048","1053"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"8ed852f5-8857-4b89-80ab-7195c7df180a","root_ids":["1048"],"roots":{"1048":"503b8eb4-45cc-4bde-b464-e4b43cbae401"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>If a 3-tuple of integers is passed <code class="docutils literal notranslate"><span class="pre">(min,max,step)</span></code>, the step size can also be set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1054">
+<div class="bk-root" data-root-id="1054" id="aec91ffc-4afd-477b-bdce-5a373a30a408"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"a7aafbed-2f65-4301-b2a6-f20b2bca4929":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1056"}],"margin":[0,0,0,0],"name":"Column03058"},"id":"1055","type":"Column"},{"attributes":{"client_comm_id":"d9abd3bf032e4aeb87a715ed952e2c35","comm_id":"f336ca1ff4554438acb6bf6edac22455","plot_id":"1054"},"id":"1059","type":"panel.models.comm_manager.CommManager"},{"attributes":{"end":8,"margin":[5,10,5,10],"start":0,"step":2,"title":"x","value":4},"id":"1056","type":"Slider"},{"attributes":{"children":[{"id":"1055"},{"id":"1057"}],"margin":[0,0,0,0],"name":"Column03053"},"id":"1054","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03052","text":"&lt;pre&gt;4&lt;/pre&gt;"},"id":"1058","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1058"}],"margin":[0,0,0,0],"name":"Row03057"},"id":"1057","type":"Row"}],"root_ids":["1054","1059"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"a7aafbed-2f65-4301-b2a6-f20b2bca4929","root_ids":["1054"],"roots":{"1054":"aec91ffc-4afd-477b-bdce-5a373a30a408"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>A float-valued slider is produced if the elements of the tuples are floats. Here the minimum is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, the maximum is <code class="docutils literal notranslate"><span class="pre">10.0</span></code> and step size is <code class="docutils literal notranslate"><span class="pre">0.1</span></code> (the default).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1060">
+<div class="bk-root" data-root-id="1060" id="549f62a0-1433-490d-af11-bab6d406e8d2"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"3d09c91f-dc46-4112-800c-9c4305d79092":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1061"},{"id":"1063"}],"margin":[0,0,0,0],"name":"Column03062"},"id":"1060","type":"Column"},{"attributes":{"client_comm_id":"29a95f4a48844eb9bcb2c515c4e5e519","comm_id":"8c17c3303f144dcda2f54121b0a4a5f0","plot_id":"1060"},"id":"1065","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1062"}],"margin":[0,0,0,0],"name":"Column03067"},"id":"1061","type":"Column"},{"attributes":{"end":10.0,"margin":[5,10,5,10],"start":0.0,"step":0.1,"title":"x","value":5.0},"id":"1062","type":"Slider"},{"attributes":{"children":[{"id":"1064"}],"margin":[0,0,0,0],"name":"Row03066"},"id":"1063","type":"Row"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03061","text":"&lt;pre&gt;5.0&lt;/pre&gt;"},"id":"1064","type":"panel.models.markup.HTML"}],"root_ids":["1060","1065"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"3d09c91f-dc46-4112-800c-9c4305d79092","root_ids":["1060"],"roots":{"1060":"549f62a0-1433-490d-af11-bab6d406e8d2"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>The step size can be changed by passing a third element in the tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1066">
+<div class="bk-root" data-root-id="1066" id="fce0a4c9-e46c-42c4-b68f-392a9c747d31"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"2baf06ed-57a9-49e4-8425-497c9f2e5eca":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"end":10.0,"margin":[5,10,5,10],"start":0.0,"step":0.01,"title":"x","value":5.0},"id":"1068","type":"Slider"},{"attributes":{"children":[{"id":"1067"},{"id":"1069"}],"margin":[0,0,0,0],"name":"Column03071"},"id":"1066","type":"Column"},{"attributes":{"children":[{"id":"1070"}],"margin":[0,0,0,0],"name":"Row03075"},"id":"1069","type":"Row"},{"attributes":{"client_comm_id":"e7c7dbde28764055839951a452ae716d","comm_id":"58678c4344b848a893567b32088ced9f","plot_id":"1066"},"id":"1071","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03070","text":"&lt;pre&gt;5.0&lt;/pre&gt;"},"id":"1070","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1068"}],"margin":[0,0,0,0],"name":"Column03076"},"id":"1067","type":"Column"}],"root_ids":["1066","1071"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"2baf06ed-57a9-49e4-8425-497c9f2e5eca","root_ids":["1066"],"roots":{"1066":"fce0a4c9-e46c-42c4-b68f-392a9c747d31"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>For both integer and float-valued sliders, you can pick the initial value of the widget by supplying a default keyword argument when you define the underlying Python function. Here we set the initial value of a float slider to <code class="docutils literal notranslate"><span class="pre">5.5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">5.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">h</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1072">
+<div class="bk-root" data-root-id="1072" id="2867e38b-bb1d-4291-aa72-d0cf1d820f71"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"4e7ec460-7b5c-4182-8c14-cc602d39ece4":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1074"}],"margin":[0,0,0,0],"name":"Column03085"},"id":"1073","type":"Column"},{"attributes":{"client_comm_id":"ad1f6bc490fb481da22185f753fe7ab5","comm_id":"e95ea9c591ab435886fec77fd06348b8","plot_id":"1072"},"id":"1077","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1076"}],"margin":[0,0,0,0],"name":"Row03084"},"id":"1075","type":"Row"},{"attributes":{"end":20.0,"margin":[5,10,5,10],"start":0.0,"step":0.5,"title":"x","value":5.5},"id":"1074","type":"Slider"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03079","text":"&lt;pre&gt;5.5&lt;/pre&gt;"},"id":"1076","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1073"},{"id":"1075"}],"margin":[0,0,0,0],"name":"Column03080"},"id":"1072","type":"Column"}],"root_ids":["1072","1077"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"4e7ec460-7b5c-4182-8c14-cc602d39ece4","root_ids":["1072"],"roots":{"1072":"2867e38b-bb1d-4291-aa72-d0cf1d820f71"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>You can also set the initial value by passing a fourth element in the tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1078">
+<div class="bk-root" data-root-id="1078" id="46e96ada-c65b-4961-94d9-051638140df6"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"b29b1f70-aaf8-43de-b901-4115d0b2c9e2":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,5,5,5],"name":"interactive03088","text":"&lt;pre&gt;5.5&lt;/pre&gt;"},"id":"1082","type":"panel.models.markup.HTML"},{"attributes":{"end":20.0,"margin":[5,10,5,10],"start":0.0,"step":0.5,"title":"x","value":5.5},"id":"1080","type":"Slider"},{"attributes":{"client_comm_id":"efb8bb69444145bdb1aefbf09912d3f7","comm_id":"28a1b1ab44ea426b9d17d5e65d5dcc5e","plot_id":"1078"},"id":"1083","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1079"},{"id":"1081"}],"margin":[0,0,0,0],"name":"Column03089"},"id":"1078","type":"Column"},{"attributes":{"children":[{"id":"1082"}],"margin":[0,0,0,0],"name":"Row03093"},"id":"1081","type":"Row"},{"attributes":{"children":[{"id":"1080"}],"margin":[0,0,0,0],"name":"Column03094"},"id":"1079","type":"Column"}],"root_ids":["1078","1083"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"b29b1f70-aaf8-43de-b901-4115d0b2c9e2","root_ids":["1078"],"roots":{"1078":"46e96ada-c65b-4961-94d9-051638140df6"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">None</span></code> as the third element to just set min, max, and value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1084">
+<div class="bk-root" data-root-id="1084" id="64aa4fe4-56e1-44b6-9b9c-a0e37810f804"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"4c629f40-e228-420d-914a-088caee10dcf":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"49bdb60436c949a99e76a6889ed5f802","comm_id":"060f26b62d3847a3a48c36cf6db5a070","plot_id":"1084"},"id":"1089","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1086"}],"margin":[0,0,0,0],"name":"Column03103"},"id":"1085","type":"Column"},{"attributes":{"end":20.0,"margin":[5,10,5,10],"start":0.0,"step":0.1,"title":"x","value":5.5},"id":"1086","type":"Slider"},{"attributes":{"children":[{"id":"1085"},{"id":"1087"}],"margin":[0,0,0,0],"name":"Column03098"},"id":"1084","type":"Column"},{"attributes":{"children":[{"id":"1088"}],"margin":[0,0,0,0],"name":"Row03102"},"id":"1087","type":"Row"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03097","text":"&lt;pre&gt;5.5&lt;/pre&gt;"},"id":"1088","type":"panel.models.markup.HTML"}],"root_ids":["1084","1089"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"4c629f40-e228-420d-914a-088caee10dcf","root_ids":["1084"],"roots":{"1084":"64aa4fe4-56e1-44b6-9b9c-a0e37810f804"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Dropdown menus are constructed by passing a list of strings. In this case, the strings are both used as the names in the dropdown menu UI and passed to the underlying Python function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">'apples'</span><span class="p">,</span> <span class="s1">'oranges'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1090">
+<div class="bk-root" data-root-id="1090" id="2b28dab3-aaac-4763-8e72-edf9c56668cc"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"613f440c-c8d4-4a88-981a-b762732b38d1":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"interactive03106","text":"&lt;p&gt;apples&lt;/p&gt;"},"id":"1094","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1092"}],"margin":[0,0,0,0],"name":"Column03112"},"id":"1091","type":"Column"},{"attributes":{"client_comm_id":"705b270cfb6d46958a37d46b5d1b1e42","comm_id":"5b626cf2d6be4b79aaddb1be7537d594","plot_id":"1090"},"id":"1095","type":"panel.models.comm_manager.CommManager"},{"attributes":{"margin":[5,10,5,10],"options":["apples","oranges"],"title":"x","value":"apples"},"id":"1092","type":"Select"},{"attributes":{"children":[{"id":"1094"}],"margin":[0,0,0,0],"name":"Row03111"},"id":"1093","type":"Row"},{"attributes":{"children":[{"id":"1091"},{"id":"1093"}],"margin":[0,0,0,0],"name":"Column03107"},"id":"1090","type":"Column"}],"root_ids":["1090","1095"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"613f440c-c8d4-4a88-981a-b762732b38d1","root_ids":["1090"],"roots":{"1090":"2b28dab3-aaac-4763-8e72-edf9c56668cc"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>When working with numeric data <code class="docutils literal notranslate"><span class="pre">interact</span></code> will automatically add a discrete slider:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="nb">dict</span><span class="p">([(</span><span class="s1">'one'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">'two'</span><span class="p">,</span> <span class="mi">20</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1096">
+<div class="bk-root" data-root-id="1096" id="c9fdeef4-8935-4dfb-b307-1e87258dce14"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"16ebc7ee-12b8-4804-a8f9-f966c5d13108":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,0,0,10],"name":"","style":{"white-space":"nowrap"},"text":"x: <b>one</b>"},"id":"1099","type":"Div"},{"attributes":{"end":1,"js_property_callbacks":{"change:value":[{"id":"1103"}]},"margin":[0,10,5,10],"show_value":false,"start":0,"tooltips":false,"value":0},"id":"1100","type":"Slider"},{"attributes":{"children":[{"id":"1097"},{"id":"1101"}],"margin":[0,0,0,0],"name":"Column03116"},"id":"1096","type":"Column"},{"attributes":{"margin":[5,5,5,5],"name":"interactive03115","text":"&lt;pre&gt;10&lt;/pre&gt;"},"id":"1102","type":"panel.models.markup.HTML"},{"attributes":{"args":{"bidirectional":false,"properties":{},"source":{"id":"1100"},"target":{"id":"1099"}},"code":"try { \n    var labels = ['x: <b>one</b>', 'x: <b>two</b>']\n    target.text = labels[source.value]\n     } catch(err) { console.log(err) }","tags":[140637572761920]},"id":"1103","type":"CustomJS"},{"attributes":{"client_comm_id":"135032baa50a46649a33a18d425a35bc","comm_id":"34d0129ca2e541d8bb94c5852ebcb85c","plot_id":"1096"},"id":"1104","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1098"}],"margin":[0,0,0,0],"name":"Column03128"},"id":"1097","type":"Column"},{"attributes":{"children":[{"id":"1099"},{"id":"1100"}],"margin":[0,0,0,0],"name":"Column03122"},"id":"1098","type":"Column"},{"attributes":{"children":[{"id":"1102"}],"margin":[0,0,0,0],"name":"Row03127"},"id":"1101","type":"Row"}],"root_ids":["1096","1104"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"16ebc7ee-12b8-4804-a8f9-f966c5d13108","root_ids":["1096"],"roots":{"1096":"c9fdeef4-8935-4dfb-b307-1e87258dce14"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<section id="disabling-continuous-updates-for-slider-widgets">
+<h3>Disabling continuous updates for slider widgets<a class="headerlink" href="#disabling-continuous-updates-for-slider-widgets" title="Permalink to this headline">¶</a></h3>
+<p>When interacting with functions which takes a long time to run, realtime feedback can be a burden instead of being helpful.</p>
+<p>If you are using slider widgets and you have a function which takes long time to calculate, you can set the keyword argument <code class="docutils literal notranslate"><span class="pre">throttled</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">interact</span></code>. This will then first run the function after the release of the mouse button.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">),</span> <span class="n">throttled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1105">
+<div class="bk-root" data-root-id="1105" id="a5396012-23d4-42c6-bf32-310423c88bf4"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"69fbdfbf-b690-4245-acf8-d32afa2f0a06":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,5,5,5],"name":"interactive03131","text":"&lt;pre&gt;5.5&lt;/pre&gt;"},"id":"1109","type":"panel.models.markup.HTML"},{"attributes":{"end":20.0,"margin":[5,10,5,10],"start":0.0,"step":0.1,"title":"x","value":5.5},"id":"1107","type":"Slider"},{"attributes":{"children":[{"id":"1106"},{"id":"1108"}],"margin":[0,0,0,0],"name":"Column03132"},"id":"1105","type":"Column"},{"attributes":{"client_comm_id":"60066a568cc3495b95136841c2bec1f6","comm_id":"1a56ffad93f44d019c59b295c04320b1","plot_id":"1105"},"id":"1110","type":"panel.models.comm_manager.CommManager"},{"attributes":{"children":[{"id":"1109"}],"margin":[0,0,0,0],"name":"Row03136"},"id":"1108","type":"Row"},{"attributes":{"children":[{"id":"1107"}],"margin":[0,0,0,0],"name":"Column03137"},"id":"1106","type":"Column"}],"root_ids":["1105","1110"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"69fbdfbf-b690-4245-acf8-d32afa2f0a06","root_ids":["1105"],"roots":{"1105":"a5396012-23d4-42c6-bf32-310423c88bf4"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/user_guide/Interact.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/user_guide/Interact.ipynb">Right click to download this notebook from GitHub.</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="Deploy_and_Export.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Deploy and Export</p>
+</div>
+</a>
+<a class="right-next" href="Widgets.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Widgets</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

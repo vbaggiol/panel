@@ -1,0 +1,1400 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Reference Gallery — Panel 0.12.6 documentation</title>
+<link href="../_static/css/theme.css" rel="stylesheet"/>
+<link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/togglebutton.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon">
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="panes/Alert.html" rel="next" title="Alert"/>
+<link href="../gallery/external/deck.gl.html" rel="prev" title="Deck.gl"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../index.html">
+<img alt="logo" class="logo" src="../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="current reference internal nav-link" href="#">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/DeckGL.html">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Param.html">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="panes/Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Accordion.html">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="layouts/WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/EditableFloatSlider.html">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/TextToSpeech.html">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="widgets/VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#panes">
+   Panes
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#layouts">
+   Layouts
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#templates">
+   Templates
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#indicators">
+   Indicators
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#widgets">
+   Widgets
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="reference-gallery">
+<h1>Reference Gallery<a class="headerlink" href="#reference-gallery" title="Permalink to this headline">¶</a></h1>
+<section id="panes">
+<h2>Panes<a class="headerlink" href="#panes" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer example" tooltip="Alert"><figure class="align-default" id="id1">
+<img alt="../_images/Alert.png" src="../_images/Alert.png">
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Alert.html#panes-gallery-alert"><span class="std std-ref">Alert</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</img></figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Audio"><figure class="align-default" id="id2">
+<img alt="../_images/Audio.png" src="../_images/Audio.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Audio.html#panes-gallery-audio"><span class="std std-ref">Audio</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Bokeh"><figure class="align-default" id="id3">
+<img alt="../_images/Bokeh.png" src="../_images/Bokeh.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Bokeh.html#panes-gallery-bokeh"><span class="std std-ref">Bokeh</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Dataframe"><figure class="align-default" id="id4">
+<img alt="../_images/DataFrame.png" src="../_images/DataFrame.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/DataFrame.html#panes-gallery-dataframe"><span class="std std-ref">Dataframe</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Deckgl"><figure class="align-default" id="id5">
+<img alt="../_images/DeckGL.png" src="../_images/DeckGL.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/DeckGL.html#panes-gallery-deckgl"><span class="std std-ref">Deckgl</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Echarts"><figure class="align-default" id="id6">
+<img alt="../_images/ECharts.png" src="../_images/ECharts.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/ECharts.html#panes-gallery-echarts"><span class="std std-ref">Echarts</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Folium"><figure class="align-default" id="id7">
+<img alt="../_images/Folium1.png" src="../_images/Folium1.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Folium.html#panes-gallery-folium"><span class="std std-ref">Folium</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Gif"><figure class="align-default" id="id8">
+<img alt="../_images/GIF.png" src="../_images/GIF.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/GIF.html#panes-gallery-gif"><span class="std std-ref">Gif</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Html"><figure class="align-default" id="id9">
+<img alt="../_images/HTML.png" src="../_images/HTML.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/HTML.html#panes-gallery-html"><span class="std std-ref">Html</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Holoviews"><figure class="align-default" id="id10">
+<img alt="../_images/HoloViews.png" src="../_images/HoloViews.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/HoloViews.html#panes-gallery-holoviews"><span class="std std-ref">Holoviews</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Idom"><figure class="align-default" id="id11">
+<img alt="../_images/IDOM.png" src="../_images/IDOM.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/IDOM.html#panes-gallery-idom"><span class="std std-ref">Idom</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Ipywidget"><figure class="align-default" id="id12">
+<img alt="../_images/IPyWidget.png" src="../_images/IPyWidget.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/IPyWidget.html#panes-gallery-ipywidget"><span class="std std-ref">Ipywidget</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Jpg"><figure class="align-default" id="id13">
+<img alt="../_images/JPG.png" src="../_images/JPG.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/JPG.html#panes-gallery-jpg"><span class="std std-ref">Jpg</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Json"><figure class="align-default" id="id14">
+<img alt="../_images/JSON.png" src="../_images/JSON.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/JSON.html#panes-gallery-json"><span class="std std-ref">Json</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Latex"><figure class="align-default" id="id15">
+<img alt="../_images/LaTeX.png" src="../_images/LaTeX.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/LaTeX.html#panes-gallery-latex"><span class="std std-ref">Latex</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Markdown"><figure class="align-default" id="id16">
+<img alt="../_images/Markdown.png" src="../_images/Markdown.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Markdown.html#panes-gallery-markdown"><span class="std std-ref">Markdown</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Matplotlib"><figure class="align-default" id="id17">
+<img alt="../_images/Matplotlib.png" src="../_images/Matplotlib.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Matplotlib.html#panes-gallery-matplotlib"><span class="std std-ref">Matplotlib</span></a></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Pdf"><figure class="align-default" id="id18">
+<img alt="../_images/PDF.png" src="../_images/PDF.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/PDF.html#panes-gallery-pdf"><span class="std std-ref">Pdf</span></a></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Png"><figure class="align-default" id="id19">
+<img alt="../_images/PNG.png" src="../_images/PNG.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/PNG.html#panes-gallery-png"><span class="std std-ref">Png</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Param"><figure class="align-default" id="id20">
+<img alt="../_images/Param.png" src="../_images/Param.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Param.html#panes-gallery-param"><span class="std std-ref">Param</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Perspective"><figure class="align-default" id="id21">
+<img alt="../_images/Perspective.png" src="../_images/Perspective.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Perspective.html#panes-gallery-perspective"><span class="std std-ref">Perspective</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Plotly"><figure class="align-default" id="id22">
+<img alt="../_images/Plotly.png" src="../_images/Plotly.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Plotly.html#panes-gallery-plotly"><span class="std std-ref">Plotly</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Svg"><figure class="align-default" id="id23">
+<img alt="../_images/SVG.png" src="../_images/SVG.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/SVG.html#panes-gallery-svg"><span class="std std-ref">Svg</span></a></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Str"><figure class="align-default" id="id24">
+<img alt="../_images/Str.png" src="../_images/Str.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Str.html#panes-gallery-str"><span class="std std-ref">Str</span></a></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Streamz"><figure class="align-default" id="id25">
+<img alt="../_images/Streamz.png" src="../_images/Streamz.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Streamz.html#panes-gallery-streamz"><span class="std std-ref">Streamz</span></a></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Vtk"><figure class="align-default" id="id26">
+<img alt="../_images/VTK.png" src="../_images/VTK.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/VTK.html#panes-gallery-vtk"><span class="std std-ref">Vtk</span></a></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Vtkjs"><figure class="align-default" id="id27">
+<img alt="../_images/VTKJS.png" src="../_images/VTKJS.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/VTKJS.html#panes-gallery-vtkjs"><span class="std std-ref">Vtkjs</span></a></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Vtkvolume"><figure class="align-default" id="id28">
+<img alt="../_images/VTKVolume.png" src="../_images/VTKVolume.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/VTKVolume.html#panes-gallery-vtkvolume"><span class="std std-ref">Vtkvolume</span></a></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Vega"><figure class="align-default" id="id29">
+<img alt="../_images/Vega.png" src="../_images/Vega.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Vega.html#panes-gallery-vega"><span class="std std-ref">Vega</span></a></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Video"><figure class="align-default" id="id30">
+<img alt="../_images/Video.png" src="../_images/Video.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="panes/Video.html#panes-gallery-video"><span class="std std-ref">Video</span></a></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div style="clear:both"></div></section>
+<section id="layouts">
+<h2>Layouts<a class="headerlink" href="#layouts" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer example" tooltip="Accordion"><figure class="align-default" id="id31">
+<img alt="../_images/Accordion.png" src="../_images/Accordion.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Accordion.html#layouts-gallery-accordion"><span class="std std-ref">Accordion</span></a></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Card"><figure class="align-default" id="id32">
+<img alt="../_images/Card.png" src="../_images/Card.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Card.html#layouts-gallery-card"><span class="std std-ref">Card</span></a></span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Column"><figure class="align-default" id="id33">
+<img alt="../_images/Column.png" src="../_images/Column.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Column.html#layouts-gallery-column"><span class="std std-ref">Column</span></a></span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Divider"><figure class="align-default" id="id34">
+<img alt="../_images/Divider.png" src="../_images/Divider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Divider.html#layouts-gallery-divider"><span class="std std-ref">Divider</span></a></span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Flexbox"><figure class="align-default" id="id35">
+<img alt="../_images/FlexBox.png" src="../_images/FlexBox.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/FlexBox.html#layouts-gallery-flexbox"><span class="std std-ref">Flexbox</span></a></span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Gridbox"><figure class="align-default" id="id36">
+<img alt="../_images/GridBox.png" src="../_images/GridBox.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/GridBox.html#layouts-gallery-gridbox"><span class="std std-ref">Gridbox</span></a></span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Gridspec"><figure class="align-default" id="id37">
+<img alt="../_images/GridSpec.png" src="../_images/GridSpec.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/GridSpec.html#layouts-gallery-gridspec"><span class="std std-ref">Gridspec</span></a></span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Gridstack"><figure class="align-default" id="id38">
+<img alt="../_images/GridStack.png" src="../_images/GridStack.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/GridStack.html#layouts-gallery-gridstack"><span class="std std-ref">Gridstack</span></a></span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Row"><figure class="align-default" id="id39">
+<img alt="../_images/Row.png" src="../_images/Row.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Row.html#layouts-gallery-row"><span class="std std-ref">Row</span></a></span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Tabs"><figure class="align-default" id="id40">
+<img alt="../_images/Tabs.png" src="../_images/Tabs.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/Tabs.html#layouts-gallery-tabs"><span class="std std-ref">Tabs</span></a></span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Widgetbox"><figure class="align-default" id="id41">
+<img alt="../_images/WidgetBox.png" src="../_images/WidgetBox.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="layouts/WidgetBox.html#layouts-gallery-widgetbox"><span class="std std-ref">Widgetbox</span></a></span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div style="clear:both"></div></section>
+<section id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer example" tooltip="Bootstrap"><figure class="align-default" id="id42">
+<img alt="../_images/Bootstrap.png" src="../_images/Bootstrap.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/Bootstrap.html#templates-gallery-bootstrap"><span class="std std-ref">Bootstrap</span></a></span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Fastgridtemplate"><figure class="align-default" id="id43">
+<img alt="../_images/FastGridTemplate.png" src="../_images/FastGridTemplate.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/FastGridTemplate.html#templates-gallery-fastgridtemplate"><span class="std std-ref">Fastgridtemplate</span></a></span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Fastlisttemplate"><figure class="align-default" id="id44">
+<img alt="../_images/FastListTemplate.png" src="../_images/FastListTemplate.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/FastListTemplate.html#templates-gallery-fastlisttemplate"><span class="std std-ref">Fastlisttemplate</span></a></span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Goldenlayout"><figure class="align-default" id="id45">
+<img alt="../_images/GoldenLayout.png" src="../_images/GoldenLayout.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/GoldenLayout.html#templates-gallery-goldenlayout"><span class="std std-ref">Goldenlayout</span></a></span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Material"><figure class="align-default" id="id46">
+<img alt="../_images/Material.png" src="../_images/Material.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/Material.html#templates-gallery-material"><span class="std std-ref">Material</span></a></span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="React"><figure class="align-default" id="id47">
+<img alt="../_images/React.png" src="../_images/React.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/React.html#templates-gallery-react"><span class="std std-ref">React</span></a></span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Vanilla"><figure class="align-default" id="id48">
+<img alt="../_images/Vanilla.png" src="../_images/Vanilla.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="templates/Vanilla.html#templates-gallery-vanilla"><span class="std std-ref">Vanilla</span></a></span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div style="clear:both"></div></section>
+<section id="indicators">
+<h2>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer example" tooltip="Booleanstatus"><figure class="align-default" id="id49">
+<img alt="../_images/BooleanStatus.png" src="../_images/BooleanStatus.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/BooleanStatus.html#indicators-gallery-booleanstatus"><span class="std std-ref">Booleanstatus</span></a></span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Dial"><figure class="align-default" id="id50">
+<img alt="../_images/Dial.png" src="../_images/Dial.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Dial.html#indicators-gallery-dial"><span class="std std-ref">Dial</span></a></span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Gauge"><figure class="align-default" id="id51">
+<img alt="../_images/Gauge.png" src="../_images/Gauge.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Gauge.html#indicators-gallery-gauge"><span class="std std-ref">Gauge</span></a></span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Loadingspinner"><figure class="align-default" id="id52">
+<img alt="../_images/LoadingSpinner.png" src="../_images/LoadingSpinner.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/LoadingSpinner.html#indicators-gallery-loadingspinner"><span class="std std-ref">Loadingspinner</span></a></span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Number"><figure class="align-default" id="id53">
+<img alt="../_images/Number.png" src="../_images/Number.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Number.html#indicators-gallery-number"><span class="std std-ref">Number</span></a></span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Progress"><figure class="align-default" id="id54">
+<img alt="../_images/Progress.png" src="../_images/Progress.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Progress.html#indicators-gallery-progress"><span class="std std-ref">Progress</span></a></span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Tqdm"><figure class="align-default" id="id55">
+<img alt="../_images/Tqdm.png" src="../_images/Tqdm.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Tqdm.html#indicators-gallery-tqdm"><span class="std std-ref">Tqdm</span></a></span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Trend"><figure class="align-default" id="id56">
+<img alt="../_images/Trend.png" src="../_images/Trend.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="indicators/Trend.html#indicators-gallery-trend"><span class="std std-ref">Trend</span></a></span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div style="clear:both"></div></section>
+<section id="widgets">
+<h2>Widgets<a class="headerlink" href="#widgets" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer example" tooltip="Ace"><figure class="align-default" id="id57">
+<img alt="../_images/Ace.png" src="../_images/Ace.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Ace.html#widgets-gallery-ace"><span class="std std-ref">Ace</span></a></span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Autocompleteinput"><figure class="align-default" id="id58">
+<img alt="../_images/AutocompleteInput.png" src="../_images/AutocompleteInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/AutocompleteInput.html#widgets-gallery-autocompleteinput"><span class="std std-ref">Autocompleteinput</span></a></span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Button"><figure class="align-default" id="id59">
+<img alt="../_images/Button.png" src="../_images/Button.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Button.html#widgets-gallery-button"><span class="std std-ref">Button</span></a></span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Checkboxgroup"><figure class="align-default" id="id60">
+<img alt="../_images/CheckBoxGroup.png" src="../_images/CheckBoxGroup.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/CheckBoxGroup.html#widgets-gallery-checkboxgroup"><span class="std std-ref">Checkboxgroup</span></a></span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Checkbuttongroup"><figure class="align-default" id="id61">
+<img alt="../_images/CheckButtonGroup.png" src="../_images/CheckButtonGroup.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/CheckButtonGroup.html#widgets-gallery-checkbuttongroup"><span class="std std-ref">Checkbuttongroup</span></a></span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Checkbox"><figure class="align-default" id="id62">
+<img alt="../_images/Checkbox.png" src="../_images/Checkbox.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Checkbox.html#widgets-gallery-checkbox"><span class="std std-ref">Checkbox</span></a></span><a class="headerlink" href="#id62" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Colorpicker"><figure class="align-default" id="id63">
+<img alt="../_images/ColorPicker.png" src="../_images/ColorPicker.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/ColorPicker.html#widgets-gallery-colorpicker"><span class="std std-ref">Colorpicker</span></a></span><a class="headerlink" href="#id63" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Crossselector"><figure class="align-default" id="id64">
+<img alt="../_images/CrossSelector.png" src="../_images/CrossSelector.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/CrossSelector.html#widgets-gallery-crossselector"><span class="std std-ref">Crossselector</span></a></span><a class="headerlink" href="#id64" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Dataframe"><figure class="align-default" id="id65">
+<img alt="../_images/DataFrame1.png" src="../_images/DataFrame1.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DataFrame.html#widgets-gallery-dataframe"><span class="std std-ref">Dataframe</span></a></span><a class="headerlink" href="#id65" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Datepicker"><figure class="align-default" id="id66">
+<img alt="../_images/DatePicker.png" src="../_images/DatePicker.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DatePicker.html#widgets-gallery-datepicker"><span class="std std-ref">Datepicker</span></a></span><a class="headerlink" href="#id66" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Daterangeslider"><figure class="align-default" id="id67">
+<img alt="../_images/DateRangeSlider.png" src="../_images/DateRangeSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DateRangeSlider.html#widgets-gallery-daterangeslider"><span class="std std-ref">Daterangeslider</span></a></span><a class="headerlink" href="#id67" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Dateslider"><figure class="align-default" id="id68">
+<img alt="../_images/DateSlider.png" src="../_images/DateSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DateSlider.html#widgets-gallery-dateslider"><span class="std std-ref">Dateslider</span></a></span><a class="headerlink" href="#id68" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Datetimeinput"><figure class="align-default" id="id69">
+<img alt="../_images/DatetimeInput.png" src="../_images/DatetimeInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DatetimeInput.html#widgets-gallery-datetimeinput"><span class="std std-ref">Datetimeinput</span></a></span><a class="headerlink" href="#id69" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Datetimepicker"><figure class="align-default" id="id70">
+<img alt="../_images/DatetimePicker.png" src="../_images/DatetimePicker.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DatetimePicker.html#widgets-gallery-datetimepicker"><span class="std std-ref">Datetimepicker</span></a></span><a class="headerlink" href="#id70" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Datetimerangeinput"><figure class="align-default" id="id71">
+<img alt="../_images/DatetimeRangeInput.png" src="../_images/DatetimeRangeInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DatetimeRangeInput.html#widgets-gallery-datetimerangeinput"><span class="std std-ref">Datetimerangeinput</span></a></span><a class="headerlink" href="#id71" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Datetimerangepicker"><figure class="align-default" id="id72">
+<img alt="../_images/DatetimeRangePicker.png" src="../_images/DatetimeRangePicker.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DatetimeRangePicker.html#widgets-gallery-datetimerangepicker"><span class="std std-ref">Datetimerangepicker</span></a></span><a class="headerlink" href="#id72" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Discreteplayer"><figure class="align-default" id="id73">
+<img alt="../_images/DiscretePlayer.png" src="../_images/DiscretePlayer.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DiscretePlayer.html#widgets-gallery-discreteplayer"><span class="std std-ref">Discreteplayer</span></a></span><a class="headerlink" href="#id73" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Discreteslider"><figure class="align-default" id="id74">
+<img alt="../_images/DiscreteSlider.png" src="../_images/DiscreteSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/DiscreteSlider.html#widgets-gallery-discreteslider"><span class="std std-ref">Discreteslider</span></a></span><a class="headerlink" href="#id74" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Editablefloatslider"><figure class="align-default" id="id75">
+<img alt="../_images/EditableFloatSlider.png" src="../_images/EditableFloatSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/EditableFloatSlider.html#widgets-gallery-editablefloatslider"><span class="std std-ref">Editablefloatslider</span></a></span><a class="headerlink" href="#id75" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Editableintslider"><figure class="align-default" id="id76">
+<img alt="../_images/EditableIntSlider.png" src="../_images/EditableIntSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/EditableIntSlider.html#widgets-gallery-editableintslider"><span class="std std-ref">Editableintslider</span></a></span><a class="headerlink" href="#id76" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Editablerangeslider"><figure class="align-default" id="id77">
+<img alt="../_images/EditableRangeSlider.png" src="../_images/EditableRangeSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/EditableRangeSlider.html#widgets-gallery-editablerangeslider"><span class="std std-ref">Editablerangeslider</span></a></span><a class="headerlink" href="#id77" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Filedownload"><figure class="align-default" id="id78">
+<img alt="../_images/FileDownload.png" src="../_images/FileDownload.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/FileDownload.html#widgets-gallery-filedownload"><span class="std std-ref">Filedownload</span></a></span><a class="headerlink" href="#id78" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Fileinput"><figure class="align-default" id="id79">
+<img alt="../_images/FileInput.png" src="../_images/FileInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/FileInput.html#widgets-gallery-fileinput"><span class="std std-ref">Fileinput</span></a></span><a class="headerlink" href="#id79" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Fileselector"><figure class="align-default" id="id80">
+<img alt="../_images/FileSelector.png" src="../_images/FileSelector.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/FileSelector.html#widgets-gallery-fileselector"><span class="std std-ref">Fileselector</span></a></span><a class="headerlink" href="#id80" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Floatinput"><figure class="align-default" id="id81">
+<img alt="../_images/FloatInput.png" src="../_images/FloatInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/FloatInput.html#widgets-gallery-floatinput"><span class="std std-ref">Floatinput</span></a></span><a class="headerlink" href="#id81" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Floatslider"><figure class="align-default" id="id82">
+<img alt="../_images/FloatSlider.png" src="../_images/FloatSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/FloatSlider.html#widgets-gallery-floatslider"><span class="std std-ref">Floatslider</span></a></span><a class="headerlink" href="#id82" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Intinput"><figure class="align-default" id="id83">
+<img alt="../_images/IntInput.png" src="../_images/IntInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/IntInput.html#widgets-gallery-intinput"><span class="std std-ref">Intinput</span></a></span><a class="headerlink" href="#id83" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Intrangeslider"><figure class="align-default" id="id84">
+<img alt="../_images/IntRangeSlider.png" src="../_images/IntRangeSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/IntRangeSlider.html#widgets-gallery-intrangeslider"><span class="std std-ref">Intrangeslider</span></a></span><a class="headerlink" href="#id84" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Intslider"><figure class="align-default" id="id85">
+<img alt="../_images/IntSlider.png" src="../_images/IntSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/IntSlider.html#widgets-gallery-intslider"><span class="std std-ref">Intslider</span></a></span><a class="headerlink" href="#id85" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Literalinput"><figure class="align-default" id="id86">
+<img alt="../_images/LiteralInput.png" src="../_images/LiteralInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/LiteralInput.html#widgets-gallery-literalinput"><span class="std std-ref">Literalinput</span></a></span><a class="headerlink" href="#id86" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Menubutton"><figure class="align-default" id="id87">
+<img alt="../_images/MenuButton.png" src="../_images/MenuButton.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/MenuButton.html#widgets-gallery-menubutton"><span class="std std-ref">Menubutton</span></a></span><a class="headerlink" href="#id87" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Multichoice"><figure class="align-default" id="id88">
+<img alt="../_images/MultiChoice.png" src="../_images/MultiChoice.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/MultiChoice.html#widgets-gallery-multichoice"><span class="std std-ref">Multichoice</span></a></span><a class="headerlink" href="#id88" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Multiselect"><figure class="align-default" id="id89">
+<img alt="../_images/MultiSelect.png" src="../_images/MultiSelect.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/MultiSelect.html#widgets-gallery-multiselect"><span class="std std-ref">Multiselect</span></a></span><a class="headerlink" href="#id89" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Passwordinput"><figure class="align-default" id="id90">
+<img alt="../_images/PasswordInput.png" src="../_images/PasswordInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/PasswordInput.html#widgets-gallery-passwordinput"><span class="std std-ref">Passwordinput</span></a></span><a class="headerlink" href="#id90" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Player"><figure class="align-default" id="id91">
+<img alt="../_images/Player.png" src="../_images/Player.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Player.html#widgets-gallery-player"><span class="std std-ref">Player</span></a></span><a class="headerlink" href="#id91" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Radioboxgroup"><figure class="align-default" id="id92">
+<img alt="../_images/RadioBoxGroup.png" src="../_images/RadioBoxGroup.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/RadioBoxGroup.html#widgets-gallery-radioboxgroup"><span class="std std-ref">Radioboxgroup</span></a></span><a class="headerlink" href="#id92" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Radiobuttongroup"><figure class="align-default" id="id93">
+<img alt="../_images/RadioButtonGroup.png" src="../_images/RadioButtonGroup.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/RadioButtonGroup.html#widgets-gallery-radiobuttongroup"><span class="std std-ref">Radiobuttongroup</span></a></span><a class="headerlink" href="#id93" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Rangeslider"><figure class="align-default" id="id94">
+<img alt="../_images/RangeSlider.png" src="../_images/RangeSlider.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/RangeSlider.html#widgets-gallery-rangeslider"><span class="std std-ref">Rangeslider</span></a></span><a class="headerlink" href="#id94" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Select"><figure class="align-default" id="id95">
+<img alt="../_images/Select.png" src="../_images/Select.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Select.html#widgets-gallery-select"><span class="std std-ref">Select</span></a></span><a class="headerlink" href="#id95" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Speechtotext"><figure class="align-default" id="id96">
+<img alt="../_images/SpeechToText.png" src="../_images/SpeechToText.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/SpeechToText.html#widgets-gallery-speechtotext"><span class="std std-ref">Speechtotext</span></a></span><a class="headerlink" href="#id96" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Statictext"><figure class="align-default" id="id97">
+<img alt="../_images/StaticText.png" src="../_images/StaticText.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/StaticText.html#widgets-gallery-statictext"><span class="std std-ref">Statictext</span></a></span><a class="headerlink" href="#id97" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Tabulator"><figure class="align-default" id="id98">
+<img alt="../_images/Tabulator.png" src="../_images/Tabulator.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Tabulator.html#widgets-gallery-tabulator"><span class="std std-ref">Tabulator</span></a></span><a class="headerlink" href="#id98" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Terminal"><figure class="align-default" id="id99">
+<img alt="../_images/Terminal.png" src="../_images/Terminal.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Terminal.html#widgets-gallery-terminal"><span class="std std-ref">Terminal</span></a></span><a class="headerlink" href="#id99" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Textareainput"><figure class="align-default" id="id100">
+<img alt="../_images/TextAreaInput.png" src="../_images/TextAreaInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/TextAreaInput.html#widgets-gallery-textareainput"><span class="std std-ref">Textareainput</span></a></span><a class="headerlink" href="#id100" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Textinput"><figure class="align-default" id="id101">
+<img alt="../_images/TextInput.png" src="../_images/TextInput.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/TextInput.html#widgets-gallery-textinput"><span class="std std-ref">Textinput</span></a></span><a class="headerlink" href="#id101" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Texttospeech"><figure class="align-default" id="id102">
+<img alt="../_images/TextToSpeech.png" src="../_images/TextToSpeech.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/TextToSpeech.html#widgets-gallery-texttospeech"><span class="std std-ref">Texttospeech</span></a></span><a class="headerlink" href="#id102" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Toggle"><figure class="align-default" id="id103">
+<img alt="../_images/Toggle.png" src="../_images/Toggle.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/Toggle.html#widgets-gallery-toggle"><span class="std std-ref">Toggle</span></a></span><a class="headerlink" href="#id103" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer example" tooltip="Videostream"><figure class="align-default" id="id104">
+<img alt="../_images/VideoStream.png" src="../_images/VideoStream.png"/>
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="widgets/VideoStream.html#widgets-gallery-videostream"><span class="std std-ref">Videostream</span></a></span><a class="headerlink" href="#id104" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div style="clear:both"></div></section>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../gallery/external/deck.gl.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Deck.gl</p>
+</div>
+</a>
+<a class="right-next" href="panes/Alert.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Alert</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

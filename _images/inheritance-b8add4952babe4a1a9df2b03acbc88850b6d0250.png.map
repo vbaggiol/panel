@@ -1,0 +1,22 @@
+<map id="inheritanceef23f966ba" name="inheritanceef23f966ba">
+<area shape="rect" id="node1" href="panel.reactive.html#panel.reactive.Reactive" target="_top" title="Reactive is a Viewable object that also supports syncing between" alt="" coords="538,144,638,158"/>
+<area shape="rect" id="node9" href="#panel.widgets.base.Widget" target="_top" title="Widgets allow syncing changes in bokeh widget models with the" alt="" coords="665,144,778,158"/>
+<area shape="rect" id="node2" href="panel.reactive.html#panel.reactive.Syncable" target="_top" title="Syncable is an extension of the Renderable object which can not" alt="" coords="381,129,483,144"/>
+<area shape="rect" id="node3" href="panel.viewable.html#panel.viewable.Viewable" target="_top" title="Viewable is the baseclass all visual components in the panel" alt="" coords="379,157,484,172"/>
+<area shape="rect" id="node4" href="panel.viewable.html#panel.viewable.Renderable" target="_top" title="Baseclass for objects which can be rendered to a Bokeh model." alt="" coords="197,129,310,144"/>
+<area shape="rect" id="node5" href="panel.viewable.html#panel.viewable.Layoutable" target="_top" title="Layoutable defines shared style and layout related parameters" alt="" coords="197,157,310,172"/>
+<area shape="rect" id="node6" title="params(name=String)" alt="" coords="5,144,153,158"/>
+<area shape="rect" id="node7" href="panel.viewable.html#panel.viewable.ServableMixin" target="_top" title="Mixin to define methods shared by objects which can served." alt="" coords="192,185,316,200"/>
+<area shape="rect" id="node8" href="#panel.widgets.base.CompositeWidget" target="_top" title="A baseclass for widgets which are made up of two or more other" alt="" coords="806,144,958,158"/>
+<area shape="rect" id="node13" href="#panel.widgets.slider.DiscreteSlider" target="_top" title="panel.widgets.slider.DiscreteSlider" alt="" coords="997,129,1138,144"/>
+<area shape="rect" id="node18" href="#panel.widgets.slider.EditableRangeSlider" target="_top" title="The EditableRangeSlider extends the RangeSlider by adding text" alt="" coords="986,157,1149,172"/>
+<area shape="rect" id="node10" href="#panel.widgets.slider.ContinuousSlider" target="_top" title="panel.widgets.slider.ContinuousSlider" alt="" coords="3,87,155,102"/>
+<area shape="rect" id="node15" href="#panel.widgets.slider.FloatSlider" target="_top" title="panel.widgets.slider.FloatSlider" alt="" coords="189,73,318,87"/>
+<area shape="rect" id="node17" href="#panel.widgets.slider.IntSlider" target="_top" title="panel.widgets.slider.IntSlider" alt="" coords="194,101,314,115"/>
+<area shape="rect" id="node11" href="#panel.widgets.slider.DateRangeSlider" target="_top" title="panel.widgets.slider.DateRangeSlider" alt="" coords="3,59,155,74"/>
+<area shape="rect" id="node12" href="#panel.widgets.slider.DateSlider" target="_top" title="panel.widgets.slider.DateSlider" alt="" coords="15,31,143,46"/>
+<area shape="rect" id="node14" href="#panel.widgets.slider.EditableFloatSlider" target="_top" title="panel.widgets.slider.EditableFloatSlider" alt="" coords="352,73,511,87"/>
+<area shape="rect" id="node16" href="#panel.widgets.slider.EditableIntSlider" target="_top" title="panel.widgets.slider.EditableIntSlider" alt="" coords="357,101,507,115"/>
+<area shape="rect" id="node19" href="#panel.widgets.slider.IntRangeSlider" target="_top" title="panel.widgets.slider.IntRangeSlider" alt="" coords="182,3,325,17"/>
+<area shape="rect" id="node20" href="#panel.widgets.slider.RangeSlider" target="_top" title="panel.widgets.slider.RangeSlider" alt="" coords="12,3,146,17"/>
+</map>

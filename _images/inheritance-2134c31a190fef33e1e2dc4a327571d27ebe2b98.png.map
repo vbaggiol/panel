@@ -1,0 +1,17 @@
+<map id="inheritance1bbae5e53c" name="inheritance1bbae5e53c">
+<area shape="rect" id="node1" title="Base class for all class types that have Bokeh properties." alt="" coords="49,48,189,63"/>
+<area shape="rect" id="node2" title="Base class for all objects stored in Bokeh &#160;|Document| instances." alt="" coords="264,93,383,109"/>
+<area shape="rect" id="node7" title="The base class for layoutable components." alt="" coords="412,93,562,109"/>
+<area shape="rect" id="node4" title="A mixin class to provide an interface for registering and" alt="" coords="3,108,235,124"/>
+<area shape="rect" id="node5" title="A mixin class to provide an interface for registering and" alt="" coords="9,138,230,154"/>
+<area shape="rect" id="node6" title="A component which size is determined by its HTML content." alt="" coords="602,63,743,79"/>
+<area shape="rect" id="node10" href="#panel.models.widgets.Audio" target="_top" title="panel.models.widgets.Audio" alt="" coords="810,3,936,19"/>
+<area shape="rect" id="node13" href="#panel.models.widgets.Progress" target="_top" title="panel.models.widgets.Progress" alt="" coords="804,33,942,49"/>
+<area shape="rect" id="node15" href="#panel.models.widgets.Video" target="_top" title="panel.models.widgets.Video" alt="" coords="810,63,936,79"/>
+<area shape="rect" id="node16" href="#panel.models.widgets.VideoStream" target="_top" title="panel.models.widgets.VideoStream" alt="" coords="796,93,950,109"/>
+<area shape="rect" id="node9" title="A base class for all interactive widget types." alt="" coords="591,124,754,139"/>
+<area shape="rect" id="node8" title="Abstract base class for input widgets." alt="" coords="783,124,963,139"/>
+<area shape="rect" id="node11" href="#panel.models.widgets.FileDownload" target="_top" title="panel.models.widgets.FileDownload" alt="" coords="993,109,1149,124"/>
+<area shape="rect" id="node14" href="#panel.models.widgets.SingleSelect" target="_top" title="Single&#45;select widget." alt="" coords="995,139,1147,154"/>
+<area shape="rect" id="node12" href="#panel.models.widgets.Player" target="_top" title="The Player widget provides controls to play through a number of frames." alt="" coords="809,154,937,169"/>
+</map>

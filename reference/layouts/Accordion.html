@@ -1,0 +1,1334 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Accordion — Panel 0.12.6 documentation</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="Card.html" rel="next" title="Card"/>
+<link href="../panes/Video.html" rel="prev" title="Video"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/DeckGL.html">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Param.html">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../panes/Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableFloatSlider.html">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextToSpeech.html">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parameters">
+   Parameters:
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#accordion">
+   Accordion
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#active">
+<code class="docutils literal notranslate">
+<span class="pre">
+       active
+      </span>
+</code>
+</a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#toggle">
+<code class="docutils literal notranslate">
+<span class="pre">
+       toggle
+      </span>
+</code>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/reference/layouts/Accordion.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="accordion">
+<span id="layouts-gallery-accordion"></span><h1>Accordion<a class="headerlink" href="#accordion" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/layouts/Accordion.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {}, 'shim': {}});
+      
+      root._bokeh_is_loading = css_urls.length + 0;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js"];
+  var js_modules = [];
+  var css_urls = ["https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Accordion</span></code> layouts are a type of <code class="docutils literal notranslate"><span class="pre">Card</span></code> layout that allows switching between multiple objects by clicking on the corresponding card header. The labels for each card may be defined explicitly as part of a tuple, and otherwise default to the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter of the card’s contents. Like <code class="docutils literal notranslate"><span class="pre">Column</span></code> and <code class="docutils literal notranslate"><span class="pre">Row</span></code>, <code class="docutils literal notranslate"><span class="pre">Tabs</span></code> has a list-like API that allows interactively updating and modifying the cards using methods <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code>, <code class="docutils literal notranslate"><span class="pre">clear</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> (to replace the contents).</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">active</span></code></strong> (list, default=[]): The indexes of the currently displayed cards. Updates when a card is expanded or collapsed and may also be set to programmatically control which cards are shown.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">objects</span></code></strong> (list): The list of objects to display in the Column. Should not generally be modified directly except when replaced in its entirety.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">toggle</span></code></strong> (bool): Whether to toggle between the available cards, activating only one at a time (if True), or (if False) whether to allow multiple cards to be expanded simultaneously.</p></li>
+</ul>
+<p>Styling-related parameters:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">active_header_background</span></code></strong> (str): The background color of the header when the <code class="docutils literal notranslate"><span class="pre">Card</span></code> is expanded.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">header_color</span></code></strong> (str): The color of the header text.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">header_background</span></code></strong> (str): The background color of the header.</p></li>
+</ul>
+<p>For further layout and styling-related parameters see the <a class="reference internal" href="../../user_guide/Customization.html"><span class="doc std std-doc">customization user guide</span></a>.</p>
+<hr class="docutils"/>
+</section>
+<section id="accordion">
+<h2>Accordion<a class="headerlink" href="#accordion" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">Accordion</span></code> layout can either be instantiated as empty and populated after the fact, or by using a list of objects provided on instantiation as positional arguments. If the objects are not already Panel components they will each be converted to one using the <code class="docutils literal notranslate"><span class="pre">pn.panel</span></code> conversion method. Unlike other panel types, <code class="docutils literal notranslate"><span class="pre">Accordion</span></code> also accepts tuples to specify the title of each tab; if no name is supplied explicitly the name of the underlying object will be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Scatter'</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">p2</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Line'</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">accordion</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Accordion</span><span class="p">((</span><span class="s1">'Scatter'</span><span class="p">,</span> <span class="n">p1</span><span class="p">),</span> <span class="n">p2</span><span class="p">)</span>
+<span class="n">accordion</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1076">
+<div class="bk-root" data-root-id="1076" id="eac29b4b-9163-4cb6-bd3d-af37f4cfc177"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"78efa774-6fe1-4649-b07e-b012ff76364b":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{},"id":"1024","type":"HelpTool"},{"attributes":{},"id":"1059","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1035","type":"Scatter"},{"attributes":{"source":{"id":"1070"}},"id":"1075","type":"CDSView"},{"attributes":{},"id":"1020","type":"WheelZoomTool"},{"attributes":{},"id":"1019","type":"PanTool"},{"attributes":{"overlay":{"id":"1025"}},"id":"1021","type":"BoxZoomTool"},{"attributes":{"line_alpha":0.2,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1073","type":"Line"},{"attributes":{},"id":"1022","type":"SaveTool"},{"attributes":{},"id":"1023","type":"ResetTool"},{"attributes":{},"id":"1113","type":"UnionRenderers"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1025","type":"BoxAnnotation"},{"attributes":{},"id":"1114","type":"Selection"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1072","type":"Line"},{"attributes":{"reload":false},"id":"1260","type":"panel.models.location.Location"},{"attributes":{},"id":"1083","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"1052"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1055","type":"Grid"},{"attributes":{},"id":"1061","type":"HelpTool"},{"attributes":{"coordinates":null,"formatter":{"id":"1108"},"group":null,"major_label_policy":{"id":"1109"},"ticker":{"id":"1053"}},"id":"1052","type":"LinearAxis"},{"attributes":{},"id":"1084","type":"AllLabels"},{"attributes":{},"id":"1086","type":"BasicTickFormatter"},{"attributes":{},"id":"1040","type":"DataRange1d"},{"attributes":{"children":[{"id":"1104"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02984","sizing_mode":"stretch_width"},"id":"1103","type":"Row"},{"attributes":{},"id":"1087","type":"AllLabels"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML02986","sizing_mode":"stretch_width","text":"Line"},"id":"1104","type":"panel.models.markup.HTML"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1036","type":"Scatter"},{"attributes":{"coordinates":null,"data_source":{"id":"1033"},"glyph":{"id":"1034"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1036"},"nonselection_glyph":{"id":"1035"},"view":{"id":"1038"}},"id":"1037","type":"GlyphRenderer"},{"attributes":{},"id":"1060","type":"ResetTool"},{"attributes":{"overlay":{"id":"1062"}},"id":"1058","type":"BoxZoomTool"},{"attributes":{"children":[{"id":"1077"},{"id":"1102"}],"margin":[0,0,0,0],"name":"Accordion02977"},"id":"1076","type":"Column"},{"attributes":{},"id":"1088","type":"UnionRenderers"},{"attributes":{"coordinates":null,"group":null},"id":"1105","type":"Title"},{"attributes":{},"id":"1089","type":"Selection"},{"attributes":{"tools":[{"id":"1019"},{"id":"1020"},{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"}]},"id":"1026","type":"Toolbar"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1078"},{"id":"1002"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"margin":[5,5,0,5],"name":"Card02981"},"id":"1077","type":"panel.models.layout.Card"},{"attributes":{},"id":"1053","type":"BasicTicker"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1114"},"selection_policy":{"id":"1113"}},"id":"1070","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1033"}},"id":"1038","type":"CDSView"},{"attributes":{"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1071","type":"Line"},{"attributes":{},"id":"1044","type":"LinearScale"},{"attributes":{},"id":"1042","type":"DataRange1d"},{"attributes":{"coordinates":null,"formatter":{"id":"1111"},"group":null,"major_label_policy":{"id":"1112"},"ticker":{"id":"1049"}},"id":"1048","type":"LinearAxis"},{"attributes":{},"id":"1046","type":"LinearScale"},{"attributes":{"children":[{"id":"1079"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02980","sizing_mode":"stretch_width"},"id":"1078","type":"Row"},{"attributes":{},"id":"1049","type":"BasicTicker"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML02982","sizing_mode":"stretch_width","text":"Scatter"},"id":"1079","type":"panel.models.markup.HTML"},{"attributes":{"axis":{"id":"1048"},"coordinates":null,"group":null,"ticker":null},"id":"1051","type":"Grid"},{"attributes":{},"id":"1057","type":"WheelZoomTool"},{"attributes":{"client_comm_id":"c576cfcd154749598c3cb5cabd10a738","comm_id":"d62fe27ef6b14cb8812b05fd6da58570","plot_id":"1076"},"id":"1193","type":"panel.models.comm_manager.CommManager"},{"attributes":{},"id":"1056","type":"PanTool"},{"attributes":{"below":[{"id":"1011"}],"center":[{"id":"1014"},{"id":"1018"}],"height":300,"left":[{"id":"1015"}],"margin":[5,5,5,5],"name":"Scatter","renderers":[{"id":"1037"}],"title":{"id":"1080"},"toolbar":{"id":"1026"},"width":300,"x_range":{"id":"1003"},"x_scale":{"id":"1007"},"y_range":{"id":"1005"},"y_scale":{"id":"1009"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1103"},{"id":"1039"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"margin":[0,5,5,5],"name":"Card02985"},"id":"1102","type":"panel.models.layout.Card"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1062","type":"BoxAnnotation"},{"attributes":{"coordinates":null,"data_source":{"id":"1070"},"glyph":{"id":"1071"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1073"},"nonselection_glyph":{"id":"1072"},"view":{"id":"1075"}},"id":"1074","type":"GlyphRenderer"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1034","type":"Scatter"},{"attributes":{"below":[{"id":"1048"}],"center":[{"id":"1051"},{"id":"1055"}],"height":300,"left":[{"id":"1052"}],"margin":[5,5,5,5],"name":"Line","renderers":[{"id":"1074"}],"title":{"id":"1105"},"toolbar":{"id":"1063"},"width":300,"x_range":{"id":"1040"},"x_scale":{"id":"1044"},"y_range":{"id":"1042"},"y_scale":{"id":"1046"}},"id":"1039","subtype":"Figure","type":"Plot"},{"attributes":{"tools":[{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"}]},"id":"1063","type":"Toolbar"},{"attributes":{"axis":{"id":"1015"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{"coordinates":null,"group":null},"id":"1080","type":"Title"},{"attributes":{},"id":"1003","type":"DataRange1d"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1089"},"selection_policy":{"id":"1088"}},"id":"1033","type":"ColumnDataSource"},{"attributes":{},"id":"1108","type":"BasicTickFormatter"},{"attributes":{},"id":"1007","type":"LinearScale"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{},"id":"1005","type":"DataRange1d"},{"attributes":{"coordinates":null,"formatter":{"id":"1086"},"group":null,"major_label_policy":{"id":"1087"},"ticker":{"id":"1012"}},"id":"1011","type":"LinearAxis"},{"attributes":{},"id":"1109","type":"AllLabels"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{},"id":"1012","type":"BasicTicker"},{"attributes":{},"id":"1111","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"1011"},"coordinates":null,"group":null,"ticker":null},"id":"1014","type":"Grid"},{"attributes":{},"id":"1112","type":"AllLabels"},{"attributes":{"coordinates":null,"formatter":{"id":"1083"},"group":null,"major_label_policy":{"id":"1084"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"}],"root_ids":["1076","1193","1260"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"78efa774-6fe1-4649-b07e-b012ff76364b","root_ids":["1076"],"roots":{"1076":"eac29b4b-9163-4cb6-bd3d-af37f4cfc177"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>The contents of the <code class="docutils literal notranslate"><span class="pre">Accordion.objects</span></code> list should never be modified individually, because Panel cannot detect when items in that list have changed internally, and will thus fail to update any already-rendered views of those objects (and their card titles!). Instead, use the provided methods for adding and removing items from the list.  The only change that is safe to make directly to <code class="docutils literal notranslate"><span class="pre">Accordion.objects</span></code> is to replace the list of <code class="docutils literal notranslate"><span class="pre">objects</span></code> entirely.  As a simple example of using the methods, we might add an additional widget to the <code class="docutils literal notranslate"><span class="pre">Accordion</span></code> using the <code class="docutils literal notranslate"><span class="pre">append</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p3</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Square'</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">square</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">accordion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On a live server or in a notebook the <code class="docutils literal notranslate"><span class="pre">accordion</span></code> displayed above will dynamically expand to include the new card. To see the effect in a statically rendered page, we will display the accordion a second time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accordion</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1523">
+<div class="bk-root" data-root-id="1523" id="2c7921b4-6e50-47d4-b06a-9e7caa10d5de"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"154e9e9c-1cc4-48a8-820b-8f07bb04c4fa":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"children":[{"id":"1562"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02984","sizing_mode":"stretch_width"},"id":"1561","type":"Row"},{"attributes":{},"id":"1024","type":"HelpTool"},{"attributes":{},"id":"1059","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1035","type":"Scatter"},{"attributes":{"source":{"id":"1070"}},"id":"1075","type":"CDSView"},{"attributes":{},"id":"1020","type":"WheelZoomTool"},{"attributes":{},"id":"1019","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1360","type":"Scatter"},{"attributes":{"overlay":{"id":"1025"}},"id":"1021","type":"BoxZoomTool"},{"attributes":{"line_alpha":0.2,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1073","type":"Line"},{"attributes":{},"id":"1022","type":"SaveTool"},{"attributes":{},"id":"1023","type":"ResetTool"},{"attributes":{"children":[{"id":"1524"},{"id":"1560"},{"id":"1596"}],"margin":[0,0,0,0],"name":"Accordion02977"},"id":"1523","type":"Column"},{"attributes":{},"id":"1113","type":"UnionRenderers"},{"attributes":{},"id":"1348","type":"ResetTool"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1025","type":"BoxAnnotation"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML02982","sizing_mode":"stretch_width","text":"Scatter"},"id":"1526","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1114","type":"Selection"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1072","type":"Line"},{"attributes":{"coordinates":null,"group":null},"id":"1368","type":"Title"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1525"},{"id":"1002"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"margin":[5,5,0,5],"name":"Card02981"},"id":"1524","type":"panel.models.layout.Card"},{"attributes":{"children":[{"id":"1526"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02980","sizing_mode":"stretch_width"},"id":"1525","type":"Row"},{"attributes":{},"id":"1083","type":"BasicTickFormatter"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML02986","sizing_mode":"stretch_width","text":"Line"},"id":"1562","type":"panel.models.markup.HTML"},{"attributes":{"axis":{"id":"1052"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1055","type":"Grid"},{"attributes":{},"id":"1061","type":"HelpTool"},{"attributes":{"coordinates":null,"formatter":{"id":"1108"},"group":null,"major_label_policy":{"id":"1109"},"ticker":{"id":"1053"}},"id":"1052","type":"LinearAxis"},{"attributes":{},"id":"1084","type":"AllLabels"},{"attributes":{"coordinates":null,"data_source":{"id":"1358"},"glyph":{"id":"1359"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1361"},"nonselection_glyph":{"id":"1360"},"view":{"id":"1363"}},"id":"1362","type":"GlyphRenderer"},{"attributes":{},"id":"1086","type":"BasicTickFormatter"},{"attributes":{},"id":"1040","type":"DataRange1d"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1597"},{"id":"1327"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"margin":[0,5,5,5],"name":"Card02992"},"id":"1596","type":"panel.models.layout.Card"},{"attributes":{"axis":{"id":"1336"},"coordinates":null,"group":null,"ticker":null},"id":"1339","type":"Grid"},{"attributes":{},"id":"1087","type":"AllLabels"},{"attributes":{},"id":"1337","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1036","type":"Scatter"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1359","type":"Scatter"},{"attributes":{"below":[{"id":"1336"}],"center":[{"id":"1339"},{"id":"1343"}],"height":300,"left":[{"id":"1340"}],"margin":[5,5,5,5],"name":"Square","renderers":[{"id":"1362"}],"title":{"id":"1368"},"toolbar":{"id":"1351"},"width":300,"x_range":{"id":"1328"},"x_scale":{"id":"1332"},"y_range":{"id":"1330"},"y_scale":{"id":"1334"}},"id":"1327","subtype":"Figure","type":"Plot"},{"attributes":{"coordinates":null,"data_source":{"id":"1033"},"glyph":{"id":"1034"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1036"},"nonselection_glyph":{"id":"1035"},"view":{"id":"1038"}},"id":"1037","type":"GlyphRenderer"},{"attributes":{"overlay":{"id":"1062"}},"id":"1058","type":"BoxZoomTool"},{"attributes":{},"id":"1060","type":"ResetTool"},{"attributes":{},"id":"1328","type":"DataRange1d"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1377"},"selection_policy":{"id":"1376"}},"id":"1358","type":"ColumnDataSource"},{"attributes":{},"id":"1088","type":"UnionRenderers"},{"attributes":{"coordinates":null,"formatter":{"id":"1371"},"group":null,"major_label_policy":{"id":"1372"},"ticker":{"id":"1341"}},"id":"1340","type":"LinearAxis"},{"attributes":{},"id":"1332","type":"LinearScale"},{"attributes":{"coordinates":null,"group":null},"id":"1105","type":"Title"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML02993","sizing_mode":"stretch_width","text":"Square"},"id":"1598","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1330","type":"DataRange1d"},{"attributes":{},"id":"1371","type":"BasicTickFormatter"},{"attributes":{"tools":[{"id":"1019"},{"id":"1020"},{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"}]},"id":"1026","type":"Toolbar"},{"attributes":{"coordinates":null,"formatter":{"id":"1374"},"group":null,"major_label_policy":{"id":"1375"},"ticker":{"id":"1337"}},"id":"1336","type":"LinearAxis"},{"attributes":{},"id":"1089","type":"Selection"},{"attributes":{},"id":"1334","type":"LinearScale"},{"attributes":{},"id":"1053","type":"BasicTicker"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1114"},"selection_policy":{"id":"1113"}},"id":"1070","type":"ColumnDataSource"},{"attributes":{},"id":"1349","type":"HelpTool"},{"attributes":{},"id":"1372","type":"AllLabels"},{"attributes":{"source":{"id":"1033"}},"id":"1038","type":"CDSView"},{"attributes":{"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1071","type":"Line"},{"attributes":{},"id":"1347","type":"SaveTool"},{"attributes":{},"id":"1374","type":"BasicTickFormatter"},{"attributes":{},"id":"1044","type":"LinearScale"},{"attributes":{"axis":{"id":"1340"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1343","type":"Grid"},{"attributes":{},"id":"1042","type":"DataRange1d"},{"attributes":{},"id":"1344","type":"PanTool"},{"attributes":{"coordinates":null,"formatter":{"id":"1111"},"group":null,"major_label_policy":{"id":"1112"},"ticker":{"id":"1049"}},"id":"1048","type":"LinearAxis"},{"attributes":{"overlay":{"id":"1350"}},"id":"1346","type":"BoxZoomTool"},{"attributes":{},"id":"1375","type":"AllLabels"},{"attributes":{},"id":"1046","type":"LinearScale"},{"attributes":{},"id":"1341","type":"BasicTicker"},{"attributes":{},"id":"1049","type":"BasicTicker"},{"attributes":{"axis":{"id":"1048"},"coordinates":null,"group":null,"ticker":null},"id":"1051","type":"Grid"},{"attributes":{},"id":"1345","type":"WheelZoomTool"},{"attributes":{},"id":"1057","type":"WheelZoomTool"},{"attributes":{},"id":"1056","type":"PanTool"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1350","type":"BoxAnnotation"},{"attributes":{"tools":[{"id":"1344"},{"id":"1345"},{"id":"1346"},{"id":"1347"},{"id":"1348"},{"id":"1349"}]},"id":"1351","type":"Toolbar"},{"attributes":{"source":{"id":"1358"}},"id":"1363","type":"CDSView"},{"attributes":{"below":[{"id":"1011"}],"center":[{"id":"1014"},{"id":"1018"}],"height":300,"left":[{"id":"1015"}],"margin":[5,5,5,5],"name":"Scatter","renderers":[{"id":"1037"}],"title":{"id":"1080"},"toolbar":{"id":"1026"},"width":300,"x_range":{"id":"1003"},"x_scale":{"id":"1007"},"y_range":{"id":"1005"},"y_scale":{"id":"1009"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1062","type":"BoxAnnotation"},{"attributes":{"coordinates":null,"data_source":{"id":"1070"},"glyph":{"id":"1071"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1073"},"nonselection_glyph":{"id":"1072"},"view":{"id":"1075"}},"id":"1074","type":"GlyphRenderer"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1034","type":"Scatter"},{"attributes":{"below":[{"id":"1048"}],"center":[{"id":"1051"},{"id":"1055"}],"height":300,"left":[{"id":"1052"}],"margin":[5,5,5,5],"name":"Line","renderers":[{"id":"1074"}],"title":{"id":"1105"},"toolbar":{"id":"1063"},"width":300,"x_range":{"id":"1040"},"x_scale":{"id":"1044"},"y_range":{"id":"1042"},"y_scale":{"id":"1046"}},"id":"1039","subtype":"Figure","type":"Plot"},{"attributes":{"tools":[{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"}]},"id":"1063","type":"Toolbar"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1361","type":"Scatter"},{"attributes":{"coordinates":null,"group":null},"id":"1080","type":"Title"},{"attributes":{"axis":{"id":"1015"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{},"id":"1003","type":"DataRange1d"},{"attributes":{},"id":"1108","type":"BasicTickFormatter"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1089"},"selection_policy":{"id":"1088"}},"id":"1033","type":"ColumnDataSource"},{"attributes":{},"id":"1376","type":"UnionRenderers"},{"attributes":{},"id":"1007","type":"LinearScale"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{"client_comm_id":"c3728a1d2e98400ab9b748be025d2d44","comm_id":"63fc1210027a4b328999eee5ea776c20","plot_id":"1523"},"id":"1731","type":"panel.models.comm_manager.CommManager"},{"attributes":{},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1109","type":"AllLabels"},{"attributes":{"coordinates":null,"formatter":{"id":"1086"},"group":null,"major_label_policy":{"id":"1087"},"ticker":{"id":"1012"}},"id":"1011","type":"LinearAxis"},{"attributes":{},"id":"1377","type":"Selection"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1561"},{"id":"1039"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"margin":[0,5,0,5],"name":"Card02985"},"id":"1560","type":"panel.models.layout.Card"},{"attributes":{},"id":"1111","type":"BasicTickFormatter"},{"attributes":{},"id":"1012","type":"BasicTicker"},{"attributes":{"coordinates":null,"formatter":{"id":"1083"},"group":null,"major_label_policy":{"id":"1084"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"},{"attributes":{"axis":{"id":"1011"},"coordinates":null,"group":null,"ticker":null},"id":"1014","type":"Grid"},{"attributes":{},"id":"1112","type":"AllLabels"},{"attributes":{"children":[{"id":"1598"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02991","sizing_mode":"stretch_width"},"id":"1597","type":"Row"}],"root_ids":["1523","1731"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"154e9e9c-1cc4-48a8-820b-8f07bb04c4fa","root_ids":["1523"],"roots":{"1523":"2c7921b4-6e50-47d4-b06a-9e7caa10d5de"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<section id="active">
+<h3><code class="docutils literal notranslate"><span class="pre">active</span></code><a class="headerlink" href="#active" title="Permalink to this headline">¶</a></h3>
+<p>In addition to being able to modify the <code class="docutils literal notranslate"><span class="pre">objects</span></code> using methods we can also get and set the currently <code class="docutils literal notranslate"><span class="pre">active</span></code> cards as a list of integers, which will update any rendered views of the object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">accordion</span><span class="o">.</span><span class="n">active</span><span class="p">)</span>
+<span class="n">accordion</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="toggle">
+<h3><code class="docutils literal notranslate"><span class="pre">toggle</span></code><a class="headerlink" href="#toggle" title="Permalink to this headline">¶</a></h3>
+<p>When toggle is enabled only one card can be active at the same time, i.e., expanding one card will collapse the other active cards (much like a Tabs layout).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accordion</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">toggle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1901">
+<div class="bk-root" data-root-id="1901" id="03a95253-17e9-426d-9592-ab317581b6f7"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"17d7caab-1408-410e-a0c5-d25072a49960":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{},"id":"1024","type":"HelpTool"},{"attributes":{},"id":"1059","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1035","type":"Scatter"},{"attributes":{"source":{"id":"1070"}},"id":"1075","type":"CDSView"},{"attributes":{},"id":"1020","type":"WheelZoomTool"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML03005","sizing_mode":"stretch_width","text":"Line"},"id":"1941","type":"panel.models.markup.HTML"},{"attributes":{},"id":"1019","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1360","type":"Scatter"},{"attributes":{"children":[{"id":"1941"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row03003","sizing_mode":"stretch_width"},"id":"1940","type":"Row"},{"attributes":{"overlay":{"id":"1025"}},"id":"1021","type":"BoxZoomTool"},{"attributes":{"line_alpha":0.2,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1073","type":"Line"},{"attributes":{},"id":"1022","type":"SaveTool"},{"attributes":{},"id":"1023","type":"ResetTool"},{"attributes":{},"id":"1113","type":"UnionRenderers"},{"attributes":{},"id":"1348","type":"ResetTool"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1025","type":"BoxAnnotation"},{"attributes":{},"id":"1114","type":"Selection"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1072","type":"Line"},{"attributes":{"client_comm_id":"90c81fc6988d4e46b05c8fbb0f3fbc6c","comm_id":"98c4c7184433417bb681c9061151b91b","plot_id":"1901"},"id":"2112","type":"panel.models.comm_manager.CommManager"},{"attributes":{"args":{"accordion":{"id":"1901"}},"code":"\n    for (var child of accordion.children) {\n      if ((child.id !== cb_obj.id) && (child.collapsed == cb_obj.collapsed) && !cb_obj.collapsed) {\n        child.collapsed = !cb_obj.collapsed\n      }\n    }\n    "},"id":"1975","type":"CustomJS"},{"attributes":{"args":{"accordion":{"id":"1901"}},"code":"\n    for (var child of accordion.children) {\n      if ((child.id !== cb_obj.id) && (child.collapsed == cb_obj.collapsed) && !cb_obj.collapsed) {\n        child.collapsed = !cb_obj.collapsed\n      }\n    }\n    "},"id":"1938","type":"CustomJS"},{"attributes":{"coordinates":null,"group":null},"id":"1368","type":"Title"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1940"},{"id":"1039"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"js_property_callbacks":{"change:collapsed":[{"id":"1975"}]},"margin":[0,5,0,5],"name":"Card03004"},"id":"1939","type":"panel.models.layout.Card"},{"attributes":{},"id":"1083","type":"BasicTickFormatter"},{"attributes":{"axis":{"id":"1052"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1055","type":"Grid"},{"attributes":{},"id":"1061","type":"HelpTool"},{"attributes":{"coordinates":null,"formatter":{"id":"1108"},"group":null,"major_label_policy":{"id":"1109"},"ticker":{"id":"1053"}},"id":"1052","type":"LinearAxis"},{"attributes":{},"id":"1084","type":"AllLabels"},{"attributes":{"args":{"accordion":{"id":"1901"}},"code":"\n    for (var child of accordion.children) {\n      if ((child.id !== cb_obj.id) && (child.collapsed == cb_obj.collapsed) && !cb_obj.collapsed) {\n        child.collapsed = !cb_obj.collapsed\n      }\n    }\n    "},"id":"2012","type":"CustomJS"},{"attributes":{"coordinates":null,"data_source":{"id":"1358"},"glyph":{"id":"1359"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1361"},"nonselection_glyph":{"id":"1360"},"view":{"id":"1363"}},"id":"1362","type":"GlyphRenderer"},{"attributes":{},"id":"1086","type":"BasicTickFormatter"},{"attributes":{"children":[{"id":"1904"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row02999","sizing_mode":"stretch_width"},"id":"1903","type":"Row"},{"attributes":{},"id":"1040","type":"DataRange1d"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML03001","sizing_mode":"stretch_width","text":"Scatter"},"id":"1904","type":"panel.models.markup.HTML"},{"attributes":{"axis":{"id":"1336"},"coordinates":null,"group":null,"ticker":null},"id":"1339","type":"Grid"},{"attributes":{},"id":"1087","type":"AllLabels"},{"attributes":{},"id":"1337","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1036","type":"Scatter"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1903"},{"id":"1002"}],"collapsed":false,"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"js_property_callbacks":{"change:collapsed":[{"id":"1938"}]},"margin":[5,5,0,5],"name":"Card03000"},"id":"1902","type":"panel.models.layout.Card"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1359","type":"Scatter"},{"attributes":{"coordinates":null,"data_source":{"id":"1033"},"glyph":{"id":"1034"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1036"},"nonselection_glyph":{"id":"1035"},"view":{"id":"1038"}},"id":"1037","type":"GlyphRenderer"},{"attributes":{"below":[{"id":"1336"}],"center":[{"id":"1339"},{"id":"1343"}],"height":300,"left":[{"id":"1340"}],"margin":[5,5,5,5],"name":"Square","renderers":[{"id":"1362"}],"title":{"id":"1368"},"toolbar":{"id":"1351"},"width":300,"x_range":{"id":"1328"},"x_scale":{"id":"1332"},"y_range":{"id":"1330"},"y_scale":{"id":"1334"}},"id":"1327","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"1062"}},"id":"1058","type":"BoxZoomTool"},{"attributes":{},"id":"1060","type":"ResetTool"},{"attributes":{},"id":"1328","type":"DataRange1d"},{"attributes":{"children":[{"id":"1902"},{"id":"1939"},{"id":"1976"}],"margin":[0,0,0,0],"name":"Accordion02997"},"id":"1901","type":"Column"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1377"},"selection_policy":{"id":"1376"}},"id":"1358","type":"ColumnDataSource"},{"attributes":{},"id":"1088","type":"UnionRenderers"},{"attributes":{"coordinates":null,"formatter":{"id":"1371"},"group":null,"major_label_policy":{"id":"1372"},"ticker":{"id":"1341"}},"id":"1340","type":"LinearAxis"},{"attributes":{},"id":"1332","type":"LinearScale"},{"attributes":{"coordinates":null,"group":null},"id":"1105","type":"Title"},{"attributes":{},"id":"1330","type":"DataRange1d"},{"attributes":{},"id":"1371","type":"BasicTickFormatter"},{"attributes":{},"id":"1089","type":"Selection"},{"attributes":{"tools":[{"id":"1019"},{"id":"1020"},{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"}]},"id":"1026","type":"Toolbar"},{"attributes":{"coordinates":null,"formatter":{"id":"1374"},"group":null,"major_label_policy":{"id":"1375"},"ticker":{"id":"1337"}},"id":"1336","type":"LinearAxis"},{"attributes":{},"id":"1334","type":"LinearScale"},{"attributes":{},"id":"1053","type":"BasicTicker"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1114"},"selection_policy":{"id":"1113"}},"id":"1070","type":"ColumnDataSource"},{"attributes":{},"id":"1349","type":"HelpTool"},{"attributes":{},"id":"1372","type":"AllLabels"},{"attributes":{"source":{"id":"1033"}},"id":"1038","type":"CDSView"},{"attributes":{"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1071","type":"Line"},{"attributes":{},"id":"1347","type":"SaveTool"},{"attributes":{},"id":"1374","type":"BasicTickFormatter"},{"attributes":{},"id":"1044","type":"LinearScale"},{"attributes":{"axis":{"id":"1340"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1343","type":"Grid"},{"attributes":{},"id":"1042","type":"DataRange1d"},{"attributes":{},"id":"1344","type":"PanTool"},{"attributes":{"coordinates":null,"formatter":{"id":"1111"},"group":null,"major_label_policy":{"id":"1112"},"ticker":{"id":"1049"}},"id":"1048","type":"LinearAxis"},{"attributes":{"overlay":{"id":"1350"}},"id":"1346","type":"BoxZoomTool"},{"attributes":{},"id":"1375","type":"AllLabels"},{"attributes":{},"id":"1046","type":"LinearScale"},{"attributes":{},"id":"1341","type":"BasicTicker"},{"attributes":{"active_header_background":"#ccc","button_css_classes":["card-button"],"children":[{"id":"1977"},{"id":"1327"}],"css_classes":["accordion"],"header_background":"","header_color":"","header_css_classes":["accordion-header"],"js_property_callbacks":{"change:collapsed":[{"id":"2012"}]},"margin":[0,5,5,5],"name":"Card03008"},"id":"1976","type":"panel.models.layout.Card"},{"attributes":{},"id":"1049","type":"BasicTicker"},{"attributes":{"axis":{"id":"1048"},"coordinates":null,"group":null,"ticker":null},"id":"1051","type":"Grid"},{"attributes":{},"id":"1345","type":"WheelZoomTool"},{"attributes":{},"id":"1057","type":"WheelZoomTool"},{"attributes":{},"id":"1056","type":"PanTool"},{"attributes":{"children":[{"id":"1978"}],"css_classes":["card-header-row"],"margin":[0,0,0,0],"name":"Row03007","sizing_mode":"stretch_width"},"id":"1977","type":"Row"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1350","type":"BoxAnnotation"},{"attributes":{"css_classes":["card-title"],"margin":[5,0,5,0],"name":"HTML03009","sizing_mode":"stretch_width","text":"Square"},"id":"1978","type":"panel.models.markup.HTML"},{"attributes":{"tools":[{"id":"1344"},{"id":"1345"},{"id":"1346"},{"id":"1347"},{"id":"1348"},{"id":"1349"}]},"id":"1351","type":"Toolbar"},{"attributes":{"source":{"id":"1358"}},"id":"1363","type":"CDSView"},{"attributes":{"below":[{"id":"1011"}],"center":[{"id":"1014"},{"id":"1018"}],"height":300,"left":[{"id":"1015"}],"margin":[5,5,5,5],"name":"Scatter","renderers":[{"id":"1037"}],"title":{"id":"1080"},"toolbar":{"id":"1026"},"width":300,"x_range":{"id":"1003"},"x_scale":{"id":"1007"},"y_range":{"id":"1005"},"y_scale":{"id":"1009"}},"id":"1002","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1062","type":"BoxAnnotation"},{"attributes":{"coordinates":null,"data_source":{"id":"1070"},"glyph":{"id":"1071"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1073"},"nonselection_glyph":{"id":"1072"},"view":{"id":"1075"}},"id":"1074","type":"GlyphRenderer"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"#1f77b4"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1034","type":"Scatter"},{"attributes":{"below":[{"id":"1048"}],"center":[{"id":"1051"},{"id":"1055"}],"height":300,"left":[{"id":"1052"}],"margin":[5,5,5,5],"name":"Line","renderers":[{"id":"1074"}],"title":{"id":"1105"},"toolbar":{"id":"1063"},"width":300,"x_range":{"id":"1040"},"x_scale":{"id":"1044"},"y_range":{"id":"1042"},"y_scale":{"id":"1046"}},"id":"1039","subtype":"Figure","type":"Plot"},{"attributes":{"tools":[{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"},{"id":"1060"},{"id":"1061"}]},"id":"1063","type":"Toolbar"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b4"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"#1f77b4"},"marker":{"value":"square"},"size":{"value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1361","type":"Scatter"},{"attributes":{"coordinates":null,"group":null},"id":"1080","type":"Title"},{"attributes":{"axis":{"id":"1015"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{},"id":"1003","type":"DataRange1d"},{"attributes":{},"id":"1108","type":"BasicTickFormatter"},{"attributes":{"data":{"x":[0,1,2,3,4,5,6],"y":[0,1,2,3,2,1,0]},"selected":{"id":"1089"},"selection_policy":{"id":"1088"}},"id":"1033","type":"ColumnDataSource"},{"attributes":{},"id":"1376","type":"UnionRenderers"},{"attributes":{},"id":"1007","type":"LinearScale"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1109","type":"AllLabels"},{"attributes":{"coordinates":null,"formatter":{"id":"1086"},"group":null,"major_label_policy":{"id":"1087"},"ticker":{"id":"1012"}},"id":"1011","type":"LinearAxis"},{"attributes":{},"id":"1377","type":"Selection"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{},"id":"1111","type":"BasicTickFormatter"},{"attributes":{},"id":"1012","type":"BasicTicker"},{"attributes":{"axis":{"id":"1011"},"coordinates":null,"group":null,"ticker":null},"id":"1014","type":"Grid"},{"attributes":{},"id":"1112","type":"AllLabels"},{"attributes":{"coordinates":null,"formatter":{"id":"1083"},"group":null,"major_label_policy":{"id":"1084"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"}],"root_ids":["1901","2112"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"17d7caab-1408-410e-a0c5-d25072a49960","root_ids":["1901"],"roots":{"1901":"03a95253-17e9-426d-9592-ab317581b6f7"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/layouts/Accordion.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/layouts/Accordion.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../panes/Video.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Video</p>
+</div>
+</a>
+<a class="right-next" href="Card.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Card</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

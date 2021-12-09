@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>panel.io.jupyter_server_extension — Panel 0.12.6 documentation</title>
+<link href="../../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+<script src="../../../_static/jquery.js"></script>
+<script src="../../../_static/underscore.js"></script>
+<script src="../../../_static/doctools.js"></script>
+<script src="../../../_static/togglebutton.js"></script>
+<script src="../../../_static/clipboard.min.js"></script>
+<script src="../../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../../genindex.html" rel="index" title="Index"/>
+<link href="../../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../../index.html">
+<img alt="logo" class="logo" src="../../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<h1>Source code for panel.io.jupyter_server_extension</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span>
+
+<span class="kn">import</span> <span class="nn">tornado</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.command.util</span> <span class="kn">import</span> <span class="n">build_single_handler_application</span>
+<span class="kn">from</span> <span class="nn">bokeh.embed.bundle</span> <span class="kn">import</span> <span class="n">extension_dirs</span>
+<span class="kn">from</span> <span class="nn">bokeh.embed.server</span> <span class="kn">import</span> <span class="n">server_html_page_for_session</span>
+<span class="kn">from</span> <span class="nn">bokeh.protocol</span> <span class="kn">import</span> <span class="n">Protocol</span>
+<span class="kn">from</span> <span class="nn">bokeh.protocol.exceptions</span> <span class="kn">import</span> <span class="n">ProtocolError</span>
+<span class="kn">from</span> <span class="nn">bokeh.protocol.receiver</span> <span class="kn">import</span> <span class="n">Receiver</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.connection</span> <span class="kn">import</span> <span class="n">ServerConnection</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.contexts</span> <span class="kn">import</span> <span class="n">ApplicationContext</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.protocol_handler</span> <span class="kn">import</span> <span class="n">ProtocolHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.views.doc_handler</span> <span class="kn">import</span> <span class="n">DocHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.views.multi_root_static_handler</span> <span class="kn">import</span> <span class="n">MultiRootStaticHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.views.static_handler</span> <span class="kn">import</span> <span class="n">StaticHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.views.ws</span> <span class="kn">import</span> <span class="n">WSHandler</span>
+<span class="kn">from</span> <span class="nn">bokeh.server.auth_provider</span> <span class="kn">import</span> <span class="n">NullAuth</span>
+<span class="kn">from</span> <span class="nn">bokeh.util.token</span> <span class="kn">import</span> <span class="n">get_session_id</span>
+<span class="kn">from</span> <span class="nn">tornado.web</span> <span class="kn">import</span> <span class="n">StaticFileHandler</span>
+
+<span class="kn">from</span> <span class="nn">..config</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">edit_readonly</span>
+<span class="kn">from</span> <span class="nn">.state</span> <span class="kn">import</span> <span class="n">state</span>
+<span class="kn">from</span> <span class="nn">.resources</span> <span class="kn">import</span> <span class="n">DIST_DIR</span><span class="p">,</span> <span class="n">Resources</span>
+
+<span class="n">_RESOURCES</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">_APPS</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<div class="viewcode-block" id="url_path_join"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.url_path_join">[docs]</a><span class="k">def</span> <span class="nf">url_path_join</span><span class="p">(</span><span class="o">*</span><span class="n">pieces</span><span class="p">):</span>
+    <span class="sd">"""Join components of url into a relative url</span>
+<span class="sd">    Use to prevent double slash when joining subpath. This will leave the</span>
+<span class="sd">    initial and final / in place</span>
+<span class="sd">    """</span>
+    <span class="n">initial</span> <span class="o">=</span> <span class="n">pieces</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+    <span class="n">final</span> <span class="o">=</span> <span class="n">pieces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+    <span class="n">stripped</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">pieces</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s1">'/'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stripped</span> <span class="k">if</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">initial</span><span class="p">:</span> <span class="n">result</span> <span class="o">=</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="n">result</span>
+    <span class="k">if</span> <span class="n">final</span><span class="p">:</span> <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="s1">'/'</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="s1">'//'</span><span class="p">:</span> <span class="n">result</span> <span class="o">=</span> <span class="s1">'/'</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="ServerApplicationProxy"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.ServerApplicationProxy">[docs]</a><span class="k">class</span> <span class="nc">ServerApplicationProxy</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    A wrapper around the jupyter_server.serverapp.ServerWebApplication</span>
+<span class="sd">    to make it compatible with the expected BokehTornado application</span>
+<span class="sd">    API.</span>
+<span class="sd">    """</span>
+
+    <span class="n">auth_provider</span> <span class="o">=</span> <span class="n">NullAuth</span><span class="p">()</span>
+    <span class="n">generate_session_ids</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">sign_sessions</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">include_headers</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">include_cookies</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">exclude_headers</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">exclude_cookies</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">session_token_expiration</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">secret_key</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">websocket_origins</span> <span class="o">=</span> <span class="s1">'*'</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_app</span> <span class="o">=</span> <span class="n">app</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_app</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PanelHandler"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.PanelHandler">[docs]</a><span class="k">class</span> <span class="nc">PanelHandler</span><span class="p">(</span><span class="n">DocHandler</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">kw</span><span class="p">[</span><span class="s1">'application_context'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">kw</span><span class="p">[</span><span class="s1">'bokeh_websocket_path'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">proxy</span> <span class="o">=</span> <span class="n">ServerApplicationProxy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">_APPS</span><span class="p">:</span>
+            <span class="n">app</span><span class="p">,</span> <span class="n">context</span> <span class="o">=</span> <span class="n">_APPS</span><span class="p">[</span><span class="n">path</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'yml'</span><span class="p">)</span> <span class="ow">or</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.yaml'</span><span class="p">):</span>
+                <span class="kn">from</span> <span class="nn">lumen.config</span> <span class="kn">import</span> <span class="n">config</span>
+                <span class="kn">from</span> <span class="nn">lumen.command</span> <span class="kn">import</span> <span class="n">build_single_handler_application</span> <span class="k">as</span> <span class="n">build_lumen</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">dev</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">app</span> <span class="o">=</span> <span class="n">build_lumen</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">argv</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">app</span> <span class="o">=</span> <span class="n">build_single_handler_application</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">ApplicationContext</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">_loop</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">ioloop</span><span class="o">.</span><span class="n">IOLoop</span><span class="o">.</span><span class="n">current</span><span class="p">()</span>
+            <span class="n">_APPS</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">application_context</span> <span class="o">=</span> <span class="n">context</span>
+
+        <span class="n">session</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_session</span><span class="p">()</span>
+
+        <span class="n">page</span> <span class="o">=</span> <span class="n">server_html_page_for_session</span><span class="p">(</span>
+            <span class="n">session</span><span class="p">,</span>
+            <span class="n">resources</span><span class="o">=</span><span class="n">RESOURCES</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+            <span class="n">template</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+            <span class="n">template_variables</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">template_variables</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_header</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span> <span class="s1">'text/html'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">page</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PanelWSHandler"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.PanelWSHandler">[docs]</a><span class="k">class</span> <span class="nc">PanelWSHandler</span><span class="p">(</span><span class="n">WSHandler</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">kw</span><span class="p">[</span><span class="s1">'application_context'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">proxy</span> <span class="o">=</span> <span class="n">ServerApplicationProxy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="PanelWSHandler.open"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.PanelWSHandler.open">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">context</span> <span class="o">=</span> <span class="n">_APPS</span><span class="p">[</span><span class="n">path</span><span class="p">]</span>
+
+        <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_token</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_subprotocol</span> <span class="o">!=</span> <span class="s1">'bokeh'</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="n">ProtocolError</span><span class="p">(</span><span class="s2">"Subprotocol header is not 'bokeh'"</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">token</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="n">ProtocolError</span><span class="p">(</span><span class="s2">"No token received in subprotocol header"</span><span class="p">)</span>
+
+        <span class="n">session_id</span> <span class="o">=</span> <span class="n">get_session_id</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">context</span><span class="o">.</span><span class="n">create_session_if_needed</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get_session</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">protocol</span> <span class="o">=</span> <span class="n">Protocol</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">receiver</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">(</span><span class="n">protocol</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handler</span> <span class="o">=</span> <span class="n">ProtocolHandler</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_connection</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">'ACK'</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">new_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">application_context</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
+        <span class="n">connection</span> <span class="o">=</span> <span class="n">ServerConnection</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">application_context</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">connection</span>
+
+<div class="viewcode-block" id="PanelWSHandler.on_close"><a class="viewcode-back" href="../../../api/panel.io.html#panel.io.jupyter_server_extension.PanelWSHandler.on_close">[docs]</a>    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">detach_session</span><span class="p">()</span></div></div>
+
+
+<span class="k">def</span> <span class="nf">_load_jupyter_server_extension</span><span class="p">(</span><span class="n">notebook_app</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">RESOURCES</span>
+
+    <span class="n">base_url</span> <span class="o">=</span> <span class="n">notebook_app</span><span class="o">.</span><span class="n">web_app</span><span class="o">.</span><span class="n">settings</span><span class="p">[</span><span class="s2">"base_url"</span><span class="p">]</span>
+
+    <span class="c1"># Configure Panel</span>
+    <span class="n">RESOURCES</span> <span class="o">=</span> <span class="n">Resources</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">"server"</span><span class="p">,</span> <span class="n">root_url</span><span class="o">=</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s1">'panel-preview'</span><span class="p">),</span>
+        <span class="n">path_versioner</span><span class="o">=</span><span class="n">StaticHandler</span><span class="o">.</span><span class="n">append_version</span>
+    <span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">autoreload</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">with</span> <span class="n">edit_readonly</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">url_path_join</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s1">'/panel-preview/'</span><span class="p">)</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">rel_path</span> <span class="o">=</span> <span class="n">url_path_join</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s1">'/panel-preview'</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">base_url</span><span class="p">,</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="s1">'panel-preview'</span><span class="p">))</span>
+
+    <span class="c1"># Set up handlers</span>
+    <span class="n">notebook_app</span><span class="o">.</span><span class="n">web_app</span><span class="o">.</span><span class="n">add_handlers</span><span class="p">(</span>
+        <span class="n">host_pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">".*$"</span><span class="p">,</span>
+        <span class="n">host_handlers</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"panel-preview/static/extensions/(.*)"</span><span class="p">),</span>
+             <span class="n">MultiRootStaticHandler</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">extension_dirs</span><span class="p">)),</span>
+            <span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"panel-preview/static/(.*)"</span><span class="p">),</span>
+             <span class="n">StaticHandler</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"panel-preview/render/(.*)/ws"</span><span class="p">),</span>
+             <span class="n">PanelWSHandler</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"panel-preview/render/(.*)"</span><span class="p">),</span>
+             <span class="n">PanelHandler</span><span class="p">,</span> <span class="p">{}),</span>
+            <span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"panel_dist/(.*)"</span><span class="p">),</span>
+             <span class="n">StaticFileHandler</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">DIST_DIR</span><span class="p">))</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+
+<span class="c1"># compat for older versions of Jupyter</span>
+<span class="n">load_jupyter_server_extension</span> <span class="o">=</span> <span class="n">_load_jupyter_server_extension</span>
+</pre></div>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</main>
+</div>
+</div>
+<script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1539 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>DeckGL — Panel 0.12.6 documentation</title>
+<link href="../../_static/css/theme.css" rel="stylesheet"/>
+<link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/blank.css" rel="stylesheet" type="text/css">
+<link href="../../_static/togglebutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/mystnb.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/css/custom.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/togglebutton.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon">
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="ECharts.html" rel="next" title="ECharts"/>
+<link href="DataFrame.html" rel="prev" title="DataFrame"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+</link></link></link></link></link></link></head>
+<body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
+<div class="container-fluid" id="banner"></div>
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<div id="navbar-start">
+<a class="navbar-brand" href="../../index.html">
+<img alt="logo" class="logo" src="../../_static/logo_horizontal.png"/>
+</a>
+</div>
+<button aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar-collapsible" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="col-lg-9 collapse navbar-collapse" id="navbar-collapsible">
+<div class="mr-auto" id="navbar-center">
+<div class="navbar-center-item">
+<ul class="navbar-nav" id="navbar-main-elements">
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../user_guide/index.html">
+  User Guide
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../gallery/index.html">
+  Gallery
+ </a>
+</li>
+<li class="toctree-l1 current active nav-item">
+<a class="reference internal nav-link" href="../index.html">
+  Reference Gallery
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../developer_guide/index.html">
+  Developers
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../api/index.html">
+  API
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../releases.html">
+  Releases
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../FAQ.html">
+  FAQ
+ </a>
+</li>
+<li class="toctree-l1 nav-item">
+<a class="reference internal nav-link" href="../../about/index.html">
+  About
+ </a>
+</li>
+</ul>
+</div>
+</div>
+<div id="navbar-end">
+<div class="navbar-end-item">
+<ul aria-label="Icon Links" class="navbar-nav" id="navbar-icon-links">
+<li class="nav-item">
+<a class="nav-link" href="https://github.com/holoviz/panel" rel="noopener" target="_blank" title="GitHub">
+<span><i class="fab fa-github-square"></i></span>
+<label class="sr-only">GitHub</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://twitter.com/Panel_Org" rel="noopener" target="_blank" title="Twitter">
+<span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse">
+<span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="container-xl">
+<div class="row">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="col-12 col-md-2 bd-sidebar"><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="icon fas fa-search"></i>
+<input aria-label="Search the docs ..." autocomplete="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." type="search"/>
+</form><nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="Alert.html">
+   Alert
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Audio.html">
+   Audio
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Bokeh.html">
+   Bokeh
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1 current active">
+<a class="current reference internal" href="#">
+   DeckGL
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="ECharts.html">
+   ECharts
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Folium.html">
+   Folium
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="GIF.html">
+   GIF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="HTML.html">
+   HTML
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="HoloViews.html">
+   HoloViews
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IDOM.html">
+   IDOM
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="IPyWidget.html">
+   IPyWidget
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="JPG.html">
+   JPG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="JSON.html">
+   JSON
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="LaTeX.html">
+   LaTeX
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Markdown.html">
+   Markdown
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Matplotlib.html">
+   Matplotlib
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PDF.html">
+   PDF
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="PNG.html">
+   PNG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Param.html">
+   Param
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Perspective.html">
+   Perspective
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Plotly.html">
+   Plotly
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="SVG.html">
+   SVG
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Str.html">
+   Str
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Streamz.html">
+   Streamz
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTK.html">
+   VTK
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTKJS.html">
+   VTKJS
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="VTKVolume.html">
+   VTKVolume
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Vega.html">
+   Vega
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="Video.html">
+   Video
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Accordion.html">
+   Accordion
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Card.html">
+   Card
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Column.html">
+   Column
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Divider.html">
+   Divider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/FlexBox.html">
+   FlexBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridBox.html">
+   GridBox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridSpec.html">
+   GridSpec
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/GridStack.html">
+   GridStack
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Row.html">
+   Row
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/Tabs.html">
+   Tabs
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../layouts/WidgetBox.html">
+   WidgetBox
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Bootstrap.html">
+   Bootstrap
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastGridTemplate.html">
+   FastGridTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/FastListTemplate.html">
+   FastListTemplate
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/GoldenLayout.html">
+   GoldenLayout
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Material.html">
+   Material
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/React.html">
+   React
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../templates/Vanilla.html">
+   Vanilla
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/BooleanStatus.html">
+   BooleanStatus
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Dial.html">
+   Dial
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Gauge.html">
+   Gauge
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/LoadingSpinner.html">
+   LoadingSpinner
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Number.html">
+   Number
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Progress.html">
+   Progress
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Tqdm.html">
+   Tqdm
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../indicators/Trend.html">
+   Trend
+  </a>
+</li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Ace.html">
+   Ace
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/AutocompleteInput.html">
+   AutocompleteInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Button.html">
+   Button
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckBoxGroup.html">
+   CheckBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CheckButtonGroup.html">
+   CheckButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Checkbox.html">
+   Checkbox
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/ColorPicker.html">
+   ColorPicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/CrossSelector.html">
+   CrossSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DataFrame.html">
+   DataFrame
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatePicker.html">
+   DatePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateRangeSlider.html">
+   DateRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DateSlider.html">
+   DateSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeInput.html">
+   DatetimeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimePicker.html">
+   DatetimePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangeInput.html">
+   DatetimeRangeInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DatetimeRangePicker.html">
+   DatetimeRangePicker
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscretePlayer.html">
+   DiscretePlayer
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/DiscreteSlider.html">
+   DiscreteSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableFloatSlider.html">
+   EditableFloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableIntSlider.html">
+   EditableIntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/EditableRangeSlider.html">
+   EditableRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileDownload.html">
+   FileDownload
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileInput.html">
+   FileInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FileSelector.html">
+   FileSelector
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatInput.html">
+   FloatInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/FloatSlider.html">
+   FloatSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntInput.html">
+   IntInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntRangeSlider.html">
+   IntRangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/IntSlider.html">
+   IntSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/LiteralInput.html">
+   LiteralInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MenuButton.html">
+   MenuButton
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiChoice.html">
+   MultiChoice
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/MultiSelect.html">
+   MultiSelect
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/PasswordInput.html">
+   PasswordInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Player.html">
+   Player
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioBoxGroup.html">
+   RadioBoxGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RadioButtonGroup.html">
+   RadioButtonGroup
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/RangeSlider.html">
+   RangeSlider
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Select.html">
+   Select
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/SpeechToText.html">
+   SpeechToText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/StaticText.html">
+   StaticText
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Tabulator.html">
+   Tabulator
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Terminal.html">
+   Terminal
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextAreaInput.html">
+   TextAreaInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextInput.html">
+   TextInput
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/TextToSpeech.html">
+   TextToSpeech
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/Toggle.html">
+   Toggle
+  </a>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../widgets/VideoStream.html">
+   VideoStream
+  </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+<div class="toc-item">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#parameters">
+   Parameters:
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tooltips">
+   Tooltips
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pydeck">
+     PyDeck
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#controls">
+   Controls
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="toc-item">
+</div>
+<a href="https://mybinder.org/v2/gh/holoviz/panel/v0.12.6?urlpath=lab/tree/examples/reference/panes/DeckGL.ipynb" style="padding-left: 1.5rem;">Open this page in Binder</a>
+</div>
+<main class="col-12 col-md-10 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+<div>
+<section id="deckgl">
+<span id="panes-gallery-deckgl"></span><h1>DeckGL<a class="headerlink" href="#deckgl" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/DeckGL.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'deckgl'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, js_modules, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+    if (js_modules == null) js_modules = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls.length === 0 && js_modules.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    var skip = [];
+    if (window.requirejs) {
+      window.requirejs.config({'packages': {}, 'paths': {'deck.gl': 'https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@^8.1.2/dist/index', 'mapbox-gl': 'https://cdn.jsdelivr.net/npm/mapbox-gl@1.7.0/dist/mapbox-gl.min'}, 'shim': {}});
+      
+      require(["deck.gl"], function(deck) {
+	
+	window.deck = deck
+	
+	on_load()
+      })
+      
+      require(["mapbox-gl"], function(mapboxgl) {
+	
+	window.mapboxgl = mapboxgl
+	
+	on_load()
+      })
+      
+      root._bokeh_is_loading = css_urls.length + 2;
+    } else {
+      root._bokeh_is_loading = css_urls.length + js_urls.length + js_modules.length;
+    }
+    if (((window['deck'] !== undefined) && (!(window['deck'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://cdn.jsdelivr.net/npm/deck.gl@8.1.12/dist.min.js', 'https://cdn.jsdelivr.net/npm/@deck.gl/json@8.1.12/dist.min.js', 'https://cdn.jsdelivr.net/npm/@loaders.gl/csv@2.0.2/dist/dist.min.js', 'https://cdn.jsdelivr.net/npm/@loaders.gl/json@2.0.2/dist/dist.min.js', 'https://cdn.jsdelivr.net/npm/@loaders.gl/3d-tiles@2.0.2/dist/dist.min.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }
+    if (((window['mapboxgl'] !== undefined) && (!(window['mapboxgl'] instanceof HTMLElement))) || window.requirejs) {
+      var urls = ['https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'];
+      for (var i = 0; i < urls.length; i++) {
+        skip.push(urls[i])
+      }
+    }
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    for (var i = 0; i < js_modules.length; i++) {
+      var url = js_modules[i];
+      if (skip.indexOf(url) >= 0) {
+	if (!window.requirejs) {
+	  on_load();
+	}
+	continue;
+      }
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      element.type = "module";
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+    if (!js_urls.length && !js_modules.length) {
+      on_load()
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.jsdelivr.net/npm/deck.gl@8.1.12/dist.min.js", "https://cdn.jsdelivr.net/npm/@deck.gl/json@8.1.12/dist.min.js", "https://cdn.jsdelivr.net/npm/@loaders.gl/csv@2.0.2/dist/dist.min.js", "https://cdn.jsdelivr.net/npm/@loaders.gl/json@2.0.2/dist/dist.min.js", "https://cdn.jsdelivr.net/npm/@loaders.gl/3d-tiles@2.0.2/dist/dist.min.js", "https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js", "https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js", "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js", "https://unpkg.com/@holoviz/panel@0.12.6/dist/panel.min.js", "https://unpkg.com/@bokeh/ipywidgets_bokeh@1.2.1/dist/ipywidgets_bokeh.js"];
+  var js_modules = [];
+  var css_urls = ["https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/dataframe.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/markdown.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/widgets.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/json.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/card.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/loading.css", "https://unpkg.com/@holoviz/panel@0.12.6/dist/css/alerts.css"];
+  var inline_js = [
+    function(Bokeh) {
+      inject_raw_css("\n    .bk.pn-loading.arcs:before {\n      background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjMyIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZT0iI2MzYzNjMyIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIga2V5VGltZXM9IjA7MSIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCI+PC9hbmltYXRlVHJhbnNmb3JtPiAgPC9jaXJjbGU+PC9zdmc+\");\n      max-height: 400px;\n    }\n    ");
+    },
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {} // ensure no trailing comma for IE
+  ];
+
+  function run_inline_js() {
+    if ((root.Bokeh !== undefined) || (force === true)) {
+      for (var i = 0; i < inline_js.length; i++) {
+        inline_js[i].call(root, root.Bokeh);
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, js_modules, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><script type="application/javascript">
+if ((window.PyViz === undefined) || (window.PyViz instanceof HTMLElement)) {
+  window.PyViz = {comms: {}, comm_status:{}, kernels:{}, receivers: {}, plot_index: []}
+}
+
+
+    function JupyterCommManager() {
+    }
+
+    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {
+      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        comm_manager.register_target(comm_id, function(comm) {
+          comm.on_msg(msg_handler);
+        });
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {
+          comm.onMsg = msg_handler;
+        });
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        google.colab.kernel.comms.registerTarget(comm_id, (comm) => {
+          var messages = comm.messages[Symbol.asyncIterator]();
+          function processIteratorResult(result) {
+            var message = result.value;
+            console.log(message)
+            var content = {data: message.data, comm_id};
+            var buffers = []
+            for (var buffer of message.buffers || []) {
+              buffers.push(new DataView(buffer))
+            }
+            var metadata = message.metadata || {};
+            var msg = {content, buffers, metadata}
+            msg_handler(msg);
+            return messages.next().then(processIteratorResult);
+          }
+          return messages.next().then(processIteratorResult);
+        })
+      }
+    }
+
+    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {
+      if (comm_id in window.PyViz.comms) {
+        return window.PyViz.comms[comm_id];
+      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {
+        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;
+        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);
+        if (msg_handler) {
+          comm.on_msg(msg_handler);
+        }
+      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {
+        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);
+        comm.open();
+        if (msg_handler) {
+          comm.onMsg = msg_handler;
+        }
+      } else if (typeof google != 'undefined' && google.colab.kernel != null) {
+        var comm_promise = google.colab.kernel.comms.open(comm_id)
+        comm_promise.then((comm) => {
+          window.PyViz.comms[comm_id] = comm;
+          if (msg_handler) {
+            var messages = comm.messages[Symbol.asyncIterator]();
+            function processIteratorResult(result) {
+              var message = result.value;
+              var content = {data: message.data};
+              var metadata = message.metadata || {comm_id};
+              var msg = {content, metadata}
+              msg_handler(msg);
+              return messages.next().then(processIteratorResult);
+            }
+            return messages.next().then(processIteratorResult);
+          }
+        }) 
+        var sendClosure = (data, metadata, buffers, disposeOnDone) => {
+          return comm_promise.then((comm) => {
+            comm.send(data, metadata, buffers, disposeOnDone);
+          });
+        };
+        var comm = {
+          send: sendClosure
+        };
+      }
+      window.PyViz.comms[comm_id] = comm;
+      return comm;
+    }
+    window.PyViz.comm_manager = new JupyterCommManager();
+    
+
+
+var JS_MIME_TYPE = 'application/javascript';
+var HTML_MIME_TYPE = 'text/html';
+var EXEC_MIME_TYPE = 'application/vnd.holoviews_exec.v0+json';
+var CLASS_NAME = 'output';
+
+/**
+ * Render data to the DOM node
+ */
+function render(props, node) {
+  var div = document.createElement("div");
+  var script = document.createElement("script");
+  node.appendChild(div);
+  node.appendChild(script);
+}
+
+/**
+ * Handle when a new output is added
+ */
+function handle_add_output(event, handle) {
+  var output_area = handle.output_area;
+  var output = handle.output;
+  if ((output.data == undefined) || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+    return
+  }
+  var id = output.metadata[EXEC_MIME_TYPE]["id"];
+  var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+  if (id !== undefined) {
+    var nchildren = toinsert.length;
+    var html_node = toinsert[nchildren-1].children[0];
+    html_node.innerHTML = output.data[HTML_MIME_TYPE];
+    var scripts = [];
+    var nodelist = html_node.querySelectorAll("script");
+    for (var i in nodelist) {
+      if (nodelist.hasOwnProperty(i)) {
+        scripts.push(nodelist[i])
+      }
+    }
+
+    scripts.forEach( function (oldScript) {
+      var newScript = document.createElement("script");
+      var attrs = [];
+      var nodemap = oldScript.attributes;
+      for (var j in nodemap) {
+        if (nodemap.hasOwnProperty(j)) {
+          attrs.push(nodemap[j])
+        }
+      }
+      attrs.forEach(function(attr) { newScript.setAttribute(attr.name, attr.value) });
+      newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+    if (JS_MIME_TYPE in output.data) {
+      toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];
+    }
+    output_area._hv_plot_id = id;
+    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {
+      window.PyViz.plot_index[id] = Bokeh.index[id];
+    } else {
+      window.PyViz.plot_index[id] = null;
+    }
+  } else if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+    var bk_div = document.createElement("div");
+    bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+    var script_attrs = bk_div.children[0].attributes;
+    for (var i = 0; i < script_attrs.length; i++) {
+      toinsert[toinsert.length - 1].childNodes[1].setAttribute(script_attrs[i].name, script_attrs[i].value);
+    }
+    // store reference to server id on output_area
+    output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+  }
+}
+
+/**
+ * Handle when an output is cleared or removed
+ */
+function handle_clear_output(event, handle) {
+  var id = handle.cell.output_area._hv_plot_id;
+  var server_id = handle.cell.output_area._bokeh_server_id;
+  if (((id === undefined) || !(id in PyViz.plot_index)) && (server_id !== undefined)) { return; }
+  var comm = window.PyViz.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});
+  if (server_id !== null) {
+    comm.send({event_type: 'server_delete', 'id': server_id});
+    return;
+  } else if (comm !== null) {
+    comm.send({event_type: 'delete', 'id': id});
+  }
+  delete PyViz.plot_index[id];
+  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {
+    var doc = window.Bokeh.index[id].model.document
+    doc.clear();
+    const i = window.Bokeh.documents.indexOf(doc);
+    if (i > -1) {
+      window.Bokeh.documents.splice(i, 1);
+    }
+  }
+}
+
+/**
+ * Handle kernel restart event
+ */
+function handle_kernel_cleanup(event, handle) {
+  delete PyViz.comms["hv-extension-comm"];
+  window.PyViz.plot_index = {}
+}
+
+/**
+ * Handle update_display_data messages
+ */
+function handle_update_output(event, handle) {
+  handle_clear_output(event, {cell: {output_area: handle.output_area}})
+  handle_add_output(event, handle)
+}
+
+function register_renderer(events, OutputArea) {
+  function append_mime(data, metadata, element) {
+    // create a DOM node to render to
+    var toinsert = this.create_output_subarea(
+    metadata,
+    CLASS_NAME,
+    EXEC_MIME_TYPE
+    );
+    this.keyboard_manager.register_events(toinsert);
+    // Render to node
+    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+    render(props, toinsert[0]);
+    element.append(toinsert);
+    return toinsert
+  }
+
+  events.on('output_added.OutputArea', handle_add_output);
+  events.on('output_updated.OutputArea', handle_update_output);
+  events.on('clear_output.CodeCell', handle_clear_output);
+  events.on('delete.Cell', handle_clear_output);
+  events.on('kernel_ready.Kernel', handle_kernel_cleanup);
+
+  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+    safe: true,
+    index: 0
+  });
+}
+
+if (window.Jupyter !== undefined) {
+  try {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  } catch(err) {
+  }
+}
+</script></div>
+</div>
+<p><a class="reference external" href="https://deck.gl/#/">Deck.gl</a> is a very powerful WebGL-powered framework for visual exploratory data analysis of large datasets. The <code class="docutils literal notranslate"><span class="pre">DeckGL</span></code> <em>pane</em> renders JSON Deck.gl JSON specification as well as <code class="docutils literal notranslate"><span class="pre">PyDeck</span></code> plots inside a panel. If data is encoded in the deck.gl layers the pane will extract the data and send it across the websocket in a binary format speeding up rendering.</p>
+<p>The <a class="reference external" href="https://deckgl.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">PyDeck</span></code></a> <em>package</em> provides Python bindings. Please follow the <a class="reference external" href="https://github.com/uber/deck.gl/blob/master/bindings/pydeck/README.md">installation instructions</a> closely to get it working in this Jupyter Notebook.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>For layout and styling related parameters see the <a class="reference internal" href="../../user_guide/Customization.html"><span class="doc std std-doc">customization user guide</span></a>.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mapbox_api_key</span></code></strong> (string): The MapBox API key if not supplied by a PyDeck object.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">object</span></code></strong> (object, dict or string): The deck.GL JSON or PyDeck object being displayed</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tooltips</span></code></strong> (bool or dict, default=True): Whether to enable tooltips or custom tooltip formatters</p></li>
+</ul>
+<p>In addition to parameters which control how the object is displayed the DeckGL pane also exposes a number of parameters which receive updates from the plot:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">click_state</span></code></strong> (dict): Contains the last click event on the DeckGL plot.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hover_state</span></code></strong> (dict): Contains information about the current hover location on the DeckGL plot.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">view_state</span></code></strong> (dict): Contains information about the current view port of the DeckGL plot.</p></li>
+</ul>
+<hr class="docutils"/>
+<p>In order to use Deck.gl you need a MAP BOX Key which you can acquire for free for limited use at <a class="reference external" href="https://account.mapbox.com/access-tokens/">mapbox.com</a>.</p>
+<p>Now we can define a JSON spec and pass it to the DeckGL pane along with the Mapbox key:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MAPBOX_KEY</span> <span class="o">=</span> <span class="s2">"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ"</span>
+
+<span class="n">json_spec</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"initialViewState"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"bearing"</span><span class="p">:</span> <span class="o">-</span><span class="mf">27.36</span><span class="p">,</span>
+        <span class="s2">"latitude"</span><span class="p">:</span> <span class="mf">52.2323</span><span class="p">,</span>
+        <span class="s2">"longitude"</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.415</span><span class="p">,</span>
+        <span class="s2">"maxZoom"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+        <span class="s2">"minZoom"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">"pitch"</span><span class="p">:</span> <span class="mf">40.5</span><span class="p">,</span>
+        <span class="s2">"zoom"</span><span class="p">:</span> <span class="mi">6</span>
+    <span class="p">},</span>
+    <span class="s2">"layers"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">"@@type"</span><span class="p">:</span> <span class="s2">"HexagonLayer"</span><span class="p">,</span>
+        <span class="s2">"autoHighlight"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"coverage"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"</span><span class="p">,</span>
+        <span class="s2">"elevationRange"</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
+        <span class="s2">"elevationScale"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">"extruded"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">"getPosition"</span><span class="p">:</span> <span class="s2">"@@=[lng, lat]"</span><span class="p">,</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"8a553b25-ef3a-489c-bbe2-e102d18a3211"</span><span class="p">,</span>
+        <span class="s2">"pickable"</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}],</span>
+    <span class="s2">"mapStyle"</span><span class="p">:</span> <span class="s2">"mapbox://styles/mapbox/dark-v9"</span><span class="p">,</span>
+    <span class="s2">"views"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"@@type"</span><span class="p">:</span> <span class="s2">"MapView"</span><span class="p">,</span> <span class="s2">"controller"</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">deck_gl</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">DeckGL</span><span class="p">(</span><span class="n">json_spec</span><span class="p">,</span> <span class="n">mapbox_api_key</span><span class="o">=</span><span class="n">MAPBOX_KEY</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">'stretch_width'</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="n">deck_gl</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1002">
+<div class="bk-root" data-root-id="1002" id="fbf23820-4a0f-4fb1-955a-ae8fe1cb5018"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"4f744df4-07df-4f00-9265-3dd8d4b422aa":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"2fe5063faf6b48e5a129ce8e567f31be","comm_id":"a71b35edb4084821a7d692a66cd2f55f","plot_id":"1002"},"id":"1003","type":"panel.models.comm_manager.CommManager"},{"attributes":{"data":{"mapStyle":"mapbox://styles/mapbox/dark-v9","views":[{"@@type":"MapView","controller":true}]},"height":600,"initialViewState":{"bearing":-27.36,"latitude":52.2323,"longitude":-1.415,"maxZoom":15,"minZoom":5,"pitch":40.5,"zoom":6},"layers":[{"@@type":"HexagonLayer","autoHighlight":true,"coverage":1,"data":"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv","elevationRange":[0,3000],"elevationScale":50,"extruded":true,"getPosition":"@@=[lng, lat]","id":"8a553b25-ef3a-489c-bbe2-e102d18a3211","pickable":true}],"mapbox_api_key":"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ","margin":[5,5,5,5],"name":"DeckGL02973","sizing_mode":"stretch_width","tooltip":true},"id":"1002","type":"panel.models.deckgl.DeckGLPlot"},{"attributes":{"reload":false},"id":"1004","type":"panel.models.location.Location"}],"root_ids":["1002","1003","1004"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"4f744df4-07df-4f00-9265-3dd8d4b422aa","root_ids":["1002"],"roots":{"1002":"fbf23820-4a0f-4fb1-955a-ae8fe1cb5018"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>Like other panes the DeckGL object can be replaced or updated. In this example we will change the <code class="docutils literal notranslate"><span class="pre">colorRange</span></code> of the HexagonLayer and then trigger an update:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">COLOR_RANGE</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mi">189</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">206</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">216</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">181</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">254</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">177</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">254</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">209</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">json_spec</span><span class="p">[</span><span class="s1">'layers'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'colorRange'</span><span class="p">]</span> <span class="o">=</span> <span class="n">COLOR_RANGE</span>
+
+<span class="n">deck_gl</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="s1">'object'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tooltips">
+<h2>Tooltips<a class="headerlink" href="#tooltips" title="Permalink to this headline">¶</a></h2>
+<p>By default tooltips can be disabled and enabled by setting <code class="docutils literal notranslate"><span class="pre">tooltips=True/False</span></code>. For more customization it is possible to pass in a dictionary defining the formatting. Let us start by declaring a plot with two layers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_URL</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json'</span>
+
+<span class="n">LAND_COVER</span> <span class="o">=</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">]]]</span>
+
+<span class="n">json_spec</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"initialViewState"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'latitude'</span><span class="p">:</span> <span class="mf">49.254</span><span class="p">,</span>
+      <span class="s1">'longitude'</span><span class="p">:</span> <span class="o">-</span><span class="mf">123.13</span><span class="p">,</span>
+      <span class="s1">'zoom'</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+      <span class="s1">'maxZoom'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s1">'pitch'</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+      <span class="s1">'bearing'</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="s2">"layers"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s1">'@@type'</span><span class="p">:</span> <span class="s1">'GeoJsonLayer'</span><span class="p">,</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'geojson'</span><span class="p">,</span>
+        <span class="s1">'data'</span><span class="p">:</span> <span class="n">DATA_URL</span><span class="p">,</span>
+        <span class="s1">'opacity'</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+        <span class="s1">'stroked'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'filled'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'extruded'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'wireframe'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'fp64'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'getLineColor'</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+        <span class="s1">'getElevation'</span><span class="p">:</span> <span class="s2">"@@=properties.valuePerSqm / 20"</span><span class="p">,</span>
+        <span class="s1">'getFillColor'</span><span class="p">:</span> <span class="s2">"@@=[255, 255, properties.growth * 255]"</span><span class="p">,</span>
+        <span class="s1">'pickable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="s1">'@@type'</span><span class="p">:</span> <span class="s1">'PolygonLayer'</span><span class="p">,</span>
+        <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'landcover'</span><span class="p">,</span>
+        <span class="s1">'data'</span><span class="p">:</span> <span class="n">LAND_COVER</span><span class="p">,</span>
+        <span class="s1">'stroked'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'pickable'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># processes the data as a flat longitude-latitude pair</span>
+        <span class="s1">'getPolygon'</span><span class="p">:</span> <span class="s1">'@@=-'</span><span class="p">,</span>
+        <span class="s1">'getFillColor'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+    <span class="p">}],</span>
+    <span class="s2">"mapStyle"</span><span class="p">:</span> <span class="s2">"mapbox://styles/mapbox/dark-v9"</span><span class="p">,</span>
+    <span class="s2">"views"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"@@type"</span><span class="p">:</span> <span class="s2">"MapView"</span><span class="p">,</span> <span class="s2">"controller"</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have explicitly given these layers the <code class="docutils literal notranslate"><span class="pre">id</span></code> <code class="docutils literal notranslate"><span class="pre">'landcover'</span></code> and <code class="docutils literal notranslate"><span class="pre">'geojson'</span></code>. Ordinarily we wouldn’t enable <code class="docutils literal notranslate"><span class="pre">pickable</span></code> property on the ‘landcover’ polygon and if we only have a single <code class="docutils literal notranslate"><span class="pre">pickable</span></code> layer it is sufficient to declare a tooltip like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geojson_tooltip</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"html"</span><span class="p">:</span> <span class="s2">"""</span>
+<span class="s2">      &lt;b&gt;Value per Square meter:&lt;/b&gt; </span><span class="si">{properties.valuePerSqm}</span><span class="s2">&lt;br&gt;</span>
+<span class="s2">      &lt;b&gt;Growth:&lt;/b&gt; </span><span class="si">{properties.growth}</span><span class="s2"></span>
+<span class="s2">    """</span><span class="p">,</span>
+    <span class="s2">"style"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"backgroundColor"</span><span class="p">:</span> <span class="s2">"steelblue"</span><span class="p">,</span>
+        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"white"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we created an HTML template which is populated by the <code class="docutils literal notranslate"><span class="pre">properties</span></code> in the GeoJSON and then has the <code class="docutils literal notranslate"><span class="pre">style</span></code> applied. In general the dictionary may contain:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code> - Set the innerHTML of the tooltip.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> - Set the innerText of the tooltip.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> - A dictionary of CSS styles that will modify the default style of the tooltip.</p></li>
+</ul>
+<p>If we have multiple pickable layers we can declare distinct tooltips by nesting the tooltips dictionary, indexed by the layer <code class="docutils literal notranslate"><span class="pre">id</span></code> or the index of the layer in the list of layers (note that the dictionary must be either integer indexed or string indexed not both).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"geojson"</span><span class="p">:</span> <span class="n">geojson_tooltip</span><span class="p">,</span>
+    <span class="s2">"landcover"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"html"</span><span class="p">:</span> <span class="s2">"The background"</span><span class="p">,</span>
+        <span class="s2">"style"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"backgroundColor"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+            <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"white"</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">DeckGL</span><span class="p">(</span><span class="n">json_spec</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="n">tooltip</span><span class="p">,</span> <span class="n">mapbox_api_key</span><span class="o">=</span><span class="n">MAPBOX_KEY</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">'stretch_width'</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1006">
+<div class="bk-root" data-root-id="1006" id="c4fbdcce-72f2-41bf-b23a-ab34d523e70d"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"7fe69f90-4bc4-469d-b678-edace44f9814":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"client_comm_id":"de5c4bdf3eef4b3d81d0875e56c960b1","comm_id":"0f292b2e5b2848b48cb137521eb0756f","plot_id":"1006"},"id":"1007","type":"panel.models.comm_manager.CommManager"},{"attributes":{"data":{"mapStyle":"mapbox://styles/mapbox/dark-v9","views":[{"@@type":"MapView","controller":true}]},"height":600,"initialViewState":{"bearing":0,"latitude":49.254,"longitude":-123.13,"maxZoom":16,"pitch":45,"zoom":11},"layers":[{"@@type":"GeoJsonLayer","data":"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json","extruded":true,"filled":true,"fp64":true,"getElevation":"@@=properties.valuePerSqm / 20","getFillColor":"@@=[255, 255, properties.growth * 255]","getLineColor":[255,255,255],"id":"geojson","opacity":0.8,"pickable":true,"stroked":true,"wireframe":true},{"@@type":"PolygonLayer","data":[[[-123.0,49.196],[-123.0,49.324],[-123.306,49.324],[-123.306,49.196]]],"getFillColor":[0,0,0,20],"getPolygon":"@@=-","id":"landcover","pickable":true,"stroked":true}],"mapbox_api_key":"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ","margin":[5,5,5,5],"name":"DeckGL02978","sizing_mode":"stretch_width","tooltip":{"geojson":{"html":"\n      <b>Value per Square meter:</b> {properties.valuePerSqm}<br>\n      <b>Growth:</b> {properties.growth}\n    ","style":{"backgroundColor":"steelblue","color":"white"}},"landcover":{"html":"The background","style":{"backgroundColor":"red","color":"white"}}}},"id":"1006","type":"panel.models.deckgl.DeckGLPlot"}],"root_ids":["1006","1007"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"7fe69f90-4bc4-469d-b678-edace44f9814","root_ids":["1006"],"roots":{"1006":"c4fbdcce-72f2-41bf-b23a-ab34d523e70d"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+<p>When hovering on the area around Vancouver you should now see a tooltip saying <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">background'</span></code> colored red, while the hover tooltip should show information about each property when hovering over one of the property polygons.</p>
+<section id="pydeck">
+<h3>PyDeck<a class="headerlink" href="#pydeck" title="Permalink to this headline">¶</a></h3>
+<p>Instead of writing out raw JSON-like dictionaries the <code class="docutils literal notranslate"><span class="pre">DeckGL</span></code> pane may also be given a PyDeck object to render:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span>
+
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json"</span>
+
+<span class="n">LAND_COVER</span> <span class="o">=</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">]]]</span>
+
+<span class="n">INITIAL_VIEW_STATE</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
+  <span class="n">latitude</span><span class="o">=</span><span class="mf">49.254</span><span class="p">,</span>
+  <span class="n">longitude</span><span class="o">=-</span><span class="mf">123.13</span><span class="p">,</span>
+  <span class="n">zoom</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+  <span class="n">max_zoom</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+  <span class="n">pitch</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
+  <span class="n">bearing</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="n">polygon</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+    <span class="s1">'PolygonLayer'</span><span class="p">,</span>
+    <span class="n">LAND_COVER</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="c1"># processes the data as a flat longitude-latitude pair</span>
+    <span class="n">get_polygon</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span>
+    <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">geojson</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+    <span class="s1">'GeoJsonLayer'</span><span class="p">,</span>
+    <span class="n">DATA_URL</span><span class="p">,</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">get_elevation</span><span class="o">=</span><span class="s1">'properties.valuePerSqm / 20'</span><span class="p">,</span>
+    <span class="n">get_fill_color</span><span class="o">=</span><span class="s1">'[255, 255, properties.growth * 255]'</span><span class="p">,</span>
+    <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span>
+    <span class="n">api_keys</span><span class="o">=</span><span class="p">{</span><span class="s1">'mapbox'</span><span class="p">:</span> <span class="n">MAPBOX_KEY</span><span class="p">},</span>
+    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">polygon</span><span class="p">,</span> <span class="n">geojson</span><span class="p">],</span>
+    <span class="n">initial_view_state</span><span class="o">=</span><span class="n">INITIAL_VIEW_STATE</span>
+<span class="p">)</span>
+
+<span class="c1"># Tooltip (you can get the id directly from the layer object)</span>
+<span class="n">tooltips</span> <span class="o">=</span> <span class="p">{</span><span class="n">geojson</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">geojson_tooltip</span><span class="p">}</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">DeckGL</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">'stretch_width'</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="n">tooltips</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1008">
+<div class="bk-root" data-root-id="1008" id="26c337a7-4feb-4f5a-abca-e3a533d34a13"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"30c19757-e706-49da-8a3f-5ce65920bca0":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"data":{"mapProvider":"carto","mapStyle":"https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json","views":[{"@@type":"MapView","controller":true}]},"height":600,"initialViewState":{"bearing":0,"latitude":49.254,"longitude":-123.13,"maxZoom":16,"minZoom":null,"pitch":45,"zoom":11},"layers":[{"@@type":"PolygonLayer","binaryData":null,"data":[[[-123.0,49.196],[-123.0,49.324],[-123.306,49.324],[-123.306,49.196]]],"getFillColor":[0,0,0,20],"getPolygon":"@@=-","id":"c2c4b466-0a80-4115-9707-d944fc295485","kwargs":{"getFillColor":[0,0,0,20],"getPolygon":"-","stroked":false},"stroked":false,"useBinaryTransport":null},{"@@type":"GeoJsonLayer","binaryData":null,"data":"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json","extruded":true,"filled":true,"getElevation":"@@=properties.valuePerSqm / 20","getFillColor":"@@=[255, 255, properties.growth * 255]","getLineColor":[255,255,255],"id":"ebedf6c7-fac0-4a76-b11f-a571a831488f","kwargs":{"extruded":true,"filled":true,"getElevation":"properties.valuePerSqm / 20","getFillColor":"[255, 255, properties.growth * 255]","getLineColor":[255,255,255],"opacity":0.8,"pickable":true,"stroked":false,"wireframe":true},"opacity":0.8,"pickable":true,"stroked":false,"useBinaryTransport":null,"wireframe":true}],"mapbox_api_key":"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ","margin":[5,5,5,5],"name":"DeckGL02982","sizing_mode":"stretch_width","tooltip":{"ebedf6c7-fac0-4a76-b11f-a571a831488f":{"html":"\n      <b>Value per Square meter:</b> {properties.valuePerSqm}<br>\n      <b>Growth:</b> {properties.growth}\n    ","style":{"backgroundColor":"steelblue","color":"white"}}}},"id":"1008","type":"panel.models.deckgl.DeckGLPlot"},{"attributes":{"client_comm_id":"1d2ee361afd943c9ba2ea842f2cc0dfb","comm_id":"5428cd230f7a45c4971f6f86a50dd7ec","plot_id":"1008"},"id":"1009","type":"panel.models.comm_manager.CommManager"}],"root_ids":["1008","1009"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"30c19757-e706-49da-8a3f-5ce65920bca0","root_ids":["1008"],"roots":{"1008":"26c337a7-4feb-4f5a-abca-e3a533d34a13"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+</section>
+<section id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DeckGL</span></code> pane exposes a number of options which can be changed from both Python and Javascript. Try out the effect of these parameters interactively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">deck_gl</span><span class="o">.</span><span class="n">controls</span><span class="p">(),</span> <span class="n">deck_gl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="1010">
+<div class="bk-root" data-root-id="1010" id="fa5b21cd-6652-4c6d-ba71-6802ed3d69de"></div>
+</div>
+<script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    var docs_json = {"bb7726dc-772d-4719-b55c-8d58cb29365c":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"args":{"bidirectional":true,"properties":{"value":"css_classes"},"source":{"id":"1026"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['css_classes'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set css_classes on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['css_classes'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007643456]},"id":"1058","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"sizing_mode"},"source":{"id":"1036"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['sizing_mode'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set sizing_mode on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['sizing_mode'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512240]},"id":"1078","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"css_classes"},"source":{"id":"1039"},"target":{"id":"1026"}},"code":"\n    var value = source['css_classes'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007643456]},"id":"1059","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"sizing_mode"},"source":{"id":"1039"},"target":{"id":"1036"}},"code":"\n    var value = source['sizing_mode'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512240]},"id":"1079","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"width"},"source":{"id":"1039"},"target":{"id":"1027"}},"code":"\n    var value = source['width'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831104]},"id":"1061","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"visible"},"source":{"id":"1037"},"target":{"id":"1039"}},"code":"\n    var value = source['active'];\n    value = value.indexOf(0) >= 0;\n    value = value;\n    try {\n      var property = target.properties['visible'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set visible on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['visible'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512192]},"id":"1080","type":"CustomJS"},{"attributes":{"client_comm_id":"f45e54597fd64982ad58a6700321dd81","comm_id":"60b244a430624103a7fe7b00711f71ed","plot_id":"1010"},"id":"1082","type":"panel.models.comm_manager.CommManager"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"visible"},"source":{"id":"1039"},"target":{"id":"1037"}},"code":"\n    var value = source['visible'];\n    value = value;\n    value = value ? [0] : [];\n    try {\n      var property = target.properties['active'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set active on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['active'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512192]},"id":"1081","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"width"},"source":{"id":"1027"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['width'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set width on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['width'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831104]},"id":"1060","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"mapbox_api_key"},"source":{"id":"1014"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['mapbox_api_key'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set mapbox_api_key on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['mapbox_api_key'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007957152]},"id":"1040","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"mapbox_api_key"},"source":{"id":"1039"},"target":{"id":"1014"}},"code":"\n    var value = source['mapbox_api_key'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007957152]},"id":"1041","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"height"},"source":{"id":"1028"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['height'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set height on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['height'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831584]},"id":"1062","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"min_width"},"source":{"id":"1039"},"target":{"id":"1029"}},"code":"\n    var value = source['min_width'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831536]},"id":"1065","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"height"},"source":{"id":"1039"},"target":{"id":"1028"}},"code":"\n    var value = source['height'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831584]},"id":"1063","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"tooltips"},"source":{"id":"1039"},"target":{"id":"1015"}},"code":"\n    var value = source['tooltip'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140036330872160]},"id":"1043","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"tooltips"},"source":{"id":"1015"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['tooltip'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set tooltip on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['tooltip'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140036330872160]},"id":"1042","type":"CustomJS"},{"attributes":{"children":[{"id":"1011"},{"id":"1039"}],"margin":[0,0,0,0],"name":"Row03060"},"id":"1010","type":"Row"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"min_width"},"source":{"id":"1029"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['min_width'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set min_width on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['min_width'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831536]},"id":"1064","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"click_state"},"source":{"id":"1039"},"target":{"id":"1016"}},"code":"\n    var value = source['clickState'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007956192]},"id":"1045","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"min_height"},"source":{"id":"1039"},"target":{"id":"1030"}},"code":"\n    var value = source['min_height'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831152]},"id":"1067","type":"CustomJS"},{"attributes":{"margin":[0,0,0,0],"tabs":[{"id":"1019"},{"id":"1038"}]},"id":"1011","type":"Tabs"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"click_state"},"source":{"id":"1016"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['clickState'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set clickState on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['clickState'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007956192]},"id":"1044","type":"CustomJS"},{"attributes":{"children":[{"id":"1013"},{"id":"1014"},{"id":"1015"},{"id":"1016"},{"id":"1017"},{"id":"1018"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Controls","width":300},"id":"1012","type":"Column"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"hover_state"},"source":{"id":"1039"},"target":{"id":"1017"}},"code":"\n    var value = source['hoverState'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007956528]},"id":"1047","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1058"}]},"margin":[5,10,5,10],"title":"Css classes"},"id":"1026","type":"TextInput"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1052"}]},"margin":[5,10,5,10],"title":"Align","value":"'start'"},"id":"1023","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Controls</b>"},"id":"1013","type":"Div"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"min_height"},"source":{"id":"1030"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['min_height'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set min_height on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['min_height'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007831152]},"id":"1066","type":"CustomJS"},{"attributes":{"children":[{"id":"1021"},{"id":"1022"},{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"},{"id":"1028"},{"id":"1029"},{"id":"1030"},{"id":"1031"},{"id":"1032"},{"id":"1033"},{"id":"1034"},{"id":"1035"},{"id":"1036"},{"id":"1037"}],"css_classes":["panel-widget-box"],"margin":[5,5,5,5],"min_width":300,"name":"Layout","width":300},"id":"1020","type":"Column"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"max_width"},"source":{"id":"1039"},"target":{"id":"1031"}},"code":"\n    var value = source['max_width'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511952]},"id":"1069","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1044"}]},"margin":[5,10,5,10],"title":"Click state","value":"{}"},"id":"1016","type":"TextInput"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1046"}]},"margin":[5,10,5,10],"title":"Hover state","value":"{}"},"id":"1017","type":"TextInput"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1040"}]},"margin":[5,10,5,10],"max_length":5000,"title":"Mapbox api key","value":"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ"},"id":"1014","type":"TextInput"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"hover_state"},"source":{"id":"1017"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['hoverState'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set hoverState on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['hoverState'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007956528]},"id":"1046","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1042"}]},"margin":[5,10,5,10],"title":"Tooltips","value":"true"},"id":"1015","type":"TextInput"},{"attributes":{"margin":[5,10,5,10],"name":"","text":"<b>Layout</b>"},"id":"1021","type":"Div"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"view_state"},"source":{"id":"1039"},"target":{"id":"1018"}},"code":"\n    var value = source['viewState'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007413008]},"id":"1049","type":"CustomJS"},{"attributes":{"disabled":true,"js_property_callbacks":{"change:value":[{"id":"1050"}]},"margin":[5,10,5,10],"max_length":5000,"title":"Name","value":"DeckGL02973"},"id":"1022","type":"TextInput"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"max_width"},"source":{"id":"1031"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['max_width'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set max_width on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['max_width'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511952]},"id":"1068","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1048"}]},"margin":[5,10,5,10],"title":"View state","value":"{}"},"id":"1018","type":"TextInput"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"max_height"},"source":{"id":"1032"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['max_height'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set max_height on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['max_height'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511856]},"id":"1070","type":"CustomJS"},{"attributes":{"child":{"id":"1012"},"name":"Controls","title":"Controls"},"id":"1019","type":"Panel"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"view_state"},"source":{"id":"1018"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['viewState'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set viewState on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['viewState'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007413008]},"id":"1048","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1054"}]},"margin":[5,10,5,10],"title":"Aspect ratio"},"id":"1024","type":"TextInput"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"max_height"},"source":{"id":"1039"},"target":{"id":"1032"}},"code":"\n    var value = source['max_height'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511856]},"id":"1071","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1070"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max height","value":0,"value_throttled":0},"id":"1032","type":"Spinner"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1064"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min width","value":0,"value_throttled":0},"id":"1029","type":"Spinner"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1056"}]},"margin":[5,10,5,10],"title":"Background"},"id":"1025","type":"TextInput"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1060"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Width","value":0,"value_throttled":0},"id":"1027","type":"Spinner"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1076"}]},"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Height policy","value":"auto"},"id":"1035","type":"Select"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1066"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Min height","value":0,"value_throttled":0},"id":"1030","type":"Spinner"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"name"},"source":{"id":"1022"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['name'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set name on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['name'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007412960]},"id":"1050","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1068"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Max width","value":0,"value_throttled":0},"id":"1031","type":"Spinner"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1062"}]},"low":0,"margin":[5,10,5,10],"mode":"int","placeholder":"0","title":"Height","value":600,"value_throttled":600},"id":"1028","type":"Spinner"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"name"},"source":{"id":"1039"},"target":{"id":"1022"}},"code":"\n    var value = source['name'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007412960]},"id":"1051","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1072"}]},"margin":[5,10,5,10],"title":"Margin","value":"5"},"id":"1033","type":"TextInput"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1078"}]},"margin":[5,10,5,10],"options":[["fixed","fixed"],["stretch_width","stretch_width"],["stretch_height","stretch_height"],["stretch_both","stretch_both"],["scale_width","scale_width"],["scale_height","scale_height"],["scale_both","scale_both"],["None","None"]],"title":"Sizing mode","value":"stretch_width"},"id":"1036","type":"Select"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"margin"},"source":{"id":"1033"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['margin'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set margin on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['margin'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511664]},"id":"1072","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"margin"},"source":{"id":"1039"},"target":{"id":"1033"}},"code":"\n    var value = source['margin'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007511664]},"id":"1073","type":"CustomJS"},{"attributes":{"js_property_callbacks":{"change:value":[{"id":"1074"}]},"margin":[5,10,5,10],"options":[["auto","auto"],["fixed","fixed"],["fit","fit"],["min","min"],["max","max"]],"title":"Width policy","value":"auto"},"id":"1034","type":"Select"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"align"},"source":{"id":"1023"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['align'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set align on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['align'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007955376]},"id":"1052","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"aspect_ratio"},"source":{"id":"1039"},"target":{"id":"1024"}},"code":"\n    var value = source['aspect_ratio'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007954992]},"id":"1055","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"align"},"source":{"id":"1039"},"target":{"id":"1023"}},"code":"\n    var value = source['align'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007955376]},"id":"1053","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"width_policy"},"source":{"id":"1034"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['width_policy'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set width_policy on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['width_policy'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512000]},"id":"1074","type":"CustomJS"},{"attributes":{"child":{"id":"1020"},"name":"Layout","title":"Layout"},"id":"1038","type":"Panel"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"width_policy"},"source":{"id":"1039"},"target":{"id":"1034"}},"code":"\n    var value = source['width_policy'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512000]},"id":"1075","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"aspect_ratio"},"source":{"id":"1024"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['aspect_ratio'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set aspect_ratio on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['aspect_ratio'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007954992]},"id":"1054","type":"CustomJS"},{"attributes":{"active":[0],"js_property_callbacks":{"change:active":[{"id":"1080"}]},"labels":["Visible"],"margin":[5,10,5,10]},"id":"1037","type":"CheckboxGroup"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"background"},"source":{"id":"1039"},"target":{"id":"1025"}},"code":"\n    var value = source['background'];\n    value = value;\n    value = JSON.stringify(value).replace(/,/g, \",\").replace(/:/g, \": \");\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007642976]},"id":"1057","type":"CustomJS"},{"attributes":{"data":{"mapStyle":"mapbox://styles/mapbox/dark-v9","views":[{"@@type":"MapView","controller":true}]},"height":600,"initialViewState":{"bearing":-27.36,"latitude":52.2323,"longitude":-1.415,"maxZoom":15,"minZoom":5,"pitch":40.5,"zoom":6},"js_property_callbacks":{"change:align":[{"id":"1053"}],"change:aspect_ratio":[{"id":"1055"}],"change:background":[{"id":"1057"}],"change:clickState":[{"id":"1045"}],"change:css_classes":[{"id":"1059"}],"change:height":[{"id":"1063"}],"change:height_policy":[{"id":"1077"}],"change:hoverState":[{"id":"1047"}],"change:mapbox_api_key":[{"id":"1041"}],"change:margin":[{"id":"1073"}],"change:max_height":[{"id":"1071"}],"change:max_width":[{"id":"1069"}],"change:min_height":[{"id":"1067"}],"change:min_width":[{"id":"1065"}],"change:name":[{"id":"1051"}],"change:sizing_mode":[{"id":"1079"}],"change:tooltip":[{"id":"1043"}],"change:viewState":[{"id":"1049"}],"change:visible":[{"id":"1081"}],"change:width":[{"id":"1061"}],"change:width_policy":[{"id":"1075"}]},"layers":[{"@@type":"HexagonLayer","autoHighlight":true,"colorRange":[[1,152,189],[73,227,206],[216,254,181],[254,237,177],[254,173,84],[209,55,78]],"coverage":1,"data":"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv","elevationRange":[0,3000],"elevationScale":50,"extruded":true,"getPosition":"@@=[lng, lat]","id":"8a553b25-ef3a-489c-bbe2-e102d18a3211","pickable":true}],"mapbox_api_key":"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ","margin":[5,5,5,5],"name":"DeckGL02973","sizing_mode":"stretch_width","tooltip":true},"id":"1039","type":"panel.models.deckgl.DeckGLPlot"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"height_policy"},"source":{"id":"1035"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['height_policy'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set height_policy on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['height_policy'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512096]},"id":"1076","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"height_policy"},"source":{"id":"1039"},"target":{"id":"1035"}},"code":"\n    var value = source['height_policy'];\n    value = value;\n    value = value;\n    try {\n      var property = target.properties['value'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set value on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['value'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007512096]},"id":"1077","type":"CustomJS"},{"attributes":{"args":{"bidirectional":true,"properties":{"value":"background"},"source":{"id":"1025"},"target":{"id":"1039"}},"code":"\n    var value = source['value'];\n    value = JSON.parse(value.replace(/'/g, '\"'));\n    value = value;\n    try {\n      var property = target.properties['background'];\n      if (property !== undefined) { property.validate(value); }\n    } catch(err) {\n      console.log('WARNING: Could not set background on target, raised error: ' + err);\n      return;\n    }\n    try {\n      target['background'] = value;\n    } catch(err) {\n      console.log(err)\n    }\n    ","tags":[140037007642976]},"id":"1056","type":"CustomJS"}],"root_ids":["1010","1082"]},"title":"Bokeh Application","version":"2.4.2"}};
+    var render_items = [{"docid":"bb7726dc-772d-4719-b55c-8d58cb29365c","root_ids":["1010"],"roots":{"1010":"fa5b21cd-6652-4c6d-ba71-6802ed3d69de"}}];
+    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && ( root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined && (root['deck'] !== undefined)&& (root.Bokeh.Models.registered_names().indexOf("ipywidgets_bokeh.widget.IPyWidget") > -1)) {
+        clearInterval(timer);
+        embed_document(root);
+      } else if (document.readyState == "complete") {
+        attempts++;
+        if (attempts > 200) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 25, root)
+  }
+})(window);</script></div></div>
+</div>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/DeckGL.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/holoviz/panel/master/examples/reference/panes/DeckGL.ipynb">Download this notebook from GitHub (right-click to download).</a></p>
+</section>
+</div>
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="DataFrame.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">DataFrame</p>
+</div>
+</a>
+<a class="right-next" href="ECharts.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">ECharts</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</main>
+</div>
+</div>
+<script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+<div class="container">
+<div class="footer-item">
+<p class="copyright">
+    © Copyright 2019-2021 Panel contributors.<br/>
+</p>
+</div>
+<div class="footer-item">
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
