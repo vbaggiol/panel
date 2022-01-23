@@ -2,6 +2,7 @@ import re
 
 from io import StringIO
 
+from panel.io import Resources
 from panel.pane import Alert, Vega
 from panel.models.vega import VegaPlot
 
@@ -52,3 +53,15 @@ def test_save_cdn_resources():
     sio.seek(0)
     html = sio.read()
     assert re.findall('https://unpkg.com/@holoviz/panel@(.*)/dist/css/alerts.css', html)
+
+
+def test_static_path_in_holoviews_save():
+    alert = Alert('# Save test')
+
+    res = Resources(mode='server', root_url='/')
+    sio = StringIO()
+    alert.save(sio, resources=res)
+    sio.seek(0)
+    html = sio.read()
+    assert 'src="/static/js/bokeh' in html and 'src="static/js/bokeh' not in html
+    assert 'href="/static/extensions/panel/css/' in html and 'href="static/extensions/panel/css/' not in html
