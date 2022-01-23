@@ -6,6 +6,7 @@ import copy
 import glob
 import json
 import os
+import re
 
 from base64 import b64encode
 from collections import OrderedDict
@@ -56,6 +57,7 @@ DEFAULT_TITLE = "Panel Application"
 JS_RESOURCES = _env.get_template('js_resources.html')
 CDN_DIST = f"https://unpkg.com/@holoviz/panel@{js_version}/dist/"
 LOCAL_DIST = "static/extensions/panel/"
+URL_RE = r'^(?:http|ftp)s?://'
 
 CSS_URLS = {
     'font-awesome': 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css',
@@ -214,7 +216,7 @@ class Resources(BkResources):
         js_files = []
         for js_file in files:
             if (js_file.startswith(state.base_url) or js_file.startswith('static/')):
-                if js_file.startswith(state.base_url):
+                if js_file.startswith(state.base_url) and re.match(URL_RE, state.base_url):
                     js_file = js_file[len(state.base_url):]
                 if state.rel_path:
                     js_file = f'{state.rel_path}/{js_file}'
@@ -271,6 +273,8 @@ class Resources(BkResources):
         if self.mode == 'server':
             if state.rel_path:
                 dist_dir = f'{state.rel_path}/{LOCAL_DIST}'
+            elif state.base_url:
+                dist_dir = f'{state.base_url}{LOCAL_DIST}'
             else:
                 dist_dir = LOCAL_DIST
         else:
@@ -317,7 +321,7 @@ class Bundle(BkBundle):
         js_files = []
         for js_file in self.js_files:
             if (js_file.startswith(state.base_url) or js_file.startswith('static/')):
-                if js_file.startswith(state.base_url):
+                if js_file.startswith(state.base_url) and re.match(URL_RE, state.base_url):
                     js_file = js_file[len(state.base_url):]
                 
                 if state.rel_path:
